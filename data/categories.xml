@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories>
+    <category>
+        <id>CAT-01</id>
+        <name>Beverages</name>
+        <slug>beverages</slug>
+        <description>Artisanal coffee, teas, juices, and cold refreshments</description>
+        <status>active</status>
+    </category>
+    <category>
+        <id>CAT-02</id>
+        <name>Snacks &amp; Pantry</name>
+        <slug>snacks-pantry</slug>
+        <description>Premium nuts, dried fruit, chips, and pantry staples</description>
+        <status>active</status>
+    </category>
+    <category>
+        <id>CAT-03</id>
+        <name>Fresh &amp; Bakery</name>
+        <slug>fresh-bakery</slug>
+        <description>Freshly baked breads, pastries, and dairy essentials</description>
+        <status>active</status>
+    </category>
+    <category>
+        <id>CAT-04</id>
+        <name>Personal Care</name>
+        <slug>personal-care</slug>
+        <description>Organic soaps, balms, sanitizers, and wellness goods</description>
+        <status>active</status>
+    </category>
+    <category>
+        <id>CAT-05</id>
+        <name>Stationery &amp; Office</name>
+        <slug>stationery-office</slug>
+        <description>Eco-friendly notebooks, gel pens, planners, and supplies</description>
+        <status>active</status>
+    </category>
+    <category>
+        <id>CAT-06</id>
+        <name>Home &amp; Cleaning</name>
+        <slug>home-cleaning</slug>
+        <description>Eco-conscious cleaning sprays, wipes, and room mists</description>
+        <status>active</status>
+    </category>
+</categories>

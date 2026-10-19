@@ -1,0 +1,6 @@
+# Deny direct access to XML data files
+<Files ~ "\.xml$">
+    Order allow,deny
+    Deny from all
+</Files>
+Deny from all

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audit_logs>
+    <entry>
+        <log_id>AUD-1001</log_id>
+        <user_id>USR-1001</user_id>
+        <username>admin</username>
+        <action>AUTH_LOGIN</action>
+        <module>Security</module>
+        <details>Administrative session authenticated successfully</details>
+        <ip_address>127.0.0.1</ip_address>
+        <timestamp>2026-10-16 08:30:00</timestamp>
+    </entry>
+    <entry>
+        <log_id>AUD-1002</log_id>
+        <user_id>USR-1001</user_id>
+        <username>admin</username>
+        <action>INVENTORY_RESTOCK</action>
+        <module>Inventory</module>
+        <details>Restocked PRD-101 (+30 units). PO: PO-2026-081</details>
+        <ip_address>127.0.0.1</ip_address>
+        <timestamp>2026-10-10 09:30:00</timestamp>
+    </entry>
+    <entry>
+        <log_id>AUD-1003</log_id>
+        <user_id>USR-1002</user_id>
+        <username>cashier</username>
+        <action>POS_TRANSACTION</action>
+        <module>POS</module>
+        <details>Completed POS sale TXN-20261016-001 (Total: $14.55)</details>
+        <ip_address>127.0.0.1</ip_address>
+        <timestamp>2026-10-16 10:15:30</timestamp>
+    </entry>
+</audit_logs>

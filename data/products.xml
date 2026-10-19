@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <id>PRD-101</id>
+        <sku>SKU-BEV-001</sku>
+        <name>Organic Cold Brew Coffee (330ml)</name>
+        <category_id>CAT-01</category_id>
+        <category_name>Beverages</category_name>
+        <unit_price>4.50</unit_price>
+        <cost_price>2.20</cost_price>
+        <stock_quantity>48</stock_quantity>
+        <low_stock_threshold>10</low_stock_threshold>
+        <unit>Bottle</unit>
+        <description>100% Arabica cold-steeped for 18 hours. Smooth, bold, and low acidity.</description>
+        <barcode>8901001001</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-10 10:00:00</created_at>
+        <updated_at>2026-01-10 10:00:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-102</id>
+        <sku>SKU-BEV-002</sku>
+        <name>Sparkling Yuzu Green Tea (250ml)</name>
+        <category_id>CAT-01</category_id>
+        <category_name>Beverages</category_name>
+        <unit_price>3.80</unit_price>
+        <cost_price>1.75</cost_price>
+        <stock_quantity>6</stock_quantity>
+        <low_stock_threshold>12</low_stock_threshold>
+        <unit>Can</unit>
+        <description>Lightly sparkling brewed green tea infused with citrus Japanese yuzu juice.</description>
+        <barcode>8901001002</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-10 10:30:00</created_at>
+        <updated_at>2026-01-10 10:30:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-103</id>
+        <sku>SKU-BEV-003</sku>
+        <name>Artisan Oat Milk Latte (300ml)</name>
+        <category_id>CAT-01</category_id>
+        <category_name>Beverages</category_name>
+        <unit_price>4.95</unit_price>
+        <cost_price>2.50</cost_price>
+        <stock_quantity>0</stock_quantity>
+        <low_stock_threshold>8</low_stock_threshold>
+        <unit>Bottle</unit>
+        <description>Creamy barista-blend oat milk with double-shot espresso, sweetened with date syrup.</description>
+        <barcode>8901001003</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-11 09:15:00</created_at>
+        <updated_at>2026-01-11 09:15:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-104</id>
+        <sku>SKU-SNK-001</sku>
+        <name>Roasted Himalayan Sea Salt Almonds (150g)</name>
+        <category_id>CAT-02</category_id>
+        <category_name>Snacks &amp; Pantry</category_name>
+        <unit_price>6.25</unit_price>
+        <cost_price>3.40</cost_price>
+        <stock_quantity>32</stock_quantity>
+        <low_stock_threshold>10</low_stock_threshold>
+        <unit>Pouch</unit>
+        <description>Slow-roasted California almonds lightly dusted with pure pink Himalayan crystal salt.</description>
+        <barcode>8902001001</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-12 11:00:00</created_at>
+        <updated_at>2026-01-12 11:00:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-105</id>
+        <sku>SKU-SNK-002</sku>
+        <name>Dark Chocolate Quinoa Crunch Bar (60g)</name>
+        <category_id>CAT-02</category_id>
+        <category_name>Snacks &amp; Pantry</category_name>
+        <unit_price>2.90</unit_price>
+        <cost_price>1.20</cost_price>
+        <stock_quantity>5</stock_quantity>
+        <low_stock_threshold>15</low_stock_threshold>
+        <unit>Piece</unit>
+        <description>72% single-origin cacao with crispy puffed Andean quinoa grains.</description>
+        <barcode>8902001002</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-12 11:30:00</created_at>
+        <updated_at>2026-01-12 11:30:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-106</id>
+        <sku>SKU-BAK-001</sku>
+        <name>Artisan Sourdough Loaf (750g)</name>
+        <category_id>CAT-03</category_id>
+        <category_name>Fresh &amp; Bakery</category_name>
+        <unit_price>5.50</unit_price>
+        <cost_price>2.10</cost_price>
+        <stock_quantity>18</stock_quantity>
+        <low_stock_threshold>6</low_stock_threshold>
+        <unit>Loaf</unit>
+        <description>Naturally fermented wild yeast sourdough with golden crust and open crumb structure.</description>
+        <barcode>8903001001</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-15 06:00:00</created_at>
+        <updated_at>2026-01-15 06:00:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-107</id>
+        <sku>SKU-BAK-002</sku>
+        <name>French Butter Croissant (Pack of 2)</name>
+        <category_id>CAT-03</category_id>
+        <category_name>Fresh &amp; Bakery</category_name>
+        <unit_price>4.20</unit_price>
+        <cost_price>1.80</cost_price>
+        <stock_quantity>24</stock_quantity>
+        <low_stock_threshold>8</low_stock_threshold>
+        <unit>Pack</unit>
+        <description>Flaky, 36-layer laminated puff pastry baked with Normandy cultured butter.</description>
+        <barcode>8903001002</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-15 06:30:00</created_at>
+        <updated_at>2026-01-15 06:30:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-108</id>
+        <sku>SKU-PER-001</sku>
+        <name>Lavender &amp; Chamomile Botanical Soap (120g)</name>
+        <category_id>CAT-04</category_id>
+        <category_name>Personal Care</category_name>
+        <unit_price>5.90</unit_price>
+        <cost_price>2.60</cost_price>
+        <stock_quantity>40</stock_quantity>
+        <low_stock_threshold>10</low_stock_threshold>
+        <unit>Bar</unit>
+        <description>Cold-processed plant oil bar with French lavender and gentle Roman chamomile extracts.</description>
+        <barcode>8904001001</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-18 14:00:00</created_at>
+        <updated_at>2026-01-18 14:00:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-109</id>
+        <sku>SKU-PER-002</sku>
+        <name>Hydrating Eucalyptus Hand Sanitizer (60ml)</name>
+        <category_id>CAT-04</category_id>
+        <category_name>Personal Care</category_name>
+        <unit_price>3.50</unit_price>
+        <cost_price>1.30</cost_price>
+        <stock_quantity>55</stock_quantity>
+        <low_stock_threshold>12</low_stock_threshold>
+        <unit>Bottle</unit>
+        <description>70% sugarcane alcohol mist with Australian eucalyptus oil and organic aloe vera.</description>
+        <barcode>8904001002</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-18 14:30:00</created_at>
+        <updated_at>2026-01-18 14:30:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-110</id>
+        <sku>SKU-STA-001</sku>
+        <name>Hardcover Recycled Dot Grid Journal (A5)</name>
+        <category_id>CAT-05</category_id>
+        <category_name>Stationery &amp; Office</category_name>
+        <unit_price>12.50</unit_price>
+        <cost_price>5.80</cost_price>
+        <stock_quantity>25</stock_quantity>
+        <low_stock_threshold>5</low_stock_threshold>
+        <unit>Unit</unit>
+        <description>160 numbered pages of 120gsm ink-proof recycled paper with elastic closure and bookmark.</description>
+        <barcode>8905001001</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-20 09:00:00</created_at>
+        <updated_at>2026-01-20 09:00:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-111</id>
+        <sku>SKU-STA-002</sku>
+        <name>Archival Rollerball Ink Pens (0.5mm 3-Pack)</name>
+        <category_id>CAT-05</category_id>
+        <category_name>Stationery &amp; Office</category_name>
+        <unit_price>7.00</unit_price>
+        <cost_price>3.10</cost_price>
+        <stock_quantity>30</stock_quantity>
+        <low_stock_threshold>8</low_stock_threshold>
+        <unit>Pack</unit>
+        <description>Waterproof, fade-resistant Japanese pigment ink pens with precision needle tips.</description>
+        <barcode>8905001002</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-20 09:45:00</created_at>
+        <updated_at>2026-01-20 09:45:00</updated_at>
+    </product>
+    <product>
+        <id>PRD-112</id>
+        <sku>SKU-HOM-001</sku>
+        <name>Plant-Based All-Purpose Surface Cleaner (500ml)</name>
+        <category_id>CAT-06</category_id>
+        <category_name>Home &amp; Cleaning</category_name>
+        <unit_price>7.80</unit_price>
+        <cost_price>3.50</cost_price>
+        <stock_quantity>22</stock_quantity>
+        <low_stock_threshold>8</low_stock_threshold>
+        <unit>Bottle</unit>
+        <description>Non-toxic biodegradable multi-surface cleaning spray scented with essential sweet orange oil.</description>
+        <barcode>8906001001</barcode>
+        <visibility>visible</visibility>
+        <created_at>2026-01-22 13:00:00</created_at>
+        <updated_at>2026-01-22 13:00:00</updated_at>
+    </product>
+</products>

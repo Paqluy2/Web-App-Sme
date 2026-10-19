@@ -1,0 +1,388 @@
+'use strict';
+
+document.addEventListener('DOMContentLoaded', () => {
+    let cart = JSON.parse(localStorage.getItem('gigs_cafe_cart')) || [];
+    const DELIVERY_FEE = 50.00;
+
+    // DOM References
+    const cartCountBadge = document.getElementById('cartCountBadge');
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartItemsList = document.getElementById('cartItemsList');
+    const drawerSubtotal = document.getElementById('drawerSubtotal');
+    const drawerDelivery = document.getElementById('drawerDelivery');
+    const drawerTotal = document.getElementById('drawerTotal');
+    const btnProceedCheckout = document.getElementById('btnProceedCheckout');
+    const authModal = document.getElementById('authModal');
+
+    // 1. Drawer open/close
+    function toggleCart(isOpen) {
+        cartDrawer.classList.toggle('open', isOpen);
+        cartOverlay.classList.toggle('open', isOpen);
+    }
+
+    if (openCartBtn) openCartBtn.addEventListener('click', () => toggleCart(true));
+    if (closeCartBtn) closeCartBtn.addEventListener('click', () => toggleCart(false));
+    if (cartOverlay) cartOverlay.addEventListener('click', () => toggleCart(false));
+
+    // 2. Add to Cart from Menu
+    document.querySelectorAll('.btn-add-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const id = parseInt(button.dataset.id, 10);
+            const name = button.dataset.name;
+            const price = parseFloat(button.dataset.price);
+
+            const existing = cart.find(item => item.product_id === id);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ product_id: id, name, price, qty: 1 });
+            }
+            saveCart();
+            renderCart();
+            toggleCart(true);
+        });
+    });
+
+    // 3. Render Cart & Calculate
+    function saveCart() {
+        localStorage.setItem('gigs_cafe_cart', JSON.stringify(cart));
+    }
+
+    function renderCart() {
+        if (!cartItemsList) return;
+        cartItemsList.innerHTML = '';
+
+        const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+        if (cartCountBadge) cartCountBadge.textContent = totalQty.toString();
+
+        if (cart.length === 0) {
+            cartItemsList.innerHTML = '<p style="text-align:center; color:#7a6e67; margin-top:40px;">Your cart is empty.</p>';
+            if (drawerSubtotal) drawerSubtotal.textContent = '₱0.00';
+            if (drawerDelivery) drawerDelivery.textContent = '₱0.00';
+            if (drawerTotal) drawerTotal.textContent = '₱0.00';
+            return;
+        }
+
+        let subtotal = 0;
+        cart.forEach((item, index) => {
+            const line = item.price * item.qty;
+            subtotal += line;
+
+            const div = document.createElement('div');
+            div.style.cssText = 'display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e8ded4; padding:10px 0;';
+            div.innerHTML = `
+                <div>
+                    <strong>${item.name}</strong>
+                    <div style="font-size:0.85rem; color:#7a6e67;">₱${item.price.toFixed(2)} x ${item.qty}</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:6px;">
+                    <button type="button" class="btn-qty" onclick="updateCartItem(${index}, -1)">-</button>
+                    <span style="font-weight:700;">${item.qty}</span>
+                    <button type="button" class="btn-qty" onclick="updateCartItem(${index}, 1)">+</button>
+                    <button type="button" class="btn-del" onclick="removeCartItem(${index})">&times;</button>
+                </div>
+            `;
+            cartItemsList.appendChild(div);
+        });
+
+        const isDelivery = document.querySelector('input[name="cust_fulfillment"]:checked')?.value === 'Delivery';
+        const fee = isDelivery ? DELIVERY_FEE : 0.00;
+        const total = subtotal + fee;
+
+        if (drawerSubtotal) drawerSubtotal.textContent = `₱${subtotal.toFixed(2)}`;
+        if (drawerDelivery) drawerDelivery.textContent = `₱${fee.toFixed(2)}`;
+        if (drawerTotal) drawerTotal.textContent = `₱${total.toFixed(2)}`;
+    }
+
+    window.updateCartItem = function (index, delta) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
+        saveCart();
+        renderCart();
+    };
+
+    window.removeCartItem = function (index) {
+        cart.splice(index, 1);
+        saveCart();
+        renderCart();
+    };
+
+    document.querySelectorAll('input[name="cust_fulfillment"]').forEach(r => {
+        r.addEventListener('change', renderCart);
+    });
+
+    // 4. Modal Triggers
+    window.openAuthModal = function (notice = '') {
+        const noticeEl = document.getElementById('authNotice');
+        if (noticeEl) noticeEl.textContent = notice;
+        authModal.style.display = 'flex';
+    };
+
+    window.closeAuthModal = function () {
+        authModal.style.display = 'none';
+    };
+
+    window.toggleAuthForms = function (showRegister) {
+        document.getElementById('customerLoginForm').style.display = showRegister ? 'none' : 'block';
+        document.getElementById('customerRegisterForm').style.display = showRegister ? 'block' : 'none';
+        document.getElementById('authModalTitle').textContent = showRegister ? 'Register Account' : 'Welcome to Gigs Cafe';
+    };
+
+    // 5. Checkout Execution
+    if (btnProceedCheckout) {
+        btnProceedCheckout.addEventListener('click', async () => {
+            if (cart.length === 0) return alert('Your cart is empty.');
+
+            const fulfillment = document.querySelector('input[name="cust_fulfillment"]:checked').value;
+
+            btnProceedCheckout.disabled = true;
+            btnProceedCheckout.textContent = 'Submitting Order...';
+
+            try {
+                const response = await fetch('api/customer_api.php?action=checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        items: cart.map(i => ({ product_id: i.product_id, qty: i.qty })),
+                        fulfillment_type: fulfillment
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert(`Order Placed Successfully!\n\nOrder Code: ${result.transaction_code}`);
+                    cart = [];
+                    saveCart();
+                    renderCart();
+                    toggleCart(false);
+                    window.location.href = 'orders.php';
+                } else {
+                    alert(`Order Error: ${result.message}`);
+                }
+            } catch (err) {
+                alert('Connection failure when processing order.');
+            } finally {
+                btnProceedCheckout.disabled = false;
+                btnProceedCheckout.textContent = 'Place Online Order';
+            }
+        });
+    }
+
+    // 6. Category Filtering on Menu Page
+    const catPills = document.querySelectorAll('.category-pill');
+    const productCards = document.querySelectorAll('.customer-product-card');
+
+    catPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            catPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const selectedCat = pill.dataset.cat;
+            productCards.forEach(card => {
+                const itemCat = card.dataset.category;
+                card.style.display = (selectedCat === 'all' || itemCat === selectedCat) ? 'flex' : 'none';
+            });
+        });
+    });
+
+    renderCart();
+});
+// --- OTP Registration Controllers ---
+
+window.showLoginForm = function() {
+    document.getElementById('customerLoginForm').style.display = 'block';
+    document.getElementById('otpStep1Form').style.display = 'none';
+    document.getElementById('otpStep2Form').style.display = 'none';
+    document.getElementById('authModalTitle').textContent = 'Sign In';
+};
+
+window.showRegisterStep1 = function() {
+    document.getElementById('customerLoginForm').style.display = 'none';
+    document.getElementById('otpStep1Form').style.display = 'block';
+    document.getElementById('otpStep2Form').style.display = 'none';
+    document.getElementById('authModalTitle').textContent = 'Register with Email OTP';
+};
+
+window.showRegisterStep2 = function(email) {
+    document.getElementById('customerLoginForm').style.display = 'none';
+    document.getElementById('otpStep1Form').style.display = 'none';
+    document.getElementById('otpStep2Form').style.display = 'block';
+    document.getElementById('displayTargetEmail').textContent = email;
+    document.getElementById('authModalTitle').textContent = 'Enter Verification Code';
+    document.getElementById('reg_otp').focus();
+};
+
+// --- Phone OTP Registration Handlers ---
+
+let activeOtpPhone = '';
+
+window.showLoginForm = function() {
+    document.getElementById('customerLoginForm').style.display = 'block';
+    document.getElementById('otpStep1Form').style.display = 'none';
+    document.getElementById('otpStep2Form').style.display = 'none';
+    document.getElementById('authModalTitle').textContent = 'Sign In';
+};
+
+window.showRegisterStep1 = function() {
+    document.getElementById('customerLoginForm').style.display = 'none';
+    document.getElementById('otpStep1Form').style.display = 'block';
+    document.getElementById('otpStep2Form').style.display = 'none';
+    document.getElementById('authModalTitle').textContent = 'Register via Phone OTP';
+};
+
+window.showRegisterStep2 = function(phone) {
+    activeOtpPhone = phone;
+    document.getElementById('customerLoginForm').style.display = 'none';
+    document.getElementById('otpStep1Form').style.display = 'none';
+    document.getElementById('otpStep2Form').style.display = 'block';
+    document.getElementById('displayTargetPhone').textContent = phone;
+    document.getElementById('authModalTitle').textContent = 'Enter SMS Code';
+    document.getElementById('reg_otp').value = '';
+    document.getElementById('reg_otp').focus();
+};
+
+let confirmationResultGlobal = null;
+let recaptchaVerifier = null;
+
+// Initialize invisible reCAPTCHA
+function initRecaptcha() {
+    if (!recaptchaVerifier) {
+        recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+            'size': 'invisible',
+            'callback': (response) => {
+                // reCAPTCHA solved
+            }
+        });
+    }
+}
+
+// 1. Send SMS via Firebase
+window.handleSendOtp = async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btnSendOtp');
+    const rawPhone = document.getElementById('reg_phone').value.trim();
+
+    // Format Philippine number from 09183477631 to E.164 format: +639183477631
+    let formattedPhone = rawPhone.replace(/[^0-9]/g, '');
+    if (formattedPhone.startsWith('09')) {
+        formattedPhone = '+63' + formattedPhone.substring(1);
+    } else if (formattedPhone.startsWith('9')) {
+        formattedPhone = '+63' + formattedPhone;
+    } else if (!formattedPhone.startsWith('+63')) {
+        formattedPhone = '+63' + formattedPhone;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending SMS via Google...';
+
+    try {
+        initRecaptcha();
+        
+        // Trigger Google Firebase SMS dispatch
+        const confirmationResult = await auth.signInWithPhoneNumber(formattedPhone, recaptchaVerifier);
+        confirmationResultGlobal = confirmationResult;
+
+        alert(`Verification code sent to ${formattedPhone}!`);
+        showRegisterStep2(rawPhone);
+    } catch (error) {
+        console.error('Firebase SMS Error:', error);
+        alert('SMS Dispatch Error: ' + error.message);
+        if (recaptchaVerifier) {
+            recaptchaVerifier.render().then(widgetId => grecaptcha.reset(widgetId));
+        }
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Mobile OTP';
+    }
+};
+
+// 2. Verify Code & Finalize Account in MySQL
+window.handleVerifyOtp = async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btnVerifyOtp');
+    const otpCode = document.getElementById('reg_otp').value.trim();
+
+    if (!confirmationResultGlobal) {
+        alert('Verification session expired. Please request a new code.');
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Verifying Code...';
+
+    try {
+        // Confirm OTP with Firebase
+        const result = await confirmationResultGlobal.confirm(otpCode);
+        const user = result.user; // Verified by Google
+
+        // Save account into your local gigscafe MySQL database
+        const saveResponse = await fetch('/WebApp/api/otp_api.php?action=complete_firebase_register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                full_name: document.getElementById('reg_name').value.trim(),
+                phone: document.getElementById('reg_phone').value.trim(),
+                email: document.getElementById('reg_email').value.trim(),
+                password: document.getElementById('reg_password').value,
+                firebase_uid: user.uid
+            })
+        });
+
+        const data = await saveResponse.json();
+
+        if (data.success) {
+            alert('Phone verified and account created successfully!');
+            window.location.href = data.redirect;
+        } else {
+            alert(data.message);
+        }
+    } catch (error) {
+        console.error('Code Verification Error:', error);
+        alert('Invalid or expired verification code.');
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Verify Phone & Register';
+    }
+};
+
+window.handleVerifyOtp = async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btnVerifyOtp');
+    const otp = document.getElementById('reg_otp').value.trim();
+
+    btn.disabled = true;
+    btn.textContent = 'Verifying Code...';
+
+    try {
+        const response = await fetch('/WebApp/api/otp_api.php?action=verify_otp', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                phone: activeOtpPhone,
+                otp_code: otp
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert(data.message);
+            window.location.href = data.redirect;
+        } else {
+            alert(data.message);
+        }
+    } catch (err) {
+        alert('Error validating code.');
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Verify Phone & Register';
+    }
+};
+
+window.resendOtp = function() {
+    document.getElementById('btnSendOtp').click();
+};

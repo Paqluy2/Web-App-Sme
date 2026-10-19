@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transactions>
+    <transaction>
+        <transaction_id>TXN-20261016-001</transaction_id>
+        <type>pos</type>
+        <staff_id>USR-1002</staff_id>
+        <staff_name>Alex Rivera (Cashier)</staff_name>
+        <customer_name>Walk-in Customer</customer_name>
+        <payment_method>Cash</payment_method>
+        <amount_tendered>20.00</amount_tendered>
+        <change_due>5.45</change_due>
+        <reference_number></reference_number>
+        <subtotal>13.47</subtotal>
+        <tax_rate>0.08</tax_rate>
+        <tax_amount>1.08</tax_amount>
+        <total_amount>14.55</total_amount>
+        <timestamp>2026-10-16 10:15:30</timestamp>
+        <items>
+            <item>
+                <product_id>PRD-101</product_id>
+                <sku>SKU-BEV-001</sku>
+                <name>Organic Cold Brew Coffee (330ml)</name>
+                <unit_price>4.50</unit_price>
+                <quantity>2</quantity>
+                <line_total>9.00</line_total>
+            </item>
+            <item>
+                <product_id>PRD-107</product_id>
+                <sku>SKU-BAK-002</sku>
+                <name>French Butter Croissant (Pack of 2)</name>
+                <unit_price>4.20</unit_price>
+                <quantity>1</quantity>
+                <line_total>4.20</line_total>
+            </item>
+        </items>
+    </transaction>
+    <transaction>
+        <transaction_id>TXN-20261016-002</transaction_id>
+        <type>pos</type>
+        <staff_id>USR-1002</staff_id>
+        <staff_name>Alex Rivera (Cashier)</staff_name>
+        <customer_name>Walk-in Customer</customer_name>
+        <payment_method>Card</payment_method>
+        <amount_tendered>21.06</amount_tendered>
+        <change_due>0.00</change_due>
+        <reference_number>AUTH-489102-VISA</reference_number>
+        <subtotal>19.50</subtotal>
+        <tax_rate>0.08</tax_rate>
+        <tax_amount>1.56</tax_amount>
+        <total_amount>21.06</total_amount>
+        <timestamp>2026-10-16 13:40:12</timestamp>
+        <items>
+            <item>
+                <product_id>PRD-110</product_id>
+                <sku>SKU-STA-001</sku>
+                <name>Hardcover Recycled Dot Grid Journal (A5)</name>
+                <unit_price>12.50</unit_price>
+                <quantity>1</quantity>
+                <line_total>12.50</line_total>
+            </item>
+            <item>
+                <product_id>PRD-111</product_id>
+                <sku>SKU-STA-002</sku>
+                <name>Archival Rollerball Ink Pens (0.5mm 3-Pack)</name>
+                <unit_price>7.00</unit_price>
+                <quantity>1</quantity>
+                <line_total>7.00</line_total>
+            </item>
+        </items>
+    </transaction>
+</transactions>

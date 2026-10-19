@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+    <order>
+        <order_id>ORD-20261015-001</order_id>
+        <customer_type>registered</customer_type>
+        <customer_id>USR-1003</customer_id>
+        <customer_name>Sarah Jenkins</customer_name>
+        <customer_email>sarah.jenkins@example.com</customer_email>
+        <customer_phone>+1 555-0144</customer_phone>
+        <fulfillment_mode>delivery</fulfillment_mode>
+        <delivery_address>742 Evergreen Terrace, Maple District</delivery_address>
+        <delivery_fee>5.00</delivery_fee>
+        <pickup_timeslot></pickup_timeslot>
+        <subtotal>33.70</subtotal>
+        <tax_rate>0.08</tax_rate>
+        <tax_amount>2.70</tax_amount>
+        <total_amount>41.40</total_amount>
+        <payment_method>Card</payment_method>
+        <payment_status>Paid</payment_status>
+        <order_status>Completed</order_status>
+        <notes>Please ring doorbell and place on covered porch.</notes>
+        <created_at>2026-10-15 14:15:22</created_at>
+        <items>
+            <item>
+                <product_id>PRD-101</product_id>
+                <sku>SKU-BEV-001</sku>
+                <name>Organic Cold Brew Coffee (330ml)</name>
+                <unit_price>4.50</unit_price>
+                <quantity>2</quantity>
+                <line_total>9.00</line_total>
+            </item>
+            <item>
+                <product_id>PRD-106</product_id>
+                <sku>SKU-BAK-001</sku>
+                <name>Artisan Sourdough Loaf (750g)</name>
+                <unit_price>5.50</unit_price>
+                <quantity>1</quantity>
+                <line_total>5.50</line_total>
+            </item>
+            <item>
+                <product_id>PRD-110</product_id>
+                <sku>SKU-STA-001</sku>
+                <name>Hardcover Recycled Dot Grid Journal (A5)</name>
+                <unit_price>12.50</unit_price>
+                <quantity>1</quantity>
+                <line_total>12.50</line_total>
+            </item>
+            <item>
+                <product_id>PRD-111</product_id>
+                <sku>SKU-STA-002</sku>
+                <name>Archival Rollerball Ink Pens (0.5mm 3-Pack)</name>
+                <unit_price>7.00</unit_price>
+                <quantity>1</quantity>
+                <line_total>7.00</line_total>
+            </item>
+        </items>
+    </order>
+    <order>
+        <order_id>ORD-20261016-002</order_id>
+        <customer_type>guest</customer_type>
+        <customer_id></customer_id>
+        <customer_name>David Martinez</customer_name>
+        <customer_email>david.m@example.com</customer_email>
+        <customer_phone>+1 555-0812</customer_phone>
+        <fulfillment_mode>pickup</fulfillment_mode>
+        <delivery_address></delivery_address>
+        <delivery_fee>0.00</delivery_fee>
+        <pickup_timeslot>Today, 4:00 PM - 5:00 PM</pickup_timeslot>
+        <subtotal>17.20</subtotal>
+        <tax_rate>0.08</tax_rate>
+        <tax_amount>1.38</tax_amount>
+        <total_amount>18.58</total_amount>
+        <payment_method>E-Wallet</payment_method>
+        <payment_status>Paid</payment_status>
+        <order_status>Processing</order_status>
+        <notes>Pickup curbside at west bay.</notes>
+        <created_at>2026-10-16 11:10:00</created_at>
+        <items>
+            <item>
+                <product_id>PRD-102</product_id>
+                <sku>SKU-BEV-002</sku>
+                <name>Sparkling Yuzu Green Tea (250ml)</name>
+                <unit_price>3.80</unit_price>
+                <quantity>2</quantity>
+                <line_total>7.60</line_total>
+            </item>
+            <item>
+                <product_id>PRD-107</product_id>
+                <sku>SKU-BAK-002</sku>
+                <name>French Butter Croissant (Pack of 2)</name>
+                <unit_price>4.20</unit_price>
+                <quantity>1</quantity>
+                <line_total>4.20</line_total>
+            </item>
+            <item>
+                <product_id>PRD-108</product_id>
+                <sku>SKU-PER-001</sku>
+                <name>Lavender &amp; Chamomile Botanical Soap (120g)</name>
+                <unit_price>5.90</unit_price>
+                <quantity>1</quantity>
+                <line_total>5.90</line_total>
+            </item>
+        </items>
+    </order>
+</orders>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restock_logs>
+    <restock_entry>
+        <log_id>RST-1001</log_id>
+        <product_id>PRD-101</product_id>
+        <sku>SKU-BEV-001</sku>
+        <product_name>Organic Cold Brew Coffee (330ml)</product_name>
+        <quantity_added>30</quantity_added>
+        <previous_stock>18</previous_stock>
+        <new_stock>48</new_stock>
+        <unit_cost>2.20</unit_cost>
+        <supplier>Pacific Coast Roasters Co.</supplier>
+        <po_reference>PO-2026-081</po_reference>
+        <staff_id>USR-1001</staff_id>
+        <staff_name>System Administrator</staff_name>
+        <notes>Regular replenishment shipment.</notes>
+        <created_at>2026-10-10 09:30:00</created_at>
+    </restock_entry>
+    <restock_entry>
+        <log_id>RST-1002</log_id>
+        <product_id>PRD-109</product_id>
+        <sku>SKU-PER-002</sku>
+        <product_name>Hydrating Eucalyptus Hand Sanitizer (60ml)</product_name>
+        <quantity_added>40</quantity_added>
+        <previous_stock>15</previous_stock>
+        <new_stock>55</new_stock>
+        <unit_cost>1.30</unit_cost>
+        <supplier>EcoWellness Labs LLC</supplier>
+        <po_reference>PO-2026-088</po_reference>
+        <staff_id>USR-1001</staff_id>
+        <staff_name>System Administrator</staff_name>
+        <notes>Restocked ahead of seasonal wellness campaign.</notes>
+        <created_at>2026-10-12 11:20:00</created_at>
+    </restock_entry>
+</restock_logs>
