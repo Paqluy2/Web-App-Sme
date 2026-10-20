@@ -1,105 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<orders>
-    <order>
-        <order_id>ORD-20261015-001</order_id>
-        <customer_type>registered</customer_type>
-        <customer_id>USR-1003</customer_id>
-        <customer_name>Sarah Jenkins</customer_name>
-        <customer_email>sarah.jenkins@example.com</customer_email>
-        <customer_phone>+1 555-0144</customer_phone>
-        <fulfillment_mode>delivery</fulfillment_mode>
-        <delivery_address>742 Evergreen Terrace, Maple District</delivery_address>
-        <delivery_fee>5.00</delivery_fee>
-        <pickup_timeslot></pickup_timeslot>
-        <subtotal>33.70</subtotal>
-        <tax_rate>0.08</tax_rate>
-        <tax_amount>2.70</tax_amount>
-        <total_amount>41.40</total_amount>
-        <payment_method>Card</payment_method>
-        <payment_status>Paid</payment_status>
-        <order_status>Completed</order_status>
-        <notes>Please ring doorbell and place on covered porch.</notes>
-        <created_at>2026-10-15 14:15:22</created_at>
-        <items>
-            <item>
-                <product_id>PRD-101</product_id>
-                <sku>SKU-BEV-001</sku>
-                <name>Organic Cold Brew Coffee (330ml)</name>
-                <unit_price>4.50</unit_price>
-                <quantity>2</quantity>
-                <line_total>9.00</line_total>
-            </item>
-            <item>
-                <product_id>PRD-106</product_id>
-                <sku>SKU-BAK-001</sku>
-                <name>Artisan Sourdough Loaf (750g)</name>
-                <unit_price>5.50</unit_price>
-                <quantity>1</quantity>
-                <line_total>5.50</line_total>
-            </item>
-            <item>
-                <product_id>PRD-110</product_id>
-                <sku>SKU-STA-001</sku>
-                <name>Hardcover Recycled Dot Grid Journal (A5)</name>
-                <unit_price>12.50</unit_price>
-                <quantity>1</quantity>
-                <line_total>12.50</line_total>
-            </item>
-            <item>
-                <product_id>PRD-111</product_id>
-                <sku>SKU-STA-002</sku>
-                <name>Archival Rollerball Ink Pens (0.5mm 3-Pack)</name>
-                <unit_price>7.00</unit_price>
-                <quantity>1</quantity>
-                <line_total>7.00</line_total>
-            </item>
-        </items>
-    </order>
-    <order>
-        <order_id>ORD-20261016-002</order_id>
-        <customer_type>guest</customer_type>
-        <customer_id></customer_id>
-        <customer_name>David Martinez</customer_name>
-        <customer_email>david.m@example.com</customer_email>
-        <customer_phone>+1 555-0812</customer_phone>
-        <fulfillment_mode>pickup</fulfillment_mode>
-        <delivery_address></delivery_address>
-        <delivery_fee>0.00</delivery_fee>
-        <pickup_timeslot>Today, 4:00 PM - 5:00 PM</pickup_timeslot>
-        <subtotal>17.20</subtotal>
-        <tax_rate>0.08</tax_rate>
-        <tax_amount>1.38</tax_amount>
-        <total_amount>18.58</total_amount>
-        <payment_method>E-Wallet</payment_method>
-        <payment_status>Paid</payment_status>
-        <order_status>Processing</order_status>
-        <notes>Pickup curbside at west bay.</notes>
-        <created_at>2026-10-16 11:10:00</created_at>
-        <items>
-            <item>
-                <product_id>PRD-102</product_id>
-                <sku>SKU-BEV-002</sku>
-                <name>Sparkling Yuzu Green Tea (250ml)</name>
-                <unit_price>3.80</unit_price>
-                <quantity>2</quantity>
-                <line_total>7.60</line_total>
-            </item>
-            <item>
-                <product_id>PRD-107</product_id>
-                <sku>SKU-BAK-002</sku>
-                <name>French Butter Croissant (Pack of 2)</name>
-                <unit_price>4.20</unit_price>
-                <quantity>1</quantity>
-                <line_total>4.20</line_total>
-            </item>
-            <item>
-                <product_id>PRD-108</product_id>
-                <sku>SKU-PER-001</sku>
-                <name>Lavender &amp; Chamomile Botanical Soap (120g)</name>
-                <unit_price>5.90</unit_price>
-                <quantity>1</quantity>
-                <line_total>5.90</line_total>
-            </item>
-        </items>
-    </order>
+<orders last_updated="2026-10-21 07:49:07">
+  <order>
+    <order_id>6</order_id>
+    <customer_id>7</customer_id>
+    <transaction_code>ORD-20261021074534-F65D</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Pending</order_status>
+    <created_at>2026-10-21 07:45:34</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>110.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>110.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-21 07:49:06</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-21 07:45:34</order_date>
+  </order>
+  <order>
+    <order_id>5</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261021063628-F38E</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-21 06:36:28</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>285.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>335.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-21 06:37:48</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-21 06:36:28</order_date>
+  </order>
+  <order>
+    <order_id>4</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261021054308-5FA0</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Ready for Pickup</order_status>
+    <created_at>2026-10-21 05:43:08</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>400.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>400.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-21 06:22:04</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-21 05:43:08</order_date>
+  </order>
+  <order>
+    <order_id>3</order_id>
+    <customer_id>4</customer_id>
+    <transaction_code>ORD-20261019211621-9D5A</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] fasdas, adasd, asdas, dasdasd (Note: adasda)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>In Delivery</order_status>
+    <created_at>2026-10-20 03:16:21</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>700.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>750.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-21 06:22:02</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-20 03:16:21</order_date>
+  </order>
+  <order>
+    <order_id>2</order_id>
+    <customer_id>4</customer_id>
+    <transaction_code>ORD-20261019211412-C340</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-20 03:14:12</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>560.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>560.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-20 03:15:42</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-20 03:14:12</order_date>
+  </order>
 </orders>

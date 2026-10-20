@@ -20,7 +20,7 @@ if ($action === 'checkout') {
         exit;
     }
 
-    $customerId = (int)$_SESSION['customer_id'];
+    $customerId = (int) $_SESSION['customer_id'];
     $fulfillment = ($input['fulfillment_type'] === 'Delivery') ? 'Delivery' : 'Pickup';
     $items = $input['items'];
 
@@ -39,7 +39,7 @@ if ($action === 'checkout') {
     if ($fulfillment === 'Delivery') {
         if (empty($customer['house_unit']) || empty($customer['street']) || empty($customer['barangay']) || empty($customer['city'])) {
             echo json_encode([
-                'success' => false, 
+                'success' => false,
                 'message' => 'Please complete your delivery address (House No., Street, Barangay, City) in your Account profile before placing a delivery order.'
             ]);
             exit;
@@ -55,12 +55,12 @@ if ($action === 'checkout') {
     try {
         $subtotal = 0.0;
         foreach ($items as $item) {
-            $pId = (int)$item['product_id'];
-            $qty = (int)$item['qty'];
+            $pId = (int) $item['product_id'];
+            $qty = (int) $item['qty'];
 
             $pStmt = $db->prepare("SELECT Retail_price FROM menu_product WHERE Product_id = ?");
             $pStmt->execute([$pId]);
-            $price = (float)$pStmt->fetchColumn();
+            $price = (float) $pStmt->fetchColumn();
             $subtotal += ($price * $qty);
         }
 
@@ -81,7 +81,7 @@ if ($action === 'checkout') {
             VALUES (?, 999, ?, ?, 'Online Order', ?, NOW())
         ");
         foreach ($items as $item) {
-            $saleStmt->execute([$txnCode, (int)$item['product_id'], (int)$item['qty'], $fulfillment]);
+            $saleStmt->execute([$txnCode, (int) $item['product_id'], (int) $item['qty'], $fulfillment]);
         }
 
         $db->commit();
@@ -100,8 +100,8 @@ if ($action === 'cancel_order') {
         exit;
     }
 
-    $orderId = (int)($_GET['order_id'] ?? 0);
-    $customerId = (int)$_SESSION['customer_id'];
+    $orderId = (int) ($_GET['order_id'] ?? 0);
+    $customerId = (int) $_SESSION['customer_id'];
 
     $stmt = $db->prepare("SELECT order_status FROM online_orders WHERE order_id = ? AND customer_id = ?");
     $stmt->execute([$orderId, $customerId]);

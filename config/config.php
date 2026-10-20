@@ -6,7 +6,8 @@ require_once __DIR__ . '/db.php';
 
 // Safe sanitization helper that accepts strings or null without crashing
 if (!function_exists('sanitize')) {
-    function sanitize(?string $data): string {
-        return htmlspecialchars(trim((string)($data ?? '')), ENT_QUOTES, 'UTF-8');
+    function sanitize(?string $data): string
+    {
+        return htmlspecialchars(trim((string) ($data ?? '')), ENT_QUOTES, 'UTF-8');
     }
 }

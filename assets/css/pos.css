@@ -305,6 +305,7 @@
         flex-direction: column;
         overflow-y: auto;
     }
+
     .pos-tape {
         width: 100%;
         box-shadow: none;

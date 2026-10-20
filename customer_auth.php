@@ -1,64 +1,105 @@
 <?php
 declare(strict_types=1);
-require_once __DIR__ . '/config/db.php';
 
-$action = $_GET['action'] ?? '';
-$db = getDB();
-
-// 1. Customer Login
-if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = sanitize($_POST['email'] ?? '');
-    $password = (string)($_POST['password'] ?? '');
-
-    $stmt = $db->prepare("SELECT * FROM customers WHERE email = ? LIMIT 1");
-    $stmt->execute([$email]);
-    $cust = $stmt->fetch();
-
-    if ($cust && password_verify($password, $cust['password'])) {
-        session_regenerate_id(true);
-        $_SESSION['customer_id'] = (int)$cust['customer_id'];
-        $_SESSION['customer_name'] = $cust['full_name'];
-        $_SESSION['customer_email'] = $cust['email'];
-        header('Location: menu.php');
-        exit;
-    } else {
-        echo "<script>alert('Invalid email or password.'); window.location.href='menu.php';</script>";
-        exit;
-    }
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 
-// 2. Customer Registration (No address required upfront)
+require_once __DIR__ . '/config/db.php';
+$db = getDB();
+
+$action = $_GET['action'] ?? '';
+
+// Helper: Standardize Philippine mobile numbers
+function cleanPhoneNumber(string $phone): string
+{
+    $p = preg_replace('/[^0-9]/', '', $phone);
+    if (str_starts_with($p, '639') && strlen($p) === 12) {
+        $p = '0' . substr($p, 2);
+    }
+    return $p;
+}
+
+// -------------------------------------------------------------
+// ACTION: DIRECT REGISTRATION (NO OTP)
+// -------------------------------------------------------------
 if ($action === 'register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $fullName = sanitize($_POST['full_name'] ?? '');
-    $email    = sanitize($_POST['email'] ?? '');
-    $phone    = sanitize($_POST['phone'] ?? '');
-    $password = (string)($_POST['password'] ?? '');
+    $email = sanitize($_POST['email'] ?? '');
+    $phone = cleanPhoneNumber((string) ($_POST['phone'] ?? ''));
+    $password = (string) ($_POST['password'] ?? '');
 
-    $check = $db->prepare("SELECT customer_id FROM customers WHERE email = ? LIMIT 1");
-    $check->execute([$email]);
-    if ($check->fetch()) {
-        echo "<script>alert('An account with this email already exists.'); window.location.href='menu.php';</script>";
+    if (empty($fullName) || empty($email) || empty($phone) || strlen($password) < 6) {
+        header('Location: index.php?auth_error=' . urlencode('Please fill in all fields (password min. 6 characters).'));
         exit;
     }
 
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    
-    // Insert without address fields
-    $insert = $db->prepare("INSERT INTO customers (full_name, email, phone, password) VALUES (?, ?, ?, ?)");
-    $insert->execute([$fullName, $email, $phone, $hash]);
+    // Check duplicate email
+    $checkEmail = $db->prepare("SELECT customer_id FROM customers WHERE email = ? LIMIT 1");
+    $checkEmail->execute([$email]);
+    if ($checkEmail->fetch()) {
+        header('Location: index.php?auth_error=' . urlencode('An account with this email already exists. Please Sign In.'));
+        exit;
+    }
 
-    $_SESSION['customer_id'] = (int)$db->lastInsertId();
+    // Check duplicate phone
+    $checkPhone = $db->prepare("SELECT customer_id FROM customers WHERE phone = ? LIMIT 1");
+    $checkPhone->execute([$phone]);
+    if ($checkPhone->fetch()) {
+        header('Location: index.php?auth_error=' . urlencode('This mobile number is already registered. Please Sign In.'));
+        exit;
+    }
+
+    // Insert new customer directly
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $ins = $db->prepare("
+        INSERT INTO customers (full_name, email, phone, password, created_at)
+        VALUES (?, ?, ?, ?, NOW())
+    ");
+    $ins->execute([$fullName, $email, $phone, $hashedPassword]);
+    $newId = (int) $db->lastInsertId();
+
+    // Auto-login session setup
+    session_regenerate_id(true);
+    $_SESSION['customer_id'] = $newId;
     $_SESSION['customer_name'] = $fullName;
     $_SESSION['customer_email'] = $email;
 
-    // Send newly registered customers to Account page to set their address
-    echo "<script>alert('Account created! Please set up your delivery address.'); window.location.href='account.php';</script>";
+    // Redirect straight to account page to manage address details
+    header('Location: account.php?registered=1');
     exit;
 }
 
-// 3. Customer Logout
-if ($action === 'logout') {
-    unset($_SESSION['customer_id'], $_SESSION['customer_name'], $_SESSION['customer_email']);
-    header('Location: index.php');
-    exit;
+// -------------------------------------------------------------
+// ACTION: LOGIN
+// -------------------------------------------------------------
+if ($action === 'login') {
+    $email = trim($_POST['email'] ?? '');
+    $password = (string) ($_POST['password'] ?? '');
+
+    if ($email === '' || $password === '') {
+        $_SESSION['auth_error'] = 'Please fill in both email and password.';
+        header('Location: account.php?tab=login');
+        exit;
+    }
+
+    $stmt = $db->prepare("SELECT customer_id, full_name, email, password FROM customers WHERE email = ? LIMIT 1");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Verify hashed password
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['customer_id'] = (int) $user['customer_id'];
+        $_SESSION['customer_name'] = $user['full_name'];
+        $_SESSION['customer_email'] = $user['email'];
+        unset($_SESSION['auth_error']);
+
+        header('Location: orders.php');
+        exit;
+    } else {
+        // Sets error indicator for wrong email or password
+        $_SESSION['auth_error'] = 'Invalid email or password. Please try again.';
+        header('Location: account.php?tab=login');
+        exit;
+    }
 }

@@ -1,33 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<audit_logs>
-    <entry>
-        <log_id>AUD-1001</log_id>
-        <user_id>USR-1001</user_id>
-        <username>admin</username>
-        <action>AUTH_LOGIN</action>
-        <module>Security</module>
-        <details>Administrative session authenticated successfully</details>
-        <ip_address>127.0.0.1</ip_address>
-        <timestamp>2026-10-16 08:30:00</timestamp>
-    </entry>
-    <entry>
-        <log_id>AUD-1002</log_id>
-        <user_id>USR-1001</user_id>
-        <username>admin</username>
-        <action>INVENTORY_RESTOCK</action>
-        <module>Inventory</module>
-        <details>Restocked PRD-101 (+30 units). PO: PO-2026-081</details>
-        <ip_address>127.0.0.1</ip_address>
-        <timestamp>2026-10-10 09:30:00</timestamp>
-    </entry>
-    <entry>
-        <log_id>AUD-1003</log_id>
-        <user_id>USR-1002</user_id>
-        <username>cashier</username>
-        <action>POS_TRANSACTION</action>
-        <module>POS</module>
-        <details>Completed POS sale TXN-20261016-001 (Total: $14.55)</details>
-        <ip_address>127.0.0.1</ip_address>
-        <timestamp>2026-10-16 10:15:30</timestamp>
-    </entry>
+<audit_logs last_updated="2026-10-21 07:49:07">
+  <log>
+    <log_id>24</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-21 05:20:50</log_date>
+  </log>
+  <log>
+    <log_id>23</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-21 05:20:27</log_date>
+  </log>
+  <log>
+    <log_id>22</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-21 02:14:14</log_date>
+  </log>
+  <log>
+    <log_id>21</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-21 00:09:51</log_date>
+  </log>
+  <log>
+    <log_id>20</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged out of the system</action_details>
+    <log_date>2026-10-20 04:05:44</log_date>
+  </log>
+  <log>
+    <log_id>19</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-20 03:35:05</log_date>
+  </log>
+  <log>
+    <log_id>18</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-18 16:06:02</log_date>
+  </log>
+  <log>
+    <log_id>17</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-17 05:19:03</log_date>
+  </log>
+  <log>
+    <log_id>16</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-15 14:28:44</log_date>
+  </log>
+  <log>
+    <log_id>15</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:56:27</log_date>
+  </log>
+  <log>
+    <log_id>14</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:52:06</log_date>
+  </log>
+  <log>
+    <log_id>13</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:48:39</log_date>
+  </log>
+  <log>
+    <log_id>12</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:44:41</log_date>
+  </log>
+  <log>
+    <log_id>11</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:38:47</log_date>
+  </log>
+  <log>
+    <log_id>10</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:37:50</log_date>
+  </log>
+  <log>
+    <log_id>9</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:37:17</log_date>
+  </log>
+  <log>
+    <log_id>8</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:34:00</log_date>
+  </log>
+  <log>
+    <log_id>7</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:28:02</log_date>
+  </log>
+  <log>
+    <log_id>6</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:25:52</log_date>
+  </log>
+  <log>
+    <log_id>5</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:21:43</log_date>
+  </log>
+  <log>
+    <log_id>4</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:19:10</log_date>
+  </log>
+  <log>
+    <log_id>3</log_id>
+    <Employee_id>2</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:17:13</log_date>
+  </log>
+  <log>
+    <log_id>2</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:13:57</log_date>
+  </log>
+  <log>
+    <log_id>1</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the POS system</action_details>
+    <log_date>2026-06-14 07:09:27</log_date>
+  </log>
 </audit_logs>

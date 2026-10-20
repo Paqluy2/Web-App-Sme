@@ -23,13 +23,13 @@ if (!$input || empty($input['items'])) {
 $db = getDB();
 $items = $input['items'];
 $paymentMethod = sanitize($input['payment_method'] ?? 'Cash');
-$amountTendered = (float)($input['amount_tendered'] ?? 0.0);
+$amountTendered = (float) ($input['amount_tendered'] ?? 0.0);
 $employeeId = $_SESSION['employee_id'];
 
 // 1. Validate recipe stock availability
 foreach ($items as $item) {
-    $pId = (int)$item['product_id'];
-    $qty = (int)$item['qty'];
+    $pId = (int) $item['product_id'];
+    $qty = (int) $item['qty'];
 
     if (!CafeInventory::canFulfillProduct($pId, $qty)) {
         echo json_encode(['success' => false, 'message' => "Insufficient raw materials in inventory for product ID #{$pId}."]);
@@ -49,8 +49,8 @@ try {
 
     $grandTotal = 0.0;
     foreach ($items as $item) {
-        $pId = (int)$item['product_id'];
-        $qty = (int)$item['qty'];
+        $pId = (int) $item['product_id'];
+        $qty = (int) $item['qty'];
 
         // Note: CalculateTotalAmount trigger automatically calculates total_amount
         // Note: AutoDeductRecipeStock trigger automatically updates the inventory table!
@@ -59,7 +59,7 @@ try {
         // Fetch the calculated line total from database
         $checkStmt = $db->prepare('SELECT Retail_price FROM menu_product WHERE Product_id = ?');
         $checkStmt->execute([$pId]);
-        $price = (float)$checkStmt->fetchColumn();
+        $price = (float) $checkStmt->fetchColumn();
         $grandTotal += ($price * $qty);
     }
 
@@ -79,11 +79,11 @@ try {
     $receiptXml = GigsXMLEngine::generateReceiptXML($transactionCode);
 
     echo json_encode([
-        'success'          => true,
+        'success' => true,
         'transaction_code' => $transactionCode,
-        'grand_total'      => $grandTotal,
-        'change'           => ($paymentMethod === 'Cash') ? round($amountTendered - $grandTotal, 2) : 0.0,
-        'xml_receipt'      => $receiptXml
+        'grand_total' => $grandTotal,
+        'change' => ($paymentMethod === 'Cash') ? round($amountTendered - $grandTotal, 2) : 0.0,
+        'xml_receipt' => $receiptXml
     ]);
 } catch (Exception $e) {
     $db->rollBack();

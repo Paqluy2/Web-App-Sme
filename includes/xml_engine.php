@@ -2,11 +2,13 @@
 declare(strict_types=1);
 require_once __DIR__ . '/../config/db.php';
 
-class GigsXMLEngine {
+class GigsXMLEngine
+{
     /**
      * Generates a structured XML receipt for a transaction.
      */
-    public static function generateReceiptXML(string $transactionCode): string {
+    public static function generateReceiptXML(string $transactionCode): string
+    {
         $db = getDB();
 
         $stmt = $db->prepare('
@@ -32,7 +34,7 @@ class GigsXMLEngine {
         $dom->appendChild($root);
 
         $cashier = $dom->createElement('staff');
-        $cashier->appendChild($dom->createElement('id', (string)$rows[0]['employee_id']));
+        $cashier->appendChild($dom->createElement('id', (string) $rows[0]['employee_id']));
         $cashier->appendChild($dom->createElement('name', $rows[0]['First_name'] . ' ' . $rows[0]['Last_name']));
         $root->appendChild($cashier);
 
@@ -41,14 +43,14 @@ class GigsXMLEngine {
 
         foreach ($rows as $item) {
             $itemNode = $dom->createElement('item');
-            $itemNode->appendChild($dom->createElement('product_id', (string)$item['product_id']));
+            $itemNode->appendChild($dom->createElement('product_id', (string) $item['product_id']));
             $itemNode->appendChild($dom->createElement('name', $item['Product_name']));
-            $itemNode->appendChild($dom->createElement('unit_price', (string)$item['Retail_price']));
-            $itemNode->appendChild($dom->createElement('quantity', (string)$item['quantity_sold']));
-            $itemNode->appendChild($dom->createElement('subtotal', (string)$item['total_amount']));
+            $itemNode->appendChild($dom->createElement('unit_price', (string) $item['Retail_price']));
+            $itemNode->appendChild($dom->createElement('quantity', (string) $item['quantity_sold']));
+            $itemNode->appendChild($dom->createElement('subtotal', (string) $item['total_amount']));
             $itemsNode->appendChild($itemNode);
 
-            $grandTotal += (float)$item['total_amount'];
+            $grandTotal += (float) $item['total_amount'];
         }
         $root->appendChild($itemsNode);
 
@@ -64,7 +66,8 @@ class GigsXMLEngine {
     /**
      * Exports raw inventory levels as XML.
      */
-    public static function exportInventoryXML(): string {
+    public static function exportInventoryXML(): string
+    {
         $db = getDB();
         $stmt = $db->query('SELECT * FROM inventory ORDER BY category, material_name');
         $items = $stmt->fetchAll();
@@ -78,14 +81,14 @@ class GigsXMLEngine {
 
         foreach ($items as $item) {
             $node = $dom->createElement('material');
-            $node->setAttribute('id', (string)$item['material_id']);
+            $node->setAttribute('id', (string) $item['material_id']);
             $node->appendChild($dom->createElement('name', $item['material_name']));
             $node->appendChild($dom->createElement('category', $item['category'] ?? 'General'));
-            $node->appendChild($dom->createElement('stock', (string)$item['current_stock']));
+            $node->appendChild($dom->createElement('stock', (string) $item['current_stock']));
             $node->appendChild($dom->createElement('unit', $item['unit']));
-            
+
             // Stock warning flag
-            $status = ((int)$item['current_stock'] <= 500) ? 'LOW_STOCK' : 'HEALTHY';
+            $status = ((int) $item['current_stock'] <= 500) ? 'LOW_STOCK' : 'HEALTHY';
             $node->appendChild($dom->createElement('status', $status));
             $root->appendChild($node);
         }

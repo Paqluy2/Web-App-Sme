@@ -5,11 +5,13 @@ $id = sanitize($_GET['id'] ?? '');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Order Confirmation</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body class="auth-body">
     <div class="auth-card" style="max-width: 500px; text-align: center;">
         <h2 style="color: #27ae60;">Order Placed Successfully!</h2>
@@ -18,7 +20,9 @@ $id = sanitize($_GET['id'] ?? '');
             <strong>Reference ID:</strong> <code><?= $id ?></code>
         </div>
         <p>An XML manifest has been queued for warehouse staging and automated stock deduction.</p>
-        <a href="/index.php" class="btn btn-primary" style="display:inline-block; margin-top:15px;">Return to Storefront</a>
+        <a href="/index.php" class="btn btn-primary" style="display:inline-block; margin-top:15px;">Return to
+            Storefront</a>
     </div>
 </body>
+
 </html>

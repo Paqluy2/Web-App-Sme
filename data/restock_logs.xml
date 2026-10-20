@@ -1,35 +1,598 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<restock_logs>
-    <restock_entry>
-        <log_id>RST-1001</log_id>
-        <product_id>PRD-101</product_id>
-        <sku>SKU-BEV-001</sku>
-        <product_name>Organic Cold Brew Coffee (330ml)</product_name>
-        <quantity_added>30</quantity_added>
-        <previous_stock>18</previous_stock>
-        <new_stock>48</new_stock>
-        <unit_cost>2.20</unit_cost>
-        <supplier>Pacific Coast Roasters Co.</supplier>
-        <po_reference>PO-2026-081</po_reference>
-        <staff_id>USR-1001</staff_id>
-        <staff_name>System Administrator</staff_name>
-        <notes>Regular replenishment shipment.</notes>
-        <created_at>2026-10-10 09:30:00</created_at>
-    </restock_entry>
-    <restock_entry>
-        <log_id>RST-1002</log_id>
-        <product_id>PRD-109</product_id>
-        <sku>SKU-PER-002</sku>
-        <product_name>Hydrating Eucalyptus Hand Sanitizer (60ml)</product_name>
-        <quantity_added>40</quantity_added>
-        <previous_stock>15</previous_stock>
-        <new_stock>55</new_stock>
-        <unit_cost>1.30</unit_cost>
-        <supplier>EcoWellness Labs LLC</supplier>
-        <po_reference>PO-2026-088</po_reference>
-        <staff_id>USR-1001</staff_id>
-        <staff_name>System Administrator</staff_name>
-        <notes>Restocked ahead of seasonal wellness campaign.</notes>
-        <created_at>2026-10-12 11:20:00</created_at>
-    </restock_entry>
+<restock_logs last_updated="2026-10-21 07:49:07">
+  <stock_item>
+    <material_id>5000</material_id>
+    <category>Coffee Beans &amp; Tea</category>
+    <material_name>Italian Espresso</material_name>
+    <current_stock>4790</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5001</material_id>
+    <category>Coffee Beans &amp; Tea</category>
+    <material_name>Assam Black Tea</material_name>
+    <current_stock>46020</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5002</material_id>
+    <category>Coffee Beans &amp; Tea</category>
+    <material_name>Blue Tea</material_name>
+    <current_stock>3000</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5003</material_id>
+    <category>Sinker Add-ons</category>
+    <material_name>black pearls</material_name>
+    <current_stock>3150</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5004</material_id>
+    <category>Sinker Add-ons</category>
+    <material_name>Coffe jelly</material_name>
+    <current_stock>3000</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5005</material_id>
+    <category>Sinker Add-ons</category>
+    <material_name>Nata</material_name>
+    <current_stock>2460</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5006</material_id>
+    <category>Sinker Add-ons</category>
+    <material_name>Crushed Oreo</material_name>
+    <current_stock>4000</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5007</material_id>
+    <category>Syrups</category>
+    <material_name>Fructose</material_name>
+    <current_stock>4240</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5008</material_id>
+    <category>Syrups</category>
+    <material_name>Caramel Syrup</material_name>
+    <current_stock>4970</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5009</material_id>
+    <category>Syrups</category>
+    <material_name>Salted Caramel Syrup</material_name>
+    <current_stock>4150</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5010</material_id>
+    <category>Syrups</category>
+    <material_name>Creamy Vanilla Syrup</material_name>
+    <current_stock>4500</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5011</material_id>
+    <category>Syrups</category>
+    <material_name>French Vanilla Syrup</material_name>
+    <current_stock>4500</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5012</material_id>
+    <category>Syrups</category>
+    <material_name>Vanilla Syrup</material_name>
+    <current_stock>4940</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5013</material_id>
+    <category>Syrups</category>
+    <material_name>Chocolate Syrup</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5014</material_id>
+    <category>Syrups</category>
+    <material_name>Butterscotch Syrup</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5015</material_id>
+    <category>Syrups</category>
+    <material_name>Hazelnut Syrup</material_name>
+    <current_stock>4500</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5016</material_id>
+    <category>Syrups</category>
+    <material_name>Winter melon Syrup</material_name>
+    <current_stock>4470</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5017</material_id>
+    <category>Syrups</category>
+    <material_name>Hokkaido Syrup</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5018</material_id>
+    <category>Syrups</category>
+    <material_name>Okinawa Syrup</material_name>
+    <current_stock>4900</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5019</material_id>
+    <category>Syrups</category>
+    <material_name>Taro Syrup</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5020</material_id>
+    <category>Syrups</category>
+    <material_name>Blue Berry Syrup</material_name>
+    <current_stock>4160</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5021</material_id>
+    <category>Syrups</category>
+    <material_name>Kiwi Syrup</material_name>
+    <current_stock>4500</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5022</material_id>
+    <category>Syrups</category>
+    <material_name>Lychee Syrup</material_name>
+    <current_stock>4390</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5023</material_id>
+    <category>Syrups</category>
+    <material_name>Passion fruit Syrup</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5024</material_id>
+    <category>Syrups</category>
+    <material_name>Strawberry Syrup</material_name>
+    <current_stock>4860</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5025</material_id>
+    <category>Sauces</category>
+    <material_name>Calamansi Concentrate</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5026</material_id>
+    <category>Sauces</category>
+    <material_name>Monin Caramel</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5027</material_id>
+    <category>Sauces</category>
+    <material_name>Da Vinci Dark Chocolate</material_name>
+    <current_stock>4940</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5028</material_id>
+    <category>Jams</category>
+    <material_name>Da Vinci White Chocolate</material_name>
+    <current_stock>5000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5029</material_id>
+    <category>Jams</category>
+    <material_name>Caramel Drizzle</material_name>
+    <current_stock>440</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5030</material_id>
+    <category>Jams</category>
+    <material_name>Blueberry Jam</material_name>
+    <current_stock>200</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5031</material_id>
+    <category>Jams</category>
+    <material_name>Mango Jam</material_name>
+    <current_stock>480</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5032</material_id>
+    <category>Jams</category>
+    <material_name>Kiwi Jam</material_name>
+    <current_stock>450</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5033</material_id>
+    <category>Jams</category>
+    <material_name>Passion fruit Jam</material_name>
+    <current_stock>500</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5034</material_id>
+    <category>Jams</category>
+    <material_name>Strawberry Jam</material_name>
+    <current_stock>380</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5035</material_id>
+    <category>Jams</category>
+    <material_name>Pineapple Jam</material_name>
+    <current_stock>470</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5036</material_id>
+    <category>Dairy Products</category>
+    <material_name>Fresh Milk</material_name>
+    <current_stock>48500</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5037</material_id>
+    <category>Dairy Products</category>
+    <material_name>whipped Cream</material_name>
+    <current_stock>610</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5038</material_id>
+    <category>Dairy Products</category>
+    <material_name>Cream Cheese</material_name>
+    <current_stock>970</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5039</material_id>
+    <category>Dairy Products</category>
+    <material_name>Condensed Milk</material_name>
+    <current_stock>1000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5040</material_id>
+    <category>Powders</category>
+    <material_name>Bamboo Charcoal</material_name>
+    <current_stock>980</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5041</material_id>
+    <category>Powders</category>
+    <material_name>Creamer</material_name>
+    <current_stock>1480</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5042</material_id>
+    <category>Powders</category>
+    <material_name>Dark Chocolate</material_name>
+    <current_stock>1920</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5043</material_id>
+    <category>Powders</category>
+    <material_name>Matcha</material_name>
+    <current_stock>1840</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5044</material_id>
+    <category>Concessionaires</category>
+    <material_name>Brown Sugar (for pearls)</material_name>
+    <current_stock>3000</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5045</material_id>
+    <category>Concessionaires</category>
+    <material_name>Brown Sugar (Sachet)</material_name>
+    <current_stock>500</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5046</material_id>
+    <category>Concessionaires</category>
+    <material_name>Mushroom Crisps</material_name>
+    <current_stock>50</current_stock>
+    <unit>packs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5047</material_id>
+    <category>Concessionaires</category>
+    <material_name>Plain Peanuts</material_name>
+    <current_stock>50</current_stock>
+    <unit>packs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5048</material_id>
+    <category>Concessionaires</category>
+    <material_name>Premium Trail Mix</material_name>
+    <current_stock>50</current_stock>
+    <unit>packs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5049</material_id>
+    <category>Concessionaires</category>
+    <material_name>Muffins</material_name>
+    <current_stock>30</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5050</material_id>
+    <category>Concessionaires</category>
+    <material_name>Cookies</material_name>
+    <current_stock>40</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5051</material_id>
+    <category>Dry Materials</category>
+    <material_name>WHITE Cold Cup (22oz)</material_name>
+    <current_stock>999</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5052</material_id>
+    <category>Dry Materials</category>
+    <material_name>WHITE Cold Cup (16 oz)</material_name>
+    <current_stock>935</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5053</material_id>
+    <category>Dry Materials</category>
+    <material_name>BLUE Cold Cup (22oz)</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5054</material_id>
+    <category>Dry Materials</category>
+    <material_name>BLUE Cold Cup (16 oz)</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5055</material_id>
+    <category>Dry Materials</category>
+    <material_name>white Grand</material_name>
+    <current_stock>500</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5056</material_id>
+    <category>Dry Materials</category>
+    <material_name>Hot Cup (12oz)</material_name>
+    <current_stock>500</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5057</material_id>
+    <category>Dry Materials</category>
+    <material_name>Hot Cup (16 oz)</material_name>
+    <current_stock>495</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5058</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Strawless lid</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5059</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Lid Hot</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5060</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Flat Lid</material_name>
+    <current_stock>929</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5061</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Dome Lid</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5062</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Straw (Big)</material_name>
+    <current_stock>2429</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5063</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Straw (Thin)</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5064</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Cling Wrap</material_name>
+    <current_stock>55</current_stock>
+    <unit>rolls</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5065</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Table Napkin</material_name>
+    <current_stock>2000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5066</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Sliced Cake Containers</material_name>
+    <current_stock>200</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5067</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Forks (For cake take-out)</material_name>
+    <current_stock>500</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5068</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Take out plastic (Single)</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5069</material_id>
+    <category>Packaging / Miscellaneous</category>
+    <material_name>Take out plastic (Double)</material_name>
+    <current_stock>1000</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5070</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Take out plastic (for concessionaires)</material_name>
+    <current_stock>500</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5071</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Whip Cream Charger</material_name>
+    <current_stock>50</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5072</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Alcohol</material_name>
+    <current_stock>3000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5073</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Dishwashing Liquid</material_name>
+    <current_stock>3000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5074</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Zonrox Original</material_name>
+    <current_stock>1000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5075</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Zonrox Color-safe</material_name>
+    <current_stock>1000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5076</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Handwash</material_name>
+    <current_stock>1000</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5077</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Detergent Powder</material_name>
+    <current_stock>1800</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5078</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Linen Spray</material_name>
+    <current_stock>500</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5079</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Scotch Tape</material_name>
+    <current_stock>10</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5080</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Ballpens</material_name>
+    <current_stock>20</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5081</material_id>
+    <category>Maintenance &amp; Office Supplies</category>
+    <material_name>Sharpie</material_name>
+    <current_stock>10</current_stock>
+    <unit>pcs</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5082</material_id>
+    <category>Yogurt</category>
+    <material_name>Yogurt</material_name>
+    <current_stock>3700</current_stock>
+    <unit>ml</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5083</material_id>
+    <category>Syrups</category>
+    <material_name>Mango Syrup</material_name>
+    <current_stock>4980</current_stock>
+    <unit>grams</unit>
+  </stock_item>
+  <stock_item>
+    <material_id>5084</material_id>
+    <category>Syrups</category>
+    <material_name>Lemon Syrup</material_name>
+    <current_stock>5000</current_stock>
+    <unit>grams</unit>
+  </stock_item>
 </restock_logs>

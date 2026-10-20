@@ -20,7 +20,7 @@ $db = getDB();
 
 // 1. Verify recipe materials
 foreach ($items as $item) {
-    if (!CafeInventory::canFulfillProduct((int)$item['product_id'], (int)$item['qty'])) {
+    if (!CafeInventory::canFulfillProduct((int) $item['product_id'], (int) $item['qty'])) {
         echo json_encode(['success' => false, 'message' => "An item in your cart is currently out of stock."]);
         exit;
     }
@@ -56,7 +56,7 @@ try {
     ');
 
     foreach ($items as $item) {
-        $stmtSale->execute([$txnCode, (int)$item['product_id'], (int)$item['qty'], $fulfillment['type']]);
+        $stmtSale->execute([$txnCode, (int) $item['product_id'], (int) $item['qty'], $fulfillment['type']]);
     }
 
     $db->commit();

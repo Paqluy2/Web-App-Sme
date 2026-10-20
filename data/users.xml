@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users>
-    <user>
-        <id>USR-1001</id>
-        <username>admin</username>
-        <password_hash>$2y$10$mDPmWiKWblZ8hFc6k1bhMO5PMhALlMZNBkaSY5.YgLAgwdKmlt4Ii</password_hash>
-        <full_name>System Administrator</full_name>
-        <email>admin@smehub.local</email>
-        <role>admin</role>
-        <status>active</status>
-        <phone>+1 555-0199</phone>
-        <address>Suite 400, Commerce Tower, Metro City</address>
-        <fulfillment_preference>delivery</fulfillment_preference>
-        <created_at>2026-01-01 09:00:00</created_at>
-        <updated_at>2026-01-01 09:00:00</updated_at>
-    </user>
-    <user>
-        <id>USR-1002</id>
-        <username>cashier</username>
-        <password_hash>$2y$10$lbHD5jj73ZXWU4knfYELOOWvQhdMk0PnxLWD/z93ER/x1IL/JM9..</password_hash>
-        <full_name>Alex Rivera</full_name>
-        <email>cashier@smehub.local</email>
-        <role>cashier</role>
-        <status>active</status>
-        <phone>+1 555-0182</phone>
-        <address>42 Retail Lane, Central District</address>
-        <fulfillment_preference>pickup</fulfillment_preference>
-        <created_at>2026-01-05 10:00:00</created_at>
-        <updated_at>2026-01-05 10:00:00</updated_at>
-    </user>
-    <user>
-        <id>USR-1003</id>
-        <username>customer</username>
-        <password_hash>$2y$10$SdchXq6J61VtdvCZPSemi.WIlOQ88ilY1b9dZEvWCjjs6i9dyMQW.</password_hash>
-        <full_name>Sarah Jenkins</full_name>
-        <email>sarah.jenkins@example.com</email>
-        <role>customer</role>
-        <status>active</status>
-        <phone>+1 555-0144</phone>
-        <address>742 Evergreen Terrace, Maple District</address>
-        <fulfillment_preference>delivery</fulfillment_preference>
-        <created_at>2026-02-14 11:30:00</created_at>
-        <updated_at>2026-02-14 11:30:00</updated_at>
-    </user>
+<users last_updated="2026-10-21 07:49:07">
+  <user>
+    <user_type>Employee / Admin</user_type>
+    <id>1</id>
+    <name>admin</name>
+    <email_or_username>admin</email_or_username>
+    <role>Manager</role>
+  </user>
+  <user>
+    <user_type>Employee / Admin</user_type>
+    <id>2</id>
+    <name>paqluy</name>
+    <email_or_username>paqluy</email_or_username>
+    <role>Employee</role>
+  </user>
+  <user>
+    <user_type>Employee / Admin</user_type>
+    <id>3</id>
+    <name>gary</name>
+    <email_or_username>gary</email_or_username>
+    <role>Employee</role>
+  </user>
+  <user>
+    <user_type>Employee / Admin</user_type>
+    <id>999</id>
+    <name>web_system</name>
+    <email_or_username>web_system</email_or_username>
+    <role>System</role>
+  </user>
+  <user>
+    <user_type>Customer</user_type>
+    <id>6</id>
+    <name>Joseph Cristobal</name>
+    <email_or_username>cristobal0057@gmail.com</email_or_username>
+    <phone>09183477631</phone>
+    <role>Customer</role>
+  </user>
+  <user>
+    <user_type>Customer</user_type>
+    <id>7</id>
+    <name>Paqluy</name>
+    <email_or_username>paqluy033@gmail.com</email_or_username>
+    <phone>09981992282</phone>
+    <role>Customer</role>
+  </user>
 </users>
