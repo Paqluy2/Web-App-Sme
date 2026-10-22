@@ -80,3 +80,34 @@ class Auth
         session_destroy();
     }
 }
+// =============================================================
+// CSRF & Input Sanitization Helpers
+// =============================================================
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!function_exists('get_csrf_token')) {
+    function get_csrf_token(): string {
+        if (empty($_SESSION['csrf_token'])) {
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        }
+        return $_SESSION['csrf_token'];
+    }
+}
+
+if (!function_exists('verify_csrf_token')) {
+    function verify_csrf_token(?string $token): bool {
+        if (empty($token) || empty($_SESSION['csrf_token'])) {
+            return false;
+        }
+        return hash_equals($_SESSION['csrf_token'], $token);
+    }
+}
+
+if (!function_exists('sanitize')) {
+    function sanitize(string $data): string {
+        return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
+    }
+}

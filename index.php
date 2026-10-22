@@ -26,7 +26,7 @@ $currentPage = 'index.php';
         <div class="nav-container">
             <a href="index.php" class="nav-brand">
                 <img src="images/logocafe.jpg" alt="Gigs Cafe Logo" onerror="this.style.display='none'">
-                <span class="brand-text">☕ Gigs Cafe</span>
+                <span class="brand-text">GigsCafe</span>
             </a>
 
             <ul class="nav-links">
@@ -78,7 +78,7 @@ $currentPage = 'index.php';
                 </p>
             </div>
             <div>
-                <img src="images/logocafe.jpg" alt="About Gigs Cafe"
+                <img src="images/wallLogo.jpg" alt="About Gigs Cafe"
                     style="width:100%; max-height:360px; object-fit:cover; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.12);"
                     onerror="this.style.display='none'">
             </div>
@@ -100,11 +100,13 @@ $currentPage = 'index.php';
             </article>
 
             <article class="card-box">
-                <span style="font-size:0.8rem; font-weight:700; color:var(--cafe-caramel);">SERVICE UPDATE</span>
-                <h3 style="margin:10px 0;">Online Ordering & Live Order Tracking</h3>
+                <span style="font-size:0.8rem; font-weight:700; color:var(--cafe-caramel);">SPECIAL PROMO</span>
+                <h3 style="margin:10px 0;">LIMITED TIME OFFER</h3>
                 <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">
-                    Browse the menu without logging in, customize your cup size, and track your drink status live from
-                    our kitchen to your doorstep.
+                   Get a🍟FREE Great Fries🍟 (Classic)! No tricks, 𝗝𝗨𝗦𝗧 𝗧𝗥𝗘𝗔𝗧𝗦! 👻💙
+For all that wants to hang out with drinks and free fries, what are you waiting for? 🤩🎉🥳
+This Oct. 26 - Nov. 2, 2026, enjoy our freebie for every purchase of 3 Iced Blends (any flavor). 
+FOR A LIMITED TIME ONLY! 🍟👻 Get ready, #GIGSFam!
                 </p>
             </article>
         </div>
@@ -115,7 +117,7 @@ $currentPage = 'index.php';
         <div
             style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
             <div>
-                <h3 style="color:#fef08a; margin-bottom:10px;">☕ Gigs Cafe</h3>
+                <h3 style="color:#fef08a; margin-bottom:10px;">GigsCafe</h3>
                 <p style="max-width:320px; font-size:0.9rem; color:#cbd5e1;">Freshly brewed artisan coffee, signature
                     iced blends, milk teas, and fruit teas crafted daily.</p>
             </div>
@@ -135,7 +137,7 @@ $currentPage = 'index.php';
         </div>
         <div
             style="text-align:center; border-top:1px solid #332722; margin-top:30px; padding-top:20px; font-size:0.8rem; color:#94a3b8;">
-            &copy; <?= date('Y') ?> Gigs Cafe. All Rights Reserved.
+            &copy; <?= date('Y') ?> GigsCafe. All Rights Reserved.
         </div>
     </footer>
 
@@ -143,7 +145,7 @@ $currentPage = 'index.php';
     <div class="modal-overlay" id="authModal">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <h3 id="authModalTitle">Welcome to Gigs Cafe</h3>
+                <h3 id="authModalTitle">Welcome to GigsCafe</h3>
                 <button type="button" onclick="closeAuthModal()"
                     style="font-size:1.5rem; background:none; border:none; cursor:pointer;">&times;</button>
             </div>

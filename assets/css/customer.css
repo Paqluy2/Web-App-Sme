@@ -698,3 +698,132 @@ a[href*="cart"] {
         overflow-x: auto !important;
     }
 }
+/* =============================================================
+   JELLY RADIO: CATEGORY FILTER BAR VARIANT
+   ============================================================= */
+.jelly-radio {
+  --jr-chip: #e2e8f0;
+  --jr-active: #2563eb;
+  --jr-text: #334155;
+  --jr-active-text: #ffffff;
+  --jr-gap: 8px;
+  --jr-radius: 18px;
+  --jr-h: 34px;
+  --jr-font: 13px;
+  --jr-px: 14px;
+  --jr-pad-x: 10px;
+  --jr-pad-y: 6px;
+  --jr-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--jr-gap);
+  padding: var(--jr-pad-y) var(--jr-pad-x);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.jelly-radio__chip {
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  outline: none !important;
+  box-shadow: none !important;
+  transform-origin: 50% 50%;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform;
+}
+
+.jelly-radio__chip[data-on='true'] {
+  cursor: default;
+  z-index: 2;
+}
+
+.jelly-radio__skin {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  height: var(--jr-h);
+  padding: 0 var(--jr-px);
+  border-radius: var(--jr-radius);
+  overflow: hidden;
+  background: var(--jr-chip);
+  color: var(--jr-text);
+  font-size: var(--jr-font);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    transform 160ms var(--jr-ease-out),
+    background-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.jelly-radio__skin,
+.jelly-radio__label,
+.jelly-radio__icon {
+  pointer-events: none !important;
+}
+.jelly-radio__chip:active .jelly-radio__skin {
+  transform: scale(0.95);
+}
+
+.jelly-radio__chip[data-on='true'] .jelly-radio__skin {
+  background: var(--jr-active);
+  color: var(--jr-active-text);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
+}
+
+/* Category Bar Specific Theme */
+.jelly-radio--categories {
+  --jr-chip: #ffffff;
+  --jr-active: #27150e;
+  --jr-text: #1e293b;
+  --jr-active-text: #ffffff;
+  --jr-gap: 10px;
+  --jr-radius: 999px;
+  --jr-h: 38px;
+  --jr-font: 13.5px;
+  --jr-px: 18px;
+  --jr-pad-x: 20px;
+  --jr-pad-y: 10px;
+
+  display: flex !important;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto 24px auto !important;
+  max-width: 100%;
+}
+
+.jelly-radio--categories .jelly-radio__skin {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.jelly-radio--categories .jelly-radio__chip[data-on='true'] .jelly-radio__skin {
+  border-color: #27150e;
+  box-shadow: 0 4px 12px rgba(39, 21, 14, 0.25);
+}
+
+@media (max-width: 768px) {
+  .jelly-radio--categories {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .jelly-radio--categories::-webkit-scrollbar {
+    display: none;
+  }
+}

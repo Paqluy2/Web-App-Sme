@@ -3,7 +3,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/config/db.php';
 
 $isCustomerLoggedIn = isset($_SESSION['customer_id']);
-$db = getDB();
+$db = call_user_func('getDB');
 
 // Pull all products grouped by category and name
 $stmt = $db->query("SELECT * FROM menu_product ORDER BY Product_type, Product_name, size");
@@ -78,12 +78,40 @@ $categories = array_keys($categoryFolderMap);
         </div>
 
         <!-- Category Pills -->
-        <div class="category-nav">
-            <button type="button" class="category-pill active" data-cat="all">All Drinks</button>
-            <?php foreach ($categories as $cat): ?>
-                <button type="button" class="category-pill" data-cat="<?= $cat ?>"><?= $cat ?></button>
-            <?php endforeach; ?>
-        </div>
+        <!-- JellyRadio Category Filter Bar -->
+<div class="jelly-radio jelly-radio--categories" role="radiogroup" aria-label="Drink Categories" id="jelly-categories">
+    <!-- "All Drinks" Chip (Index 0) -->
+    <button 
+        type="button" 
+        role="radio" 
+        aria-checked="true"
+        class="jelly-radio__chip cat-btn active" 
+        data-on="true"
+        data-category="all"
+        onclick="window.selectJellyCategory(0, 'all', this)">
+        <span class="jelly-radio__skin">
+            <span class="jelly-radio__label">All Drinks</span>
+        </span>
+    </button>
+
+    <!-- Dynamic Category Chips (Index 1..N) -->
+    <?php foreach ($categories as $idx => $catName): 
+        $chipIndex = $idx + 1;
+    ?>
+        <button 
+            type="button" 
+            role="radio" 
+            aria-checked="false"
+            class="jelly-radio__chip cat-btn" 
+            data-on="false"
+            data-category="<?= htmlspecialchars($catName) ?>"
+            onclick="window.selectJellyCategory(<?= $chipIndex ?>, '<?= htmlspecialchars($catName, ENT_QUOTES) ?>', this)">
+            <span class="jelly-radio__skin">
+                <span class="jelly-radio__label"><?= htmlspecialchars($catName) ?></span>
+            </span>
+        </button>
+    <?php endforeach; ?>
+</div>
 
         <!-- Products Grid -->
         <div class="product-grid">
@@ -260,6 +288,169 @@ $categories = array_keys($categoryFolderMap);
             }
         };
     </script>
+    <script>
+(function() {
+    // 1. Jelly Physics Config (For Category Bar Only)
+    const JELLY_CFG = {
+        swell: 0.2,
+        barge: 6,
+        shrink: 0.05,
+        jelly: 1,
+        bounce: 0.25,
+        stagger: 22,
+        stiffness: 580
+    };
+
+    const chipStates = new WeakMap();
+
+    function getChipState(el) {
+        if (!chipStates.has(el)) {
+            chipStates.set(el, {
+                x: { val: 0, vel: 0, target: 0 },
+                sx: { val: 1, vel: 0, target: 1 },
+                sy: { val: 1, vel: 0, target: 1 },
+                raf: null
+            });
+        }
+        return chipStates.get(el);
+    }
+
+    function stepSpring(axis, k, m, bounce, dt) {
+        const damping = 2 * Math.sqrt(k * m) * (1 - bounce);
+        const force = -k * (axis.val - axis.target) - damping * axis.vel;
+        const accel = force / m;
+        axis.vel += accel * dt;
+        axis.val += axis.vel * dt;
+        return Math.abs(axis.vel) > 0.001 || Math.abs(axis.target - axis.val) > 0.001;
+    }
+
+    function animateChip(el, targetX, targetS, far, instant) {
+        const state = getChipState(el);
+        state.x.target = targetX;
+        state.sx.target = targetS;
+        state.sy.target = targetS;
+
+        if (instant) {
+            state.x.val = targetX; state.x.vel = 0;
+            state.sx.val = targetS; state.sx.vel = 0;
+            state.sy.val = targetS; state.sy.vel = 0;
+            el.style.transform = `translateX(${targetX.toFixed(2)}px) scale(${targetS}, ${targetS})`;
+            return;
+        }
+
+        if (state.raf) cancelAnimationFrame(state.raf);
+
+        const C = JELLY_CFG;
+        const k = C.stiffness * (1 - 0.12 * Math.min(far, 3));
+        const j = C.jelly;
+
+        const kx = k * (1 + 0.24 * j);
+        const mx = 0.9 - 0.1 * j;
+        const bx = Math.min(0.85, C.bounce + 0.3 * j);
+
+        const ky = k * (1 - 0.14 * j);
+        const my = 0.9 + 0.05 * j;
+        const by = C.bounce;
+
+        let lastTime = performance.now();
+
+        function tick(now) {
+            const dt = Math.min((now - lastTime) / 1000, 0.032);
+            lastTime = now;
+
+            const movingX = stepSpring(state.x, k, 0.9, C.bounce, dt);
+            const movingSX = stepSpring(state.sx, kx, mx, bx, dt);
+            const movingSY = stepSpring(state.sy, ky, my, by, dt);
+
+            el.style.transform = `translateX(${state.x.val.toFixed(2)}px) scale(${state.sx.val.toFixed(4)}, ${state.sy.val.toFixed(4)})`;
+
+            if (movingX || movingSX || movingSY) {
+                state.raf = requestAnimationFrame(tick);
+            } else {
+                el.style.transform = `translateX(${targetX.toFixed(2)}px) scale(${targetS}, ${targetS})`;
+                state.raf = null;
+            }
+        }
+
+        state.raf = requestAnimationFrame(tick);
+    }
+
+    function applyCategoryJelly(selectedIndex, instant = false) {
+        const group = document.getElementById('jelly-categories');
+        if (!group) return;
+        const chips = Array.from(group.querySelectorAll('.jelly-radio__chip'));
+        if (!chips.length) return;
+
+        const C = JELLY_CFG;
+        const selWidth = chips[selectedIndex]?.offsetWidth || 85;
+        const push = (selWidth * C.swell) / 2 + C.barge;
+
+        chips.forEach((chip, i) => {
+            const isOn = i === selectedIndex;
+            chip.setAttribute('data-on', isOn ? 'true' : 'false');
+            chip.setAttribute('aria-checked', isOn ? 'true' : 'false');
+            chip.classList.toggle('active', isOn);
+
+            const far = Math.abs(i - selectedIndex);
+            const dir = Math.sign(i - selectedIndex);
+            const targetX = dir * push;
+            const targetS = isOn ? 1 + C.swell : 1 - C.shrink;
+
+            if (instant) {
+                animateChip(chip, targetX, targetS, far, true);
+            } else {
+                setTimeout(() => {
+                    animateChip(chip, targetX, targetS, far, false);
+                }, far * C.stagger);
+            }
+        });
+    }
+
+    // 2. Category Click Handler (With Jelly Animation)
+    window.selectJellyCategory = function(selectedIndex, category) {
+        applyCategoryJelly(selectedIndex, false);
+
+        const normalizedTarget = (category || 'all').trim().toLowerCase();
+        document.querySelectorAll('.customer-product-card').forEach(card => {
+            const cardCat = (card.getAttribute('data-category') || '').trim().toLowerCase();
+            if (normalizedTarget === 'all' || normalizedTarget === 'all drinks' || cardCat === normalizedTarget) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    };
+
+    // 3. 16oz / 22oz Size Click Handler (Original Static Toggle - No Jelly/Hover)
+    window.selectDrinkSize = function(hash, productId, price, size, btn) {
+        const card = document.getElementById('card-' + hash);
+        if (card) {
+            card.querySelectorAll('.size-opt').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const priceEl = card.querySelector('.product-price, .price, strong');
+            if (priceEl) {
+                priceEl.textContent = '₱' + Number(price).toFixed(2);
+            }
+        }
+
+        const addBtn = document.getElementById('btn-' + hash);
+        if (addBtn) {
+            addBtn.setAttribute('data-id', productId);
+            addBtn.setAttribute('data-price', price);
+            addBtn.setAttribute('data-size', size);
+            const baseName = addBtn.getAttribute('data-base-name') 
+                          || addBtn.getAttribute('data-name').replace(/\s*\(\d+oz\)/i, '').trim();
+            addBtn.setAttribute('data-name', `${baseName} (${size})`);
+        }
+    };
+
+    // Initialize Category Bar on load
+    document.addEventListener('DOMContentLoaded', () => {
+        applyCategoryJelly(0, true);
+    });
+})();
+</script>
 
     <script src="assets/js/customer.js?v=2"></script>
 </body>

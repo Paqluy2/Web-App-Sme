@@ -1,5 +1,13 @@
 <?php
 declare(strict_types=1);
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['user_id']) || empty($_SESSION['role']) || strtolower($_SESSION['role']) !== 'admin') {
+    header('Location: login.php');
+    exit;
+}
 require_once __DIR__ . '/includes/header.php';
 ?>
 

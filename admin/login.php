@@ -4,6 +4,17 @@ declare(strict_types=1);
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../includes/auth.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+function get_csrf_token(): string {
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
 // If already logged in, redirect straight to POS terminal
 if (Auth::check()) {
     header('Location: pos.php');
@@ -13,7 +24,7 @@ if (Auth::check()) {
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!verify_csrf_token($_POST['csrf_token'] ?? null)) {
+    if (!hash_equals((string)get_csrf_token(), (string)($_POST['csrf_token'] ?? ''))) {
         $error = 'Security session validation failure (CSRF).';
     } else {
         $username = sanitize($_POST['username'] ?? '');
