@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<orders last_updated="2026-10-22 21:22:26">
+<orders last_updated="2026-10-22 22:47:49">
   <order>
     <order_id>10</order_id>
     <customer_id>6</customer_id>
@@ -11,7 +11,7 @@
     <delivery_address>Pickup In-Store</delivery_address>
     <pickup_slot></pickup_slot>
     <delivery_fee>0.00</delivery_fee>
-    <order_status>Pending</order_status>
+    <order_status>Completed</order_status>
     <created_at>2026-10-22 12:22:04</created_at>
     <order_number></order_number>
     <contact_phone></contact_phone>
@@ -26,7 +26,7 @@
     <address></address>
     <customer_address></customer_address>
     <notes></notes>
-    <updated_at>2026-10-22 12:22:04</updated_at>
+    <updated_at>2026-10-22 22:47:47</updated_at>
     <landmark></landmark>
     <total>0.00</total>
     <payment_method>Cash</payment_method>
@@ -43,7 +43,7 @@
     <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
     <pickup_slot></pickup_slot>
     <delivery_fee>50.00</delivery_fee>
-    <order_status>Pending</order_status>
+    <order_status>Completed</order_status>
     <created_at>2026-10-22 10:49:59</created_at>
     <order_number></order_number>
     <contact_phone></contact_phone>
@@ -58,7 +58,7 @@
     <address></address>
     <customer_address></customer_address>
     <notes></notes>
-    <updated_at>2026-10-22 10:49:59</updated_at>
+    <updated_at>2026-10-22 22:47:49</updated_at>
     <landmark></landmark>
     <total>0.00</total>
     <payment_method>Cash</payment_method>

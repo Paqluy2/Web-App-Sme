@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/config/db.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $isCustomerLoggedIn = isset($_SESSION['customer_id']);
 $customerName = $_SESSION['customer_name'] ?? 'Account';
 $currentPage = 'index.php';
@@ -37,9 +41,6 @@ $currentPage = 'index.php';
             </ul>
 
             <div class="nav-actions">
-                <a href="menu.php" class="cart-btn" style="text-decoration:none;">
-                    🛒 Cart (<span id="cartCountBadge">0</span>)
-                </a>
                 <?php if ($isCustomerLoggedIn): ?>
                     <a href="customer_auth.php?action=logout" class="btn btn-sm btn-secondary">Sign Out</a>
                 <?php else: ?>

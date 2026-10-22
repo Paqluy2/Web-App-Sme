@@ -7,9 +7,11 @@ if (!function_exists('sanitize')) {
         return htmlspecialchars((string)($data ?? ''), ENT_QUOTES, 'UTF-8');
     }
 }
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $isCustomerLoggedIn = isset($_SESSION['customer_id']);
-$db = call_user_func('getDB');
+$db = getDB();
 
 // Pull all products grouped by category and name
 $stmt = $db->query("SELECT * FROM menu_product ORDER BY Product_type, Product_name, size");
@@ -54,7 +56,7 @@ $categories = array_keys($categoryFolderMap);
         <div class="nav-container">
             <a href="index.php" class="nav-brand">
                 <img src="images/logocafe.jpg" alt="Logo" onerror="this.style.display='none'">
-                <span class="brand-text">☕ Gigs Cafe</span>
+                <span class="brand-text">GigsCafe</span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>

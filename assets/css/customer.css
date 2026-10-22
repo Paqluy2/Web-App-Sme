@@ -827,3 +827,82 @@ a[href*="cart"] {
     display: none;
   }
 }
+/* 1. Prevent the page from jumping when scrollbars appear/disappear */
+html {
+    overflow-y: scroll !important;
+}
+
+/* 2. Lock the navbar container dimensions */
+.top-nav-bar {
+    width: 100% !important;
+    position: relative !important;
+}
+
+.top-nav-bar .nav-container {
+    position: relative !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 12px 24px !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Logo & Brand on the far left */
+.top-nav-bar .nav-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    z-index: 2;
+}
+
+.top-nav-bar .nav-brand img {
+    height: 38px !important;
+    width: 38px !important;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.top-nav-bar .nav-brand .brand-text {
+    line-height: 1 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
+
+/* 4. Mathematically lock nav links to the DEAD CENTER of the screen */
+.top-nav-bar .nav-links {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1;
+}
+
+.top-nav-bar .nav-links li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.top-nav-bar .nav-links a {
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    font-weight: 500 !important;
+}
+
+/* 5. Buttons on the far right */
+.top-nav-bar .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    z-index: 2;
+    margin-left: auto !important;
+}

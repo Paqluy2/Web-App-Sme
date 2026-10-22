@@ -2,6 +2,10 @@
 declare(strict_types=1);
 require_once __DIR__ . '/config/db.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $isCustomerLoggedIn = isset($_SESSION['customer_id']);
 $orders = [];
 
@@ -30,7 +34,7 @@ if ($isCustomerLoggedIn) {
         <div class="nav-container">
             <a href="index.php" class="nav-brand">
                 <img src="images/logocafe.jpg" alt="Logo" onerror="this.style.display='none'">
-                <span class="brand-text">☕ Gigs Cafe</span>
+                <span class="brand-text">GigsCafe</span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
