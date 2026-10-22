@@ -12,7 +12,7 @@ $currentPage = 'index.php';
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gigs Cafe - Artisan Drinks & Fresh Brews</title>
     <!-- Relative paths to load CSS cleanly from /WebApp/ -->
     <link rel="stylesheet" href="assets/css/style.css">

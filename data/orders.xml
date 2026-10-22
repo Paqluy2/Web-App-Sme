@@ -1,5 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<orders last_updated="2026-10-21 07:49:07">
+<orders last_updated="2026-10-22 11:06:10">
+  <order>
+    <order_id>9</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261022104959-FE5A</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Pending</order_status>
+    <created_at>2026-10-22 10:49:59</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>145.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-22 10:49:59</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-22 10:49:59</order_date>
+  </order>
+  <order>
+    <order_id>8</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261022103602-6B90</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-22 10:36:02</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>200.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>200.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-22 10:36:48</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-22 10:36:02</order_date>
+  </order>
+  <order>
+    <order_id>7</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261021075522-7C86</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-21 07:55:22</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>95.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-22 10:22:08</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-21 07:55:22</order_date>
+  </order>
   <order>
     <order_id>6</order_id>
     <customer_id>7</customer_id>
@@ -11,7 +107,7 @@
     <delivery_address>Pickup In-Store</delivery_address>
     <pickup_slot></pickup_slot>
     <delivery_fee>0.00</delivery_fee>
-    <order_status>Pending</order_status>
+    <order_status>Completed</order_status>
     <created_at>2026-10-21 07:45:34</created_at>
     <order_number></order_number>
     <contact_phone></contact_phone>
@@ -26,7 +122,7 @@
     <address></address>
     <customer_address></customer_address>
     <notes></notes>
-    <updated_at>2026-10-21 07:49:06</updated_at>
+    <updated_at>2026-10-21 07:54:48</updated_at>
     <landmark></landmark>
     <total>0.00</total>
     <payment_method>Cash</payment_method>
@@ -75,7 +171,7 @@
     <delivery_address>Pickup In-Store</delivery_address>
     <pickup_slot></pickup_slot>
     <delivery_fee>0.00</delivery_fee>
-    <order_status>Ready for Pickup</order_status>
+    <order_status>Completed</order_status>
     <created_at>2026-10-21 05:43:08</created_at>
     <order_number></order_number>
     <contact_phone></contact_phone>
@@ -90,7 +186,7 @@
     <address></address>
     <customer_address></customer_address>
     <notes></notes>
-    <updated_at>2026-10-21 06:22:04</updated_at>
+    <updated_at>2026-10-21 07:54:50</updated_at>
     <landmark></landmark>
     <total>0.00</total>
     <payment_method>Cash</payment_method>

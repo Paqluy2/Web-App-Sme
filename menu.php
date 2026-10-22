@@ -35,7 +35,7 @@ $categories = array_keys($categoryFolderMap);
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gigs Cafe - Drink Menu</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/customer.css">
@@ -91,8 +91,10 @@ $categories = array_keys($categoryFolderMap);
                 $cat = $data['type'];
                 $folder = $categoryFolderMap[$cat] ?? 'ClassicDrinks';
                 $imageSrc = "images/{$folder}/" . ($data['image'] ?? 'default.jpg');
-                $def16 = $data['sizes']['16oz'] ?? reset($data['sizes']);
+                $has16 = isset($data['sizes']['16oz']);
                 $has22 = isset($data['sizes']['22oz']);
+                $defaultSize = $has16 ? '16oz' : array_key_first($data['sizes']);
+                $defaultProduct = $data['sizes'][$defaultSize];
                 $hash = md5($name);
                 ?>
                 <div class="customer-product-card" data-category="<?= $cat ?>" id="card-<?= $hash ?>">
@@ -105,14 +107,15 @@ $categories = array_keys($categoryFolderMap);
                         <h3 class="product-name"><?= sanitize($name) ?></h3>
 
                         <!-- Size Selector -->
-                        <div style="display:flex; gap:6px; margin-bottom:12px;">
-                            <button type="button" class="pill-btn size-opt active"
-                                style="padding:4px 10px; font-size:0.75rem;"
-                                onclick="selectDrinkSize('<?= $hash ?>', <?= (int) $def16['id'] ?>, <?= (float) $def16['price'] ?>, '16oz', this)">
-                                16oz
-                            </button>
+                        <div class="size-selector-wrap">
+                            <?php if ($has16): ?>
+                                <button type="button" class="pill-btn size-opt <?= $defaultSize === '16oz' ? 'active' : '' ?>"
+                                    onclick="selectDrinkSize('<?= $hash ?>', <?= (int) $data['sizes']['16oz']['id'] ?>, <?= (float) $data['sizes']['16oz']['price'] ?>, '16oz', this)">
+                                    16oz
+                                </button>
+                            <?php endif; ?>
                             <?php if ($has22): ?>
-                                <button type="button" class="pill-btn size-opt" style="padding:4px 10px; font-size:0.75rem;"
+                                <button type="button" class="pill-btn size-opt <?= $defaultSize === '22oz' ? 'active' : '' ?>"
                                     onclick="selectDrinkSize('<?= $hash ?>', <?= (int) $data['sizes']['22oz']['id'] ?>, <?= (float) $data['sizes']['22oz']['price'] ?>, '22oz', this)">
                                     22oz
                                 </button>
@@ -120,11 +123,11 @@ $categories = array_keys($categoryFolderMap);
                         </div>
                         <div class="product-bottom">
                             <span class="product-price"
-                                id="price-<?= $hash ?>">₱<?= number_format($def16['price'], 2) ?></span>
-                            <button type="button" id="btn-<?= $hash ?>" class="btn btn-sm btn-primary btn-add-cart"
-                                data-id="<?= $def16['id'] ?>" data-base-name="<?= sanitize($name) ?>"
-                                data-name="<?= sanitize($name) ?> (16oz)" data-size="16oz"
-                                data-price="<?= $def16['price'] ?>">
+                                id="price-<?= $hash ?>">₱<?= number_format($defaultProduct['price'], 2) ?></span>
+                            <button type="button" id="btn-<?= $hash ?>" class="btn btn-primary btn-add-cart"
+                                data-id="<?= $defaultProduct['id'] ?>" data-base-name="<?= sanitize($name) ?>"
+                                data-name="<?= sanitize($name) ?> (<?= $defaultSize ?>)" data-size="<?= $defaultSize ?>"
+                                data-price="<?= $defaultProduct['price'] ?>">
                                 + Add to Cart
                             </button>
                         </div>
@@ -140,7 +143,8 @@ $categories = array_keys($categoryFolderMap);
         <div class="cart-drawer-header">
             <h3>Your Cart</h3>
             <button type="button" class="btn-del" id="closeCartBtn"
-                style="font-size:1.8rem; background:none; border:none; cursor:pointer;">&times;</button>
+    onclick="document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('cartOverlay').style.display='none';"
+    style="font-size:1.8rem; background:none; border:none; cursor:pointer; padding: 4px 10px;">&times;</button>
         </div>
         <div class="cart-drawer-body" id="cartItemsList"></div>
         <div class="cart-drawer-footer">
@@ -222,42 +226,6 @@ $categories = array_keys($categoryFolderMap);
         </div>
     </div>
     <script>
-        function selectDrinkSize(hash, productId, price, size, btn) {
-            // 1. Locate the specific card
-            const card = document.getElementById('card-' + hash);
-            if (card) {
-                // Toggle the visual active state
-                card.querySelectorAll('.size-opt').forEach(b => b.classList.remove('active'));
-                if (btn) btn.classList.add('active');
-
-                // Update the card price display
-                const priceDisplay = card.querySelector('.price, .product-price, strong');
-                if (priceDisplay) {
-                    priceDisplay.textContent = '₱' + Number(price).toFixed(2);
-                }
-            }
-
-            // 2. Update the target Add-to-Cart button
-            const addBtn = document.getElementById('btn-' + hash);
-            if (addBtn) {
-                addBtn.setAttribute('data-id', productId);
-                addBtn.setAttribute('data-price', price);
-                addBtn.setAttribute('data-size', size);
-
-                // Update the full item name sent to the cart drawer
-                const baseName = addBtn.getAttribute('data-base-name') || addBtn.getAttribute('data-name').replace(/\s*\(\d+oz\)/i, '').trim();
-                addBtn.setAttribute('data-name', `${baseName} (${size})`);
-            }
-        }
-
-        // 5. If your card uses a hidden input for product_id, update it
-        const hiddenIdInput = card.querySelector('input[name="product_id"]');
-        if (hiddenIdInput) {
-            hiddenIdInput.value = productId;
-        }
-}
-    </script>
-    <script>
         // Attach directly to window to guarantee global availability for inline onclick attributes
         window.selectDrinkSize = function (hash, productId, price, size, btn) {
             // 1. Locate the product card
@@ -266,15 +234,13 @@ $categories = array_keys($categoryFolderMap);
                 // Toggle visual active state on the size buttons
                 card.querySelectorAll('.size-opt').forEach(b => {
                     b.classList.remove('active');
-                    b.style.backgroundColor = '';
-                    b.style.color = '';
                 });
                 if (btn) {
                     btn.classList.add('active');
                 }
 
                 // Update card price display
-                const priceDisplay = card.querySelector('.price, .product-price, strong, .card-price');
+                const priceDisplay = card.querySelector('.product-price, .price, strong, .card-price');
                 if (priceDisplay) {
                     priceDisplay.textContent = '₱' + Number(price).toFixed(2);
                 }
@@ -289,7 +255,7 @@ $categories = array_keys($categoryFolderMap);
 
                 // Update the full item name passed into the cart drawer
                 const baseName = addBtn.getAttribute('data-base-name')
-                    || addBtn.getAttribute('data-name').replace(/\s*\(\d+oz\)/i, '').trim();
+                    || (addBtn.getAttribute('data-name') || '').replace(/\s*\(\d+oz\)/i, '').trim();
                 addBtn.setAttribute('data-name', `${baseName} (${size})`);
             }
         };

@@ -1,5 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<transactions last_updated="2026-10-21 07:49:07">
+<transactions last_updated="2026-10-22 11:06:10">
+  <transaction>
+    <sales_id>1086</sales_id>
+    <transaction_code>ORD-20261022104959-FE5A</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>9</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-22 10:49:59</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-22 10:49:59</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1085</sales_id>
+    <transaction_code>ORD-20261022103602-6B90</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>75</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>120.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-22 10:36:02</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-22 10:36:02</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1084</sales_id>
+    <transaction_code>ORD-20261022103602-6B90</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>7</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>80.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-22 10:36:02</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-22 10:36:02</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1083</sales_id>
+    <transaction_code>ORD-20261021075522-7C86</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-21 07:55:22</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-21 07:55:22</sale_date>
+  </transaction>
   <transaction>
     <sales_id>1082</sales_id>
     <transaction_code>ORD-20261021074534-F65D</transaction_code>

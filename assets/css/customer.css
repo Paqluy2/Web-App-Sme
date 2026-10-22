@@ -53,8 +53,6 @@ body {
     height: 48px;
     width: 48px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid var(--cafe-caramel);
 }
 
 .nav-brand .brand-text {
@@ -144,9 +142,12 @@ body {
 }
 
 .content-section {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
+width: 100% !important;
+    max-width: 1200px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .grid-2col {
@@ -171,6 +172,7 @@ body {
     overflow-x: auto;
     padding: 10px 0 20px;
     margin-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
 }
 
 .category-pill {
@@ -183,6 +185,11 @@ body {
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.2s;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
 }
 
 .category-pill.active,
@@ -195,7 +202,7 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 24px;
+    gap: 16px;
 }
 
 .customer-product-card {
@@ -250,19 +257,94 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 12px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+.size-selector-wrap {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    width: 100%;
 }
 
+.size-selector-wrap .pill-btn.size-opt,
+.pill-btn.size-opt {
+    flex: 1 1 0;
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background-color: #f1f5f9;
+    color: #475569;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    touch-action: manipulation;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.size-selector-wrap .pill-btn.size-opt:hover:not(.active),
+.pill-btn.size-opt:hover:not(.active) {
+    background-color: #e2e8f0;
+    border-color: #94a3b8;
+    color: #1e293b;
+}
+
+.size-selector-wrap .pill-btn.size-opt.active,
+.pill-btn.size-opt.active {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #1d4ed8 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+/* Product Bottom & Add to Cart */
 .product-bottom {
     margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    padding-top: 6px;
 }
 
 .product-price {
     font-size: 1.25rem;
     font-weight: 800;
     color: var(--cafe-espresso);
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.btn-add-cart {
+    min-height: 42px !important;
+    padding: 10px 16px !important;
+    border-radius: 8px !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border: 1px solid #1d4ed8 !important;
+    transition: background-color 0.2s ease-in-out !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    touch-action: manipulation;
+}
+
+.btn-add-cart:hover {
+    background-color: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
 }
 
 /* Off-Canvas Cart Drawer */
@@ -391,11 +473,228 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .cart-drawer {
-        width: 100%;
-    }
+    /* 1. Backdrop Overlay (Must sit BEHIND the drawer) */
+.cart-drawer-overlay,
+#cartOverlay {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(15, 23, 42, 0.5) !important;
+    z-index: 9998 !important;
+    display: none; /* Must NOT have !important so JS can toggle it */
+}
 
+.cart-drawer-overlay.open,
+#cartOverlay.open,
+#cartOverlay[style*="block"] {
+    display: block !important;
+}
+
+/* 2. Cart Drawer (Must sit ABOVE the overlay so buttons are clickable) */
+.cart-drawer,
+#cartDrawer {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 380px !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transform: translateX(105%) !important; /* Hidden off-screen to the right */
+    transition: transform 0.3s ease-in-out !important;
+    pointer-events: auto !important;
+}
+
+.cart-drawer.open,
+#cartDrawer.open {
+    transform: translateX(0) !important;
+}
+
+/* Full width on smartphones */
+@media (max-width: 480px) {
+    .cart-drawer,
+    #cartDrawer {
+        width: 100vw !important;
+    }
+}
+    @media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .product-name {
+        font-size: 1.05rem;
+    }
+    .product-price {
+        font-size: 1.1rem;
+    }
+    .btn-add-cart {
+        min-height: 44px !important;
+        font-size: 0.88rem !important;
+        padding: 10px 14px !important;
+    }
+    .pill-btn.size-opt {
+        min-height: 44px;
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+    .product-bottom {
+        gap: 8px;
+    }
+}
+}
+
+
+/* Hide scrollbar for a clean native app look */
+.category-filter-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsive Navbar */
+@media (max-width: 640px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+    
+    .nav-links {
+        font-size: 0.9rem;
+        gap: 12px;
+    }
+}
     .nav-links {
         gap: 14px;
+    }
+    /* Prevent iOS auto-zoom on input focus */
+input, select, textarea {
+    font-size: 16px !important; 
+}
+
+/* Thumb-friendly tap targets */
+.btn, .btn-add-cart, .pill-btn {
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+/* Responsive product card text */
+@media (max-width: 480px) {
+    .product-name {
+        font-size: 1rem;
+    }
+    .product-price {
+        font-size: 1.05rem;
+    }
+    .pill-btn.size-opt {
+        padding: 6px 14px;
+        font-size: 0.85rem;
+    }
+}
+/* 1. Prevent Horizontal Page Bleed */
+html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+main, header, section, aside, .content-section {
+    max-width: 100%;
+}
+
+/* 2. Fix Cart Button Text Wrapping */
+.cart-btn, 
+#cartBtn, 
+.header-cart-btn,
+a[href*="cart"] {
+    white-space: nowrap !important; /* Prevents "Cart 0 ) (" split */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 8px 14px !important;
+    min-height: 38px !important;
+    border-radius: 8px !important;
+    font-size: 0.85rem !important;
+    line-height: 1 !important;
+}
+
+@media (max-width: 768px) {
+    /* Force the header and its inner wrapper to wrap cleanly */
+    header,
+    header > div,
+    .navbar,
+    .navbar > div,
+    .header-container,
+    .nav-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 8px 12px !important;
+        gap: 8px !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Reset any floating/absolute positioning on the Cart & Sign In buttons */
+    header *,
+    .navbar * {
+        position: static !important;
+    }
+
+    /* Row 1 Left: Brand Logo + Gigs Cafe text */
+    header a:first-child,
+    .brand-logo,
+    .nav-brand {
+        order: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        font-size: 1.05rem !important;
+        white-space: nowrap !important;
+    }
+
+    /* Row 1 Right: Cart ( 0 ) + Sign In buttons */
+    .header-actions,
+    .nav-actions,
+    header > div > div:last-child {
+        order: 2 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin-left: auto !important;
+    }
+
+    /* Row 2 Bottom: Home | Menu | Orders | Account */
+    header nav,
+    .nav-links,
+    .navbar-nav {
+        order: 3 !important;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        border-top: 1px solid #e2e8f0 !important;
+        padding-top: 8px !important;
+        margin-top: 4px !important;
+        overflow-x: auto !important;
     }
 }
