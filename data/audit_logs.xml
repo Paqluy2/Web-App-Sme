@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<audit_logs last_updated="2026-10-22 11:54:47">
+<audit_logs last_updated="2026-10-22 21:22:26">
+  <log>
+    <log_id>28</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-22 20:12:48</log_date>
+  </log>
+  <log>
+    <log_id>27</log_id>
+    <Employee_id>1</Employee_id>
+    <action_details>Logged into the system via web interface</action_details>
+    <log_date>2026-10-22 20:12:39</log_date>
+  </log>
   <log>
     <log_id>26</log_id>
     <Employee_id>2</Employee_id>

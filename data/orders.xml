@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<orders last_updated="2026-10-22 11:54:47">
+<orders last_updated="2026-10-22 21:22:26">
+  <order>
+    <order_id>10</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261022122204-BBBA</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Pending</order_status>
+    <created_at>2026-10-22 12:22:04</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>1235.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>1235.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-22 12:22:04</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-22 12:22:04</order_date>
+  </order>
   <order>
     <order_id>9</order_id>
     <customer_id>6</customer_id>

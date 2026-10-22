@@ -53,3 +53,8 @@ try {
 } catch (Throwable $e) {
     // Suppress die during CLI/editor static analysis
 }
+if (!function_exists('sanitize')) {
+    function sanitize(?string $data): string {
+        return htmlspecialchars((string)($data ?? ''), ENT_QUOTES, 'UTF-8');
+    }
+}

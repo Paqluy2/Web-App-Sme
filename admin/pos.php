@@ -1,13 +1,22 @@
 <?php
 declare(strict_types=1);
+
+// 1. Require database and authentication classes
+require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../includes/auth.php';
+
+// 2. Start session if not started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!isset($_SESSION['user_id']) || empty($_SESSION['role']) || strtolower($_SESSION['role']) !== 'admin') {
+// 3. Verify admin authentication
+if (!Auth::check()) {
     header('Location: login.php');
     exit;
 }
+
+// 4. Load the POS layout
 require_once __DIR__ . '/includes/header.php';
 ?>
 

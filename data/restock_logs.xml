@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<restock_logs last_updated="2026-10-22 11:54:47">
+<restock_logs last_updated="2026-10-22 21:22:26">
   <stock_item>
     <material_id>5000</material_id>
     <category>Coffee Beans &amp; Tea</category>
@@ -11,7 +11,7 @@
     <material_id>5001</material_id>
     <category>Coffee Beans &amp; Tea</category>
     <material_name>Assam Black Tea</material_name>
-    <current_stock>45570</current_stock>
+    <current_stock>44290</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -25,7 +25,7 @@
     <material_id>5003</material_id>
     <category>Sinker Add-ons</category>
     <material_name>black pearls</material_name>
-    <current_stock>3060</current_stock>
+    <current_stock>2740</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -53,7 +53,7 @@
     <material_id>5007</material_id>
     <category>Syrups</category>
     <material_name>Fructose</material_name>
-    <current_stock>4220</current_stock>
+    <current_stock>4190</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -67,7 +67,7 @@
     <material_id>5009</material_id>
     <category>Syrups</category>
     <material_name>Salted Caramel Syrup</material_name>
-    <current_stock>4110</current_stock>
+    <current_stock>3760</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -270,7 +270,7 @@
     <material_id>5038</material_id>
     <category>Dairy Products</category>
     <material_name>Cream Cheese</material_name>
-    <current_stock>970</current_stock>
+    <current_stock>930</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -284,14 +284,14 @@
     <material_id>5040</material_id>
     <category>Powders</category>
     <material_name>Bamboo Charcoal</material_name>
-    <current_stock>980</current_stock>
+    <current_stock>950</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
     <material_id>5041</material_id>
     <category>Powders</category>
     <material_name>Creamer</material_name>
-    <current_stock>1420</current_stock>
+    <current_stock>1110</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -361,14 +361,14 @@
     <material_id>5051</material_id>
     <category>Dry Materials</category>
     <material_name>WHITE Cold Cup (22oz)</material_name>
-    <current_stock>999</current_stock>
+    <current_stock>998</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
     <material_id>5052</material_id>
     <category>Dry Materials</category>
     <material_name>WHITE Cold Cup (16 oz)</material_name>
-    <current_stock>932</current_stock>
+    <current_stock>925</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
@@ -424,7 +424,7 @@
     <material_id>5060</material_id>
     <category>Packaging / Miscellaneous</category>
     <material_name>Flat Lid</material_name>
-    <current_stock>926</current_stock>
+    <current_stock>918</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
@@ -438,7 +438,7 @@
     <material_id>5062</material_id>
     <category>Packaging / Miscellaneous</category>
     <material_name>Straw (Big)</material_name>
-    <current_stock>2426</current_stock>
+    <current_stock>2418</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
