@@ -82,7 +82,7 @@ if ($action === 'checkout') {
         // Fixed: Added customer_name and customer_email to the INSERT query and the ? placeholders
         $orderStmt = $db->prepare("
             INSERT INTO online_orders (transaction_code, customer_id, customer_name, customer_email, fulfillment_type, delivery_address, subtotal, delivery_fee, grand_total, order_status, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pending', NOW())
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending', NOW())
         ");
         
         // Fixed: Added $customerName and $customerEmail to the execution array
