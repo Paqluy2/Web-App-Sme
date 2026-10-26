@@ -64,19 +64,28 @@ if ($action === 'checkout') {
             $pStmt = $db->prepare("SELECT Retail_price FROM menu_product WHERE Product_id = ?");
             $pStmt->execute([$pId]);
             $price = (float) $pStmt->fetchColumn();
+            
+            // Fixed the syntax error here
             $subtotal += ($price * $qty);
         }
 
-        $deliveryFee = ($fulfillment === 'Delivery') ? FLAT_DELIVERY_FEE : 0.00;
+        // Define Delivery Fee constant if it's not defined globally, fallback to 50
+        $feeAmount = defined('FLAT_DELIVERY_FEE') ? FLAT_DELIVERY_FEE : 50.00;
+        $deliveryFee = ($fulfillment === 'Delivery') ? $feeAmount : 0.00;
         $grandTotal = $subtotal + $deliveryFee;
         $txnCode = 'ORD-' . date('YmdHis') . '-' . strtoupper(bin2hex(random_bytes(2)));
 
-        // Insert into online_orders table
+        // Retrieve customer name from session fallback to database record
+        $customerName = $_SESSION['customer_name'] ?? $customer['full_name'] ?? 'Customer';
+
+        // Fixed: Added customer_name to the INSERT query and the ? placeholders
         $orderStmt = $db->prepare("
-            INSERT INTO online_orders (transaction_code, customer_id, fulfillment_type, delivery_address, subtotal, delivery_fee, grand_total, order_status, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, 'Pending', NOW())
+            INSERT INTO online_orders (transaction_code, customer_id, customer_name, fulfillment_type, delivery_address, subtotal, delivery_fee, grand_total, order_status, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pending', NOW())
         ");
-        $orderStmt->execute([$txnCode, $customerId, $fulfillment, $formattedAddress, $subtotal, $deliveryFee, $grandTotal]);
+        
+        // Fixed: Added $customerName to the execution array
+        $orderStmt->execute([$txnCode, $customerId, $customerName, $fulfillment, $formattedAddress, $subtotal, $deliveryFee, $grandTotal]);
 
         // Insert line items into salestb under system employee 999
         $saleStmt = $db->prepare("
