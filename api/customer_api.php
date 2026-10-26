@@ -77,15 +77,16 @@ if ($action === 'checkout') {
 
         // Retrieve customer name from session fallback to database record
         $customerName = $_SESSION['customer_name'] ?? $customer['full_name'] ?? 'Customer';
+        $customerEmail = $_SESSION['customer_email'] ?? $customer['email'] ?? 'Unknown';
 
-        // Fixed: Added customer_name to the INSERT query and the ? placeholders
+        // Fixed: Added customer_name and customer_email to the INSERT query and the ? placeholders
         $orderStmt = $db->prepare("
-            INSERT INTO online_orders (transaction_code, customer_id, customer_name, fulfillment_type, delivery_address, subtotal, delivery_fee, grand_total, order_status, created_at)
+            INSERT INTO online_orders (transaction_code, customer_id, customer_name, customer_email, fulfillment_type, delivery_address, subtotal, delivery_fee, grand_total, order_status, created_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pending', NOW())
         ");
         
-        // Fixed: Added $customerName to the execution array
-        $orderStmt->execute([$txnCode, $customerId, $customerName, $fulfillment, $formattedAddress, $subtotal, $deliveryFee, $grandTotal]);
+        // Fixed: Added $customerName and $customerEmail to the execution array
+        $orderStmt->execute([$txnCode, $customerId, $customerName, $customerEmail, $fulfillment, $formattedAddress, $subtotal, $deliveryFee, $grandTotal]);
 
         // Insert line items into salestb under system employee 999
         $saleStmt = $db->prepare("
