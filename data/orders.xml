@@ -1,5 +1,805 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<orders last_updated="2026-10-22 22:47:49">
+<orders last_updated="2026-10-28 22:55:19">
+  <order>
+    <order_id>35</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028152246-E73B</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 22:22:46</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>135.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>185.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 22:23:23</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 22:22:46</order_date>
+  </order>
+  <order>
+    <order_id>34</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028151033-0B0D</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 22:10:33</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>110.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>160.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 22:11:03</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 22:10:33</order_date>
+  </order>
+  <order>
+    <order_id>33</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028150551-470C</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 22:05:51</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>80.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>80.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 22:06:54</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 22:05:51</order_date>
+  </order>
+  <order>
+    <order_id>32</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028134836-055F</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 20:48:36</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>110.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>110.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 20:48:55</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 20:48:36</order_date>
+  </order>
+  <order>
+    <order_id>31</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028134414-353E</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 20:44:14</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>125.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>175.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 20:45:16</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 20:44:14</order_date>
+  </order>
+  <order>
+    <order_id>30</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028134023-2722</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 20:40:23</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>95.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 20:42:05</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 20:40:23</order_date>
+  </order>
+  <order>
+    <order_id>29</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028133451-DFF7</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 20:34:51</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>145.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 20:35:47</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 20:34:51</order_date>
+  </order>
+  <order>
+    <order_id>28</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028131302-CE28</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 20:13:02</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>95.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 20:34:36</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 20:13:02</order_date>
+  </order>
+  <order>
+    <order_id>27</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028130620-815C</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 20:06:20</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>80.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>80.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 20:07:24</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 20:06:20</order_date>
+  </order>
+  <order>
+    <order_id>26</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261028122805-C2C0</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-28 19:28:05</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>110.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>160.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 19:29:08</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-28 19:28:05</order_date>
+  </order>
+  <order>
+    <order_id>25</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026212037-2AAA</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 04:20:37</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>95.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 04:20:50</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 04:20:37</order_date>
+  </order>
+  <order>
+    <order_id>24</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026211809-755D</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 04:18:09</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>145.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 04:20:25</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 04:18:09</order_date>
+  </order>
+  <order>
+    <order_id>23</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026211809-294A</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 04:18:09</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>145.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 04:20:45</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 04:18:09</order_date>
+  </order>
+  <order>
+    <order_id>22</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026211526-7609</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 04:15:26</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>145.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 19:30:57</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 04:15:26</order_date>
+  </order>
+  <order>
+    <order_id>21</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026211526-7B62</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 04:15:26</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>145.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 04:20:27</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 04:15:26</order_date>
+  </order>
+  <order>
+    <order_id>20</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026180034-D55B</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 01:00:34</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>80.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>80.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 19:31:03</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 01:00:34</order_date>
+  </order>
+  <order>
+    <order_id>19</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026180034-7B75</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 01:00:34</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>80.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>80.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 19:31:00</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 01:00:34</order_date>
+  </order>
+  <order>
+    <order_id>18</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026175933-700B</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 00:59:33</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>80.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>130.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 19:31:08</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 00:59:33</order_date>
+  </order>
+  <order>
+    <order_id>17</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026175933-9D9C</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-27 00:59:33</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>80.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>130.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-28 19:31:05</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 00:59:33</order_date>
+  </order>
+  <order>
+    <order_id>16</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026173733-A913</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-27 00:37:33</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>125.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>175.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 00:40:28</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 00:37:33</order_date>
+  </order>
+  <order>
+    <order_id>15</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026173733-0C67</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone>09183477631</customer_phone>
+    <fulfillment_type>Delivery</fulfillment_type>
+    <delivery_address>[Home] Blk 58 Lot 13, St. Bartolomew, San Jose, Rodriguez (Note: black gate)</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>50.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-27 00:37:33</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>125.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>175.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 00:40:32</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-27 00:37:33</order_date>
+  </order>
+  <order>
+    <order_id>14</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026093147-E4A9</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email>cristobal0057@gmail.com</customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-26 16:31:47</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>100.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>100.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 00:40:34</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-26 16:31:47</order_date>
+  </order>
+  <order>
+    <order_id>13</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026091627-5CFB</transaction_code>
+    <customer_name>Joseph Cristobal</customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-26 16:16:27</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>95.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>95.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 00:40:37</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-26 16:16:27</order_date>
+  </order>
+  <order>
+    <order_id>12</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261026091202-C9D0</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Completed</order_status>
+    <created_at>2026-10-26 16:12:02</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>110.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>110.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-27 00:40:39</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-26 16:12:02</order_date>
+  </order>
+  <order>
+    <order_id>11</order_id>
+    <customer_id>6</customer_id>
+    <transaction_code>ORD-20261022174530-D6F8</transaction_code>
+    <customer_name></customer_name>
+    <customer_email></customer_email>
+    <customer_phone></customer_phone>
+    <fulfillment_type>Pickup</fulfillment_type>
+    <delivery_address>Pickup In-Store</delivery_address>
+    <pickup_slot></pickup_slot>
+    <delivery_fee>0.00</delivery_fee>
+    <order_status>Cancelled</order_status>
+    <created_at>2026-10-22 23:45:30</created_at>
+    <order_number></order_number>
+    <contact_phone></contact_phone>
+    <items_json></items_json>
+    <subtotal>340.00</subtotal>
+    <total_amount>0.00</total_amount>
+    <status>Pending</status>
+    <grand_total>340.00</grand_total>
+    <order_type>Pickup</order_type>
+    <fulfillment>Pickup</fulfillment>
+    <phone></phone>
+    <address></address>
+    <customer_address></customer_address>
+    <notes></notes>
+    <updated_at>2026-10-22 23:45:53</updated_at>
+    <landmark></landmark>
+    <total>0.00</total>
+    <payment_method>Cash</payment_method>
+    <order_date>2026-10-22 23:45:30</order_date>
+  </order>
   <order>
     <order_id>10</order_id>
     <customer_id>6</customer_id>

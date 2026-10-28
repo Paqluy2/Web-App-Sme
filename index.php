@@ -6,6 +6,9 @@ require_once __DIR__ . '/config/db.php';
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 $isCustomerLoggedIn = isset($_SESSION['customer_id']);
 $customerName = $_SESSION['customer_name'] ?? 'Account';
@@ -17,10 +20,10 @@ $currentPage = 'index.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gigs Cafe - Artisan Drinks & Fresh Brews</title>
+    <title>GIGS CAFÉ</title>
     <!-- Relative paths to load CSS cleanly from /WebApp/ -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/customer.css">
+    <link rel="stylesheet" href="assets/css/customer.css?v=2.0">
 </head>
 
 <body>
@@ -30,7 +33,7 @@ $currentPage = 'index.php';
         <div class="nav-container">
             <a href="index.php" class="nav-brand">
                 <img src="images/logocafe.jpg" alt="Gigs Cafe Logo" onerror="this.style.display='none'">
-                <span class="brand-text">GigsCafe</span>
+                <span class="brand-text">GIGS CAFÉ </span>
             </a>
 
             <ul class="nav-links">
@@ -56,7 +59,7 @@ $currentPage = 'index.php';
         <p>Discover our signature milk teas, slow-dripped espresso, iced blends, and refreshing fruit tea infusions.</p>
         <a href="menu.php" class="btn btn-primary btn-lg"
             style="background:var(--cafe-caramel); border:none; padding:14px 28px; border-radius:30px; text-decoration:none; display:inline-block;">
-            View Our Drink Menu (6 Collections)
+            View Our Drink Menu 
         </a>
     </section>
 
@@ -113,34 +116,7 @@ FOR A LIMITED TIME ONLY! 🍟👻 Get ready, #GIGSFam!
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer style="background: var(--cafe-espresso); color: #e2e8f0; padding: 40px 20px; margin-top: 60px;">
-        <div
-            style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
-            <div>
-                <h3 style="color:#fef08a; margin-bottom:10px;">GigsCafe</h3>
-                <p style="max-width:320px; font-size:0.9rem; color:#cbd5e1;">Freshly brewed artisan coffee, signature
-                    iced blends, milk teas, and fruit teas crafted daily.</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom:10px; color:#ffffff;">Quick Navigation</h4>
-                <ul style="list-style:none; padding:0; font-size:0.85rem; line-height:1.8;">
-                    <li><a href="menu.php" style="color:#cbd5e1; text-decoration:none;">Drink Menu</a></li>
-                    <li><a href="orders.php" style="color:#cbd5e1; text-decoration:none;">Track Orders</a></li>
-                    <li><a href="account.php" style="color:#cbd5e1; text-decoration:none;">Account Profile</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="margin-bottom:10px; color:#ffffff;">Store Hours</h4>
-                <p style="font-size:0.85rem; color:#cbd5e1;">Monday – Sunday: 8:00 AM – 10:00 PM<br>Pickup & Local
-                    Delivery Available.</p>
-            </div>
-        </div>
-        <div
-            style="text-align:center; border-top:1px solid #332722; margin-top:30px; padding-top:20px; font-size:0.8rem; color:#94a3b8;">
-            &copy; <?= date('Y') ?> GigsCafe. All Rights Reserved.
-        </div>
-    </footer>
+<?php require_once __DIR__ . '/includes/customer_footer.php'; ?>
 
     <!-- Customer Login & Direct Registration Modal -->
     <div class="modal-overlay" id="authModal">
@@ -157,11 +133,11 @@ FOR A LIMITED TIME ONLY! 🍟👻 Get ready, #GIGSFam!
             <form id="customerLoginForm" method="POST" action="customer_auth.php?action=login">
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" name="email" class="form-control" required placeholder="juan@gmail.com">
+                    <input type="email" name="email" class="form-control" required placeholder="juan@gmail.com" autocapitalize="none" autocorrect="off">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" required>
+                    <input type="password" name="password" class="form-control" required autocapitalize="none" autocorrect="off">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                 <p style="text-align:center; margin-top:12px; font-size:0.85rem;">

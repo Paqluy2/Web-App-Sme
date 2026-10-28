@@ -8,6 +8,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 $isCustomerLoggedIn = isset($_SESSION['customer_id']);
 $msg = '';
 $err = '';
@@ -72,9 +76,9 @@ if ($isCustomerLoggedIn) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gigs Cafe - Customer Account</title>
+    <title>GIGS CAFÉ </title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/customer.css">
+    <link rel="stylesheet" href="assets/css/customer.css?v=2.0">
     <style>
         .form-row {
             display: grid;
@@ -116,7 +120,7 @@ if ($isCustomerLoggedIn) {
         <div class="nav-container">
             <a href="index.php" class="nav-brand">
                 <img src="images/logocafe.jpg" alt="Logo" onerror="this.style.display='none'">
-                <span class="brand-text">GigsCafe</span>
+                <span class="brand-text">GIGS CAFÉ </span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>

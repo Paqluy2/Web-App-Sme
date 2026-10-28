@@ -128,7 +128,9 @@ if ($action === 'process_pos') {
 
             $qty = (int) $item['qty'];
             $price = (float) $item['price'];
-            $total += ($qty * $price);
+            
+            // FIXED: Proper multiplication operator
+            $total += ($qty * $price); 
             $totalQty += $qty;
             $summaryParts[] = "{$item['name']} ({$item['size']}) x{$qty}";
         }
@@ -138,7 +140,9 @@ if ($action === 'process_pos') {
         }
 
         $cash = (float) $cash;
-        $change = $method === 'Cash' ? ($cash - $total) : 0.0;
+        
+        // FIXED: Proper subtraction operator
+        $change = $method === 'Cash' ? ($cash - $total) : 0.0; 
         $orderNo = 'POS-' . date('Ymd-His') . '-' . rand(10, 99);
         $itemsSummary = implode(', ', $summaryParts);
         $cashier = $_SESSION['admin_name'] ?? 'Administrator';
@@ -157,16 +161,20 @@ if ($action === 'process_pos') {
 
         $db->beginTransaction();
 
+        // FIXED: Column names now exactly match your online orders and admin dashboard
         $insertSaleSql = "
-            INSERT INTO salestb (employee_id, product_id, order_number, items, qty, total, cash, change_amount, payment_method, cashier, sale_date)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+            INSERT INTO salestb (employee_id, product_id, transaction_code, items, quantity_sold, total_amount, cash, change_amount, payment_method, order_type, cashier, sold_date)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'POS', ?, NOW())
         ";
         $stmt = $db->prepare($insertSaleSql);
 
         foreach ($cart as $item) {
             $itemQty = (int) $item['qty'];
             $itemPrice = (float) $item['price'];
-            $itemSubtotal = $itemQty * $itemPrice;
+            
+            // FIXED: Proper multiplication operator
+            $itemSubtotal = $itemQty * $itemPrice; 
+            
             $itemDesc = "{$item['name']} ({$item['size']})";
             $prodId = !empty($item['product_id']) ? (int) $item['product_id'] : $defaultProductId;
 

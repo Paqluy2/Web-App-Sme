@@ -1,5 +1,765 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<transactions last_updated="2026-10-22 22:47:49">
+<transactions last_updated="2026-10-28 22:55:19">
+  <transaction>
+    <sales_id>1129</sales_id>
+    <transaction_code>ORD-20261028152246-E73B</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>76</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>135.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-28 22:22:46</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 22:22:46</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1128</sales_id>
+    <transaction_code>POS-20261028-222005-83</transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>39</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>180.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 22:20:05</sold_date>
+    <order_number></order_number>
+    <items>Charcoal Iced Blend (16oz)</items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>180.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 22:20:05</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1127</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 22:14:46</sold_date>
+    <order_number>POS-20261028-221446-11</order_number>
+    <items>Matcha Tea Latte (22oz)</items>
+    <qty>1</qty>
+    <total>125.00</total>
+    <cash>125.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 22:14:46</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1126</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 22:12:20</sold_date>
+    <order_number>POS-20261028-221220-69</order_number>
+    <items>Classic Chocolate (16oz)</items>
+    <qty>1</qty>
+    <total>95.00</total>
+    <cash>100.00</cash>
+    <change_amount>5.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 22:12:20</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1125</sales_id>
+    <transaction_code>ORD-20261028151033-0B0D</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>4</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>110.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-28 22:10:33</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 22:10:33</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1124</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>6</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 22:08:25</sold_date>
+    <order_number>POS-20261028-220825-82</order_number>
+    <items>White Chocolate (22oz)</items>
+    <qty>1</qty>
+    <total>115.00</total>
+    <cash>115.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 22:08:25</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1123</sales_id>
+    <transaction_code>ORD-20261028150551-470C</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>7</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>80.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-28 22:05:51</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 22:05:51</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1122</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 22:05:01</sold_date>
+    <order_number>POS-20261028-220501-61</order_number>
+    <items>Matcha Tea Latte (22oz)</items>
+    <qty>2</qty>
+    <total>250.00</total>
+    <cash>250.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 22:05:01</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1121</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 22:03:34</sold_date>
+    <order_number>POS-20261028-220334-66</order_number>
+    <items>Matcha Tea Latte (22oz)</items>
+    <qty>1</qty>
+    <total>125.00</total>
+    <cash>125.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 22:03:34</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1120</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 22:01:59</sold_date>
+    <order_number>POS-20261028-220159-43</order_number>
+    <items>Matcha Tea Latte (22oz)</items>
+    <qty>1</qty>
+    <total>125.00</total>
+    <cash>200.00</cash>
+    <change_amount>75.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 22:01:59</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1119</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>6</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>GCash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 21:53:28</sold_date>
+    <order_number>POS-20261028-215328-22</order_number>
+    <items>White Chocolate (22oz)</items>
+    <qty>1</qty>
+    <total>115.00</total>
+    <cash>115.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 21:53:28</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1118</sales_id>
+    <transaction_code>ORD-20261028134836-055F</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>88</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>110.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-28 20:48:36</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 20:48:36</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1117</sales_id>
+    <transaction_code>ORD-20261028134414-353E</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>125.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-28 20:44:14</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 20:44:14</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1116</sales_id>
+    <transaction_code>ORD-20261028134023-2722</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>8</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-28 20:40:23</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 20:40:23</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1115</sales_id>
+    <transaction_code>ORD-20261028133451-DFF7</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>8</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-28 20:34:51</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 20:34:51</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1114</sales_id>
+    <transaction_code>ORD-20261028131302-CE28</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-28 20:13:02</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 20:13:02</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1113</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 20:07:36</sold_date>
+    <order_number>POS-20261028-200736-90</order_number>
+    <items>Matcha Tea Latte (22oz)</items>
+    <qty>1</qty>
+    <total>125.00</total>
+    <cash>125.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 20:07:36</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1112</sales_id>
+    <transaction_code>ORD-20261028130620-815C</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>7</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>80.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-28 20:06:20</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 20:06:20</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1111</sales_id>
+    <transaction_code>ORD-20261028122805-C2C0</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>4</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>110.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-28 19:28:05</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-28 19:28:05</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1110</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 19:05:26</sold_date>
+    <order_number>POS-20261028-190526-28</order_number>
+    <items>Classic Chocolate (16oz)</items>
+    <qty>1</qty>
+    <total>95.00</total>
+    <cash>100.00</cash>
+    <change_amount>5.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 19:05:26</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1109</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>1</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 19:03:47</sold_date>
+    <order_number>POS-20261028-190347-16</order_number>
+    <items>Matcha Tea Latte (16oz)</items>
+    <qty>1</qty>
+    <total>110.00</total>
+    <cash>500.00</cash>
+    <change_amount>390.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 19:03:47</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1108</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>12</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 19:03:00</sold_date>
+    <order_number>POS-20261028-190300-15</order_number>
+    <items>Passionfruit Fruit Tea (22oz)</items>
+    <qty>2</qty>
+    <total>220.00</total>
+    <cash>500.00</cash>
+    <change_amount>90.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 19:03:00</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1107</sales_id>
+    <transaction_code></transaction_code>
+    <employee_id>1</employee_id>
+    <product_id>11</product_id>
+    <quantity_sold>0</quantity_sold>
+    <total_amount>0.00</total_amount>
+    <payment_method>Cash</payment_method>
+    <order_type>POS</order_type>
+    <sold_date>2026-10-28 19:03:00</sold_date>
+    <order_number>POS-20261028-190300-15</order_number>
+    <items>Passionfruit Fruit Tea (16oz)</items>
+    <qty>2</qty>
+    <total>190.00</total>
+    <cash>500.00</cash>
+    <change_amount>90.00</change_amount>
+    <cashier>Administrator</cashier>
+    <sale_date>2026-10-28 19:03:00</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1106</sales_id>
+    <transaction_code>ORD-20261026212037-2AAA</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-27 04:20:37</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 04:20:37</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1105</sales_id>
+    <transaction_code>ORD-20261026211809-755D</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 04:18:09</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 04:18:09</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1104</sales_id>
+    <transaction_code>ORD-20261026211809-294A</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 04:18:09</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 04:18:09</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1103</sales_id>
+    <transaction_code>ORD-20261026211526-7609</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 04:15:26</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 04:15:26</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1102</sales_id>
+    <transaction_code>ORD-20261026211526-7B62</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 04:15:26</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 04:15:26</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1101</sales_id>
+    <transaction_code>ORD-20261026180034-D55B</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>7</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>80.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-27 01:00:34</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 01:00:34</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1100</sales_id>
+    <transaction_code>ORD-20261026180034-7B75</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>7</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>80.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-27 01:00:34</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 01:00:34</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1099</sales_id>
+    <transaction_code>ORD-20261026175933-700B</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>7</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>80.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 00:59:33</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 00:59:33</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1098</sales_id>
+    <transaction_code>ORD-20261026175933-9D9C</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>7</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>80.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 00:59:33</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 00:59:33</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1097</sales_id>
+    <transaction_code>ORD-20261026173733-A913</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>125.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 00:37:33</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 00:37:33</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1096</sales_id>
+    <transaction_code>ORD-20261026173733-0C67</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>2</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>125.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Delivery</order_type>
+    <sold_date>2026-10-27 00:37:33</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-27 00:37:33</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1095</sales_id>
+    <transaction_code>ORD-20261026093147-E4A9</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>5</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>100.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-26 16:31:47</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-26 16:31:47</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1094</sales_id>
+    <transaction_code>ORD-20261026091627-5CFB</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-26 16:16:27</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-26 16:16:27</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1093</sales_id>
+    <transaction_code>ORD-20261026091202-C9D0</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>1</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>110.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-26 16:12:02</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-26 16:12:02</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1092</sales_id>
+    <transaction_code>ORD-20261022174530-D6F8</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>1</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>110.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-22 23:45:30</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-22 23:45:30</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1091</sales_id>
+    <transaction_code>ORD-20261022174530-D6F8</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>4</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>110.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-22 23:45:30</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-22 23:45:30</sale_date>
+  </transaction>
+  <transaction>
+    <sales_id>1090</sales_id>
+    <transaction_code>ORD-20261022174530-D6F8</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>75</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>120.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-22 23:45:30</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-22 23:45:30</sale_date>
+  </transaction>
   <transaction>
     <sales_id>1089</sales_id>
     <transaction_code>ORD-20261022122204-BBBA</transaction_code>

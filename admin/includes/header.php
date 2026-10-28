@@ -89,7 +89,17 @@ foreach ($inventoryRaw as $row) {
 }
 
 // 3. Load Walk-In POS Sales (salestb)
-$salesRaw = safeQuery($db, "SELECT * FROM salestb ORDER BY 1 DESC LIMIT 200");
+$salesRaw = safeQuery($db, "
+    SELECT s.*, m.Product_name 
+    FROM salestb s 
+    LEFT JOIN menu_product m ON s.product_id = m.Product_id 
+    LEFT JOIN online_orders o ON s.transaction_code = o.transaction_code
+    WHERE o.transaction_code IS NULL 
+       OR o.order_status = 'Completed'
+    ORDER BY s.sold_date DESC 
+    LIMIT 200
+");
+
 $sales = [];
 $totalPosRevenue = 0.0;
 $todayRevenue = 0.0;
@@ -97,13 +107,14 @@ $todayDate = date('Y-m-d');
 
 foreach ($salesRaw as $row) {
     $keys = array_keys($row);
-    $id = $row['id'] ?? $row['sale_id'] ?? $row[$keys[0]] ?? 0;
-    $ordNo = $row['order_number'] ?? $row['receipt_no'] ?? ('SALE-' . $id);
-    $items = $row['items'] ?? $row['product_name'] ?? $row['description'] ?? 'Walk-in Order';
-    $qty = (int) ($row['qty'] ?? $row['quantity'] ?? 1);
-    $total = (float) ($row['total'] ?? $row['grand_total'] ?? $row['amount'] ?? $row['price'] ?? 0);
+    $id = $row[$keys[0]] ?? 0;
+    
+    $ordNo = $row['transaction_code'] ?? ('SALE-' . $id);
+    $items = $row['Product_name'] ?? 'Walk-in Order';
+    $qty = (int) ($row['quantity_sold'] ?? 1);
+    $total = (float) ($row['total_amount'] ?? 0.0);
     $method = $row['payment_method'] ?? 'Cash';
-    $date = $row['sale_date'] ?? $row['created_at'] ?? $row['date'] ?? date('Y-m-d H:i:s');
+    $date = $row['sold_date'] ?? date('Y-m-d H:i:s');
 
     $totalPosRevenue += $total;
     if (str_starts_with((string) $date, $todayDate)) {
@@ -135,8 +146,9 @@ $onlineRaw = safeQuery($db, "
         c.phone
     FROM online_orders o
     LEFT JOIN customers c ON o.customer_id = c.customer_id
-    ORDER BY o.order_id DESC 
-    LIMIT 100
+    WHERE DATE(o.created_at) = CURDATE() 
+      AND o.order_status NOT IN ('Completed', 'Cancelled', 'Archived')
+    ORDER BY o.order_id DESC
 ");
 
 $onlineOrders = [];
@@ -251,7 +263,7 @@ $analyticsChartData = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gigs Cafe — Administrator & POS</title>
+    <title>GIGS CAFÉ — Administrator </title>
     <style>
         :root {
             --bg-dark: #0f172a;
@@ -798,6 +810,59 @@ $analyticsChartData = [
             color: #1d4ed8 !important;
             border: 1px solid #bfdbfe;
         }
+
+
+        @media (max-width: 768px) {
+    /* 1. Stack the Sidebar on top of the content */
+    body {
+        flex-direction: column !important;
+        display: flex;
+    }
+    
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto; /* Lets admin scroll navigation left/right */
+        padding: 10px;
+    }
+
+    /* Keep the logo small and navigation horizontal on phones */
+    .sidebar .brand { margin-bottom: 0; margin-right: 15px; }
+    .sidebar .nav-links { display: flex; flex-direction: row; gap: 10px; margin: 0; }
+    .sidebar .nav-links li { margin: 0; white-space: nowrap; }
+
+    /* 2. Give the main content room to breathe */
+    .main-content {
+        width: 100% !important;
+        padding: 15px !important;
+        margin-left: 0 !important;
+    }
+
+    /* 3. Stop wide data tables from breaking the screen width */
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Allows swiping left/right on the table only */
+        white-space: nowrap;
+    }
+
+    /* 4. Fix POS Product Grid to 2 items per row instead of 4+ */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    /* 5. Shrink Pop-up Modals to fit the phone screen */
+    .modal-content, 
+    .receipt-modal {
+        width: 95% !important;
+        margin: 20px auto !important;
+        padding: 15px !important;
+    }
+}
     </style>
 </head>
 
@@ -805,7 +870,8 @@ $analyticsChartData = [
 
     <aside class="sidebar">
         <div class="brand">
-            <div class="brand-logo">GC</div>
+            <div class="brand-logo"><img src="../images/logocafe.jpg" alt="Gigs Cafe Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
+            
             <div>
                 <h2>Gigs Cafe</h2>
                 <span>Admin & POS System</span>

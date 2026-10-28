@@ -1,12 +1,13 @@
 /* Color Palette: Warm Artisan Coffee & Cream */
+/* Color Palette: Warm Artisan Coffee & Cream (Premium Roaster Vibe) */
 :root {
-    --cafe-dark: #2c1810;
-    --cafe-espresso: #1f110b;
-    --cafe-caramel: #c88a48;
-    --cafe-cream: #fbf8f5;
-    --cafe-border: #e8ded4;
-    --text-main: #332722;
-    --text-muted: #7a6e67;
+    --cafe-dark: #18181b;
+    --cafe-espresso: #27272a;
+    --cafe-caramel: #d97706;
+    --cafe-cream: #f8f6f0;
+    --cafe-border: #e2d7cc;
+    --text-main: #27272a;
+    --text-muted: #71717a;
     --status-pending: #f59e0b;
     --status-preparing: #3b82f6;
     --status-delivery: #8b5cf6;
@@ -905,4 +906,69 @@ html {
     gap: 12px !important;
     z-index: 2;
     margin-left: auto !important;
+}
+/* =============================================================
+   MOBILE NAVIGATION FIX (< 768px)
+   ============================================================= */
+@media (max-width: 768px) {
+    .top-nav-bar .nav-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 8px 14px !important;
+        gap: 6px 0 !important;
+    }
+
+    /* Row 1 Left: Brand Logo */
+    .top-nav-bar .nav-brand {
+        order: 1 !important;
+    }
+
+    .top-nav-bar .nav-brand img {
+        height: 32px !important;
+        width: 32px !important;
+    }
+
+    .top-nav-bar .nav-brand .brand-text {
+        font-size: 1.1rem !important;
+    }
+
+    /* Row 1 Right: Cart & Auth Buttons */
+    .top-nav-bar .nav-actions {
+        order: 2 !important;
+        margin-left: auto !important;
+        gap: 8px !important;
+    }
+
+    .top-nav-bar .btn,
+    .top-nav-bar .btn-signin,
+    .top-nav-bar .btn-logout,
+    .top-nav-bar .cart-btn {
+        padding: 6px 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Row 2: Nav Links centered beneath Row 1 */
+    .top-nav-bar .nav-links {
+        order: 3 !important;
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 4px 0 0 0 !important;
+        padding: 8px 0 2px 0 !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .top-nav-bar .nav-links a {
+        font-size: 0.9rem !important;
+        padding: 4px 6px !important;
+        display: inline-block !important;
+    }
 }

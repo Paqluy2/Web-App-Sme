@@ -6,6 +6,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 $isCustomerLoggedIn = isset($_SESSION['customer_id']);
 $orders = [];
 
@@ -22,9 +26,9 @@ if ($isCustomerLoggedIn) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gigs Cafe - Order Tracking</title>
+    <title>GIGS CAFÉ </title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/customer.css">
+    <link rel="stylesheet" href="assets/css/customer.css?v=2.0">
 </head>
 
 <body>
@@ -34,7 +38,7 @@ if ($isCustomerLoggedIn) {
         <div class="nav-container">
             <a href="index.php" class="nav-brand">
                 <img src="images/logocafe.jpg" alt="Logo" onerror="this.style.display='none'">
-                <span class="brand-text">GigsCafe</span>
+                <span class="brand-text">GIGS CAFÉ </span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
@@ -124,7 +128,7 @@ if ($isCustomerLoggedIn) {
     <div class="modal-overlay" id="authModal">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <h3 id="authModalTitle">Welcome to Gigs Cafe</h3>
+                <h3 id="authModalTitle">Welcome to GIGS CAFÉ </h3>
                 <button type="button" onclick="closeAuthModal()"
                     style="font-size:1.5rem; background:none; border:none; cursor:pointer;">&times;</button>
             </div>

@@ -115,11 +115,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Modal Triggers
-    window.openAuthModal = function (notice = '') {
-        const noticeEl = document.getElementById('authNotice');
-        if (noticeEl) noticeEl.textContent = notice;
-        authModal.style.display = 'flex';
-    };
+window.openAuthModal = function (notice = '') {
+    const modal = document.getElementById('authModal');
+    const noticeEl = document.getElementById('authNotice');
+    
+    // 1. Set any error messages (like "Please sign in to complete your checkout.")
+    if (noticeEl) noticeEl.textContent = notice;
+    
+    // 2. Open the login modal
+    if (modal) modal.style.display = 'flex';
+    showLoginForm();
+    
+    // 3. FORCE THE CART TO CLOSE automatically so they don't overlap
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    if (cartDrawer) cartDrawer.classList.remove('open');
+    if (cartOverlay) cartOverlay.classList.remove('open');
+};
 
     window.closeAuthModal = function () {
         authModal.style.display = 'none';
@@ -131,15 +143,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('authModalTitle').textContent = showRegister ? 'Register Account' : 'Welcome to Gigs Cafe';
     };
 
-    // 5. Checkout Execution
+   // 5. Checkout Execution
+    let isCheckingOut = false; // 1. Create a strict lock variable
+
     if (btnProceedCheckout) {
         btnProceedCheckout.addEventListener('click', async () => {
+            // 2. If already processing, kill the duplicate click instantly
+            if (isCheckingOut) return; 
+            
             if (cart.length === 0) return alert('Your cart is empty.');
 
-            const fulfillment = document.querySelector('input[name="cust_fulfillment"]:checked').value;
-
+            // 3. Lock the function so no other clicks can get through
+            isCheckingOut = true; 
             btnProceedCheckout.disabled = true;
             btnProceedCheckout.textContent = 'Submitting Order...';
+
+            const fulfillment = document.querySelector('input[name="cust_fulfillment"]:checked').value;
 
             try {
                 const response = await fetch('api/customer_api.php?action=checkout', {
@@ -159,13 +178,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     saveCart();
                     renderCart();
                     toggleCart(false);
+                    // Do NOT unlock if successful, let the page redirect
                     window.location.href = 'orders.php';
                 } else {
                     alert(`Order Error: ${result.message}`);
+                    isCheckingOut = false; // Unlock only if there was an error
+                    btnProceedCheckout.disabled = false;
+                    btnProceedCheckout.textContent = 'Place Online Order';
                 }
             } catch (err) {
                 alert('Connection failure when processing order.');
-            } finally {
+                isCheckingOut = false; // Unlock if the connection fails
                 btnProceedCheckout.disabled = false;
                 btnProceedCheckout.textContent = 'Place Online Order';
             }

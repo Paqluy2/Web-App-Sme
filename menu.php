@@ -3,8 +3,9 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/config/db.php';
 if (!function_exists('sanitize')) {
-    function sanitize(?string $data): string {
-        return htmlspecialchars((string)($data ?? ''), ENT_QUOTES, 'UTF-8');
+    function sanitize(?string $data): string
+    {
+        return htmlspecialchars((string) ($data ?? ''), ENT_QUOTES, 'UTF-8');
     }
 }
 if (session_status() === PHP_SESSION_NONE) {
@@ -16,6 +17,10 @@ $db = getDB();
 // Pull all products grouped by category and name
 $stmt = $db->query("SELECT * FROM menu_product ORDER BY Product_type, Product_name, size");
 $allProducts = $stmt->fetchAll();
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 $grouped = [];
 foreach ($allProducts as $p) {
@@ -38,15 +43,16 @@ $categoryFolderMap = [
 ];
 $categories = array_keys($categoryFolderMap);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gigs Cafe - Drink Menu</title>
+    <title>GIGS CAFÉ </title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/customer.css">
+    <link rel="stylesheet" href="assets/css/customer.css?v=2.0">
 </head>
 
 <body>
@@ -56,7 +62,7 @@ $categories = array_keys($categoryFolderMap);
         <div class="nav-container">
             <a href="index.php" class="nav-brand">
                 <img src="images/logocafe.jpg" alt="Logo" onerror="this.style.display='none'">
-                <span class="brand-text">GigsCafe</span>
+                <span class="brand-text">GIGS CAFÉ </span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
@@ -87,39 +93,29 @@ $categories = array_keys($categoryFolderMap);
 
         <!-- Category Pills -->
         <!-- JellyRadio Category Filter Bar -->
-<div class="jelly-radio jelly-radio--categories" role="radiogroup" aria-label="Drink Categories" id="jelly-categories">
-    <!-- "All Drinks" Chip (Index 0) -->
-    <button 
-        type="button" 
-        role="radio" 
-        aria-checked="true"
-        class="jelly-radio__chip cat-btn active" 
-        data-on="true"
-        data-category="all"
-        onclick="window.selectJellyCategory(0, 'all', this)">
-        <span class="jelly-radio__skin">
-            <span class="jelly-radio__label">All Drinks</span>
-        </span>
-    </button>
+        <div class="jelly-radio jelly-radio--categories" role="radiogroup" aria-label="Drink Categories"
+            id="jelly-categories">
+            <!-- "All Drinks" Chip (Index 0) -->
+            <button type="button" role="radio" aria-checked="true" class="jelly-radio__chip cat-btn active"
+                data-on="true" data-category="all" onclick="window.selectJellyCategory(0, 'all', this)">
+                <span class="jelly-radio__skin">
+                    <span class="jelly-radio__label">All Drinks</span>
+                </span>
+            </button>
 
-    <!-- Dynamic Category Chips (Index 1..N) -->
-    <?php foreach ($categories as $idx => $catName): 
-        $chipIndex = $idx + 1;
-    ?>
-        <button 
-            type="button" 
-            role="radio" 
-            aria-checked="false"
-            class="jelly-radio__chip cat-btn" 
-            data-on="false"
-            data-category="<?= htmlspecialchars($catName) ?>"
-            onclick="window.selectJellyCategory(<?= $chipIndex ?>, '<?= htmlspecialchars($catName, ENT_QUOTES) ?>', this)">
-            <span class="jelly-radio__skin">
-                <span class="jelly-radio__label"><?= htmlspecialchars($catName) ?></span>
-            </span>
-        </button>
-    <?php endforeach; ?>
-</div>
+            <!-- Dynamic Category Chips (Index 1..N) -->
+            <?php foreach ($categories as $idx => $catName):
+                $chipIndex = $idx + 1;
+                ?>
+                <button type="button" role="radio" aria-checked="false" class="jelly-radio__chip cat-btn" data-on="false"
+                    data-category="<?= htmlspecialchars($catName) ?>"
+                    onclick="window.selectJellyCategory(<?= $chipIndex ?>, '<?= htmlspecialchars($catName, ENT_QUOTES) ?>', this)">
+                    <span class="jelly-radio__skin">
+                        <span class="jelly-radio__label"><?= htmlspecialchars($catName) ?></span>
+                    </span>
+                </button>
+            <?php endforeach; ?>
+        </div>
 
         <!-- Products Grid -->
         <div class="product-grid">
@@ -179,8 +175,8 @@ $categories = array_keys($categoryFolderMap);
         <div class="cart-drawer-header">
             <h3>Your Cart</h3>
             <button type="button" class="btn-del" id="closeCartBtn"
-    onclick="document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('cartOverlay').style.display='none';"
-    style="font-size:1.8rem; background:none; border:none; cursor:pointer; padding: 4px 10px;">&times;</button>
+                onclick="document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('cartOverlay').style.display='none';"
+                style="font-size:1.8rem; background:none; border:none; cursor:pointer; padding: 4px 10px;">&times;</button>
         </div>
         <div class="cart-drawer-body" id="cartItemsList"></div>
         <div class="cart-drawer-footer">
@@ -297,170 +293,171 @@ $categories = array_keys($categoryFolderMap);
         };
     </script>
     <script>
-(function() {
-    // 1. Jelly Physics Config (For Category Bar Only)
-    const JELLY_CFG = {
-        swell: 0.2,
-        barge: 6,
-        shrink: 0.05,
-        jelly: 1,
-        bounce: 0.25,
-        stagger: 22,
-        stiffness: 580
-    };
+        (function () {
+            // 1. Jelly Physics Config (For Category Bar Only)
+            const JELLY_CFG = {
+                swell: 0.2,
+                barge: 6,
+                shrink: 0.05,
+                jelly: 1,
+                bounce: 0.25,
+                stagger: 22,
+                stiffness: 580
+            };
 
-    const chipStates = new WeakMap();
+            const chipStates = new WeakMap();
 
-    function getChipState(el) {
-        if (!chipStates.has(el)) {
-            chipStates.set(el, {
-                x: { val: 0, vel: 0, target: 0 },
-                sx: { val: 1, vel: 0, target: 1 },
-                sy: { val: 1, vel: 0, target: 1 },
-                raf: null
-            });
-        }
-        return chipStates.get(el);
-    }
+            function getChipState(el) {
+                if (!chipStates.has(el)) {
+                    chipStates.set(el, {
+                        x: { val: 0, vel: 0, target: 0 },
+                        sx: { val: 1, vel: 0, target: 1 },
+                        sy: { val: 1, vel: 0, target: 1 },
+                        raf: null
+                    });
+                }
+                return chipStates.get(el);
+            }
 
-    function stepSpring(axis, k, m, bounce, dt) {
-        const damping = 2 * Math.sqrt(k * m) * (1 - bounce);
-        const force = -k * (axis.val - axis.target) - damping * axis.vel;
-        const accel = force / m;
-        axis.vel += accel * dt;
-        axis.val += axis.vel * dt;
-        return Math.abs(axis.vel) > 0.001 || Math.abs(axis.target - axis.val) > 0.001;
-    }
+            function stepSpring(axis, k, m, bounce, dt) {
+                const damping = 2 * Math.sqrt(k * m) * (1 - bounce);
+                const force = -k * (axis.val - axis.target) - damping * axis.vel;
+                const accel = force / m;
+                axis.vel += accel * dt;
+                axis.val += axis.vel * dt;
+                return Math.abs(axis.vel) > 0.001 || Math.abs(axis.target - axis.val) > 0.001;
+            }
 
-    function animateChip(el, targetX, targetS, far, instant) {
-        const state = getChipState(el);
-        state.x.target = targetX;
-        state.sx.target = targetS;
-        state.sy.target = targetS;
+            function animateChip(el, targetX, targetS, far, instant) {
+                const state = getChipState(el);
+                state.x.target = targetX;
+                state.sx.target = targetS;
+                state.sy.target = targetS;
 
-        if (instant) {
-            state.x.val = targetX; state.x.vel = 0;
-            state.sx.val = targetS; state.sx.vel = 0;
-            state.sy.val = targetS; state.sy.vel = 0;
-            el.style.transform = `translateX(${targetX.toFixed(2)}px) scale(${targetS}, ${targetS})`;
-            return;
-        }
+                if (instant) {
+                    state.x.val = targetX; state.x.vel = 0;
+                    state.sx.val = targetS; state.sx.vel = 0;
+                    state.sy.val = targetS; state.sy.vel = 0;
+                    el.style.transform = `translateX(${targetX.toFixed(2)}px) scale(${targetS}, ${targetS})`;
+                    return;
+                }
 
-        if (state.raf) cancelAnimationFrame(state.raf);
+                if (state.raf) cancelAnimationFrame(state.raf);
 
-        const C = JELLY_CFG;
-        const k = C.stiffness * (1 - 0.12 * Math.min(far, 3));
-        const j = C.jelly;
+                const C = JELLY_CFG;
+                const k = C.stiffness * (1 - 0.12 * Math.min(far, 3));
+                const j = C.jelly;
 
-        const kx = k * (1 + 0.24 * j);
-        const mx = 0.9 - 0.1 * j;
-        const bx = Math.min(0.85, C.bounce + 0.3 * j);
+                const kx = k * (1 + 0.24 * j);
+                const mx = 0.9 - 0.1 * j;
+                const bx = Math.min(0.85, C.bounce + 0.3 * j);
 
-        const ky = k * (1 - 0.14 * j);
-        const my = 0.9 + 0.05 * j;
-        const by = C.bounce;
+                const ky = k * (1 - 0.14 * j);
+                const my = 0.9 + 0.05 * j;
+                const by = C.bounce;
 
-        let lastTime = performance.now();
+                let lastTime = performance.now();
 
-        function tick(now) {
-            const dt = Math.min((now - lastTime) / 1000, 0.032);
-            lastTime = now;
+                function tick(now) {
+                    const dt = Math.min((now - lastTime) / 1000, 0.032);
+                    lastTime = now;
 
-            const movingX = stepSpring(state.x, k, 0.9, C.bounce, dt);
-            const movingSX = stepSpring(state.sx, kx, mx, bx, dt);
-            const movingSY = stepSpring(state.sy, ky, my, by, dt);
+                    const movingX = stepSpring(state.x, k, 0.9, C.bounce, dt);
+                    const movingSX = stepSpring(state.sx, kx, mx, bx, dt);
+                    const movingSY = stepSpring(state.sy, ky, my, by, dt);
 
-            el.style.transform = `translateX(${state.x.val.toFixed(2)}px) scale(${state.sx.val.toFixed(4)}, ${state.sy.val.toFixed(4)})`;
+                    el.style.transform = `translateX(${state.x.val.toFixed(2)}px) scale(${state.sx.val.toFixed(4)}, ${state.sy.val.toFixed(4)})`;
 
-            if (movingX || movingSX || movingSY) {
+                    if (movingX || movingSX || movingSY) {
+                        state.raf = requestAnimationFrame(tick);
+                    } else {
+                        el.style.transform = `translateX(${targetX.toFixed(2)}px) scale(${targetS}, ${targetS})`;
+                        state.raf = null;
+                    }
+                }
+
                 state.raf = requestAnimationFrame(tick);
-            } else {
-                el.style.transform = `translateX(${targetX.toFixed(2)}px) scale(${targetS}, ${targetS})`;
-                state.raf = null;
             }
-        }
 
-        state.raf = requestAnimationFrame(tick);
-    }
+            function applyCategoryJelly(selectedIndex, instant = false) {
+                const group = document.getElementById('jelly-categories');
+                if (!group) return;
+                const chips = Array.from(group.querySelectorAll('.jelly-radio__chip'));
+                if (!chips.length) return;
 
-    function applyCategoryJelly(selectedIndex, instant = false) {
-        const group = document.getElementById('jelly-categories');
-        if (!group) return;
-        const chips = Array.from(group.querySelectorAll('.jelly-radio__chip'));
-        if (!chips.length) return;
+                const C = JELLY_CFG;
+                const selWidth = chips[selectedIndex]?.offsetWidth || 85;
+                const push = (selWidth * C.swell) / 2 + C.barge;
 
-        const C = JELLY_CFG;
-        const selWidth = chips[selectedIndex]?.offsetWidth || 85;
-        const push = (selWidth * C.swell) / 2 + C.barge;
+                chips.forEach((chip, i) => {
+                    const isOn = i === selectedIndex;
+                    chip.setAttribute('data-on', isOn ? 'true' : 'false');
+                    chip.setAttribute('aria-checked', isOn ? 'true' : 'false');
+                    chip.classList.toggle('active', isOn);
 
-        chips.forEach((chip, i) => {
-            const isOn = i === selectedIndex;
-            chip.setAttribute('data-on', isOn ? 'true' : 'false');
-            chip.setAttribute('aria-checked', isOn ? 'true' : 'false');
-            chip.classList.toggle('active', isOn);
+                    const far = Math.abs(i - selectedIndex);
+                    const dir = Math.sign(i - selectedIndex);
+                    const targetX = dir * push;
+                    const targetS = isOn ? 1 + C.swell : 1 - C.shrink;
 
-            const far = Math.abs(i - selectedIndex);
-            const dir = Math.sign(i - selectedIndex);
-            const targetX = dir * push;
-            const targetS = isOn ? 1 + C.swell : 1 - C.shrink;
-
-            if (instant) {
-                animateChip(chip, targetX, targetS, far, true);
-            } else {
-                setTimeout(() => {
-                    animateChip(chip, targetX, targetS, far, false);
-                }, far * C.stagger);
+                    if (instant) {
+                        animateChip(chip, targetX, targetS, far, true);
+                    } else {
+                        setTimeout(() => {
+                            animateChip(chip, targetX, targetS, far, false);
+                        }, far * C.stagger);
+                    }
+                });
             }
-        });
-    }
 
-    // 2. Category Click Handler (With Jelly Animation)
-    window.selectJellyCategory = function(selectedIndex, category) {
-        applyCategoryJelly(selectedIndex, false);
+            // 2. Category Click Handler (With Jelly Animation)
+            window.selectJellyCategory = function (selectedIndex, category) {
+                applyCategoryJelly(selectedIndex, false);
 
-        const normalizedTarget = (category || 'all').trim().toLowerCase();
-        document.querySelectorAll('.customer-product-card').forEach(card => {
-            const cardCat = (card.getAttribute('data-category') || '').trim().toLowerCase();
-            if (normalizedTarget === 'all' || normalizedTarget === 'all drinks' || cardCat === normalizedTarget) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    };
+                const normalizedTarget = (category || 'all').trim().toLowerCase();
+                document.querySelectorAll('.customer-product-card').forEach(card => {
+                    const cardCat = (card.getAttribute('data-category') || '').trim().toLowerCase();
+                    if (normalizedTarget === 'all' || normalizedTarget === 'all drinks' || cardCat === normalizedTarget) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            };
 
-    // 3. 16oz / 22oz Size Click Handler (Original Static Toggle - No Jelly/Hover)
-    window.selectDrinkSize = function(hash, productId, price, size, btn) {
-        const card = document.getElementById('card-' + hash);
-        if (card) {
-            card.querySelectorAll('.size-opt').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
+            // 3. 16oz / 22oz Size Click Handler (Original Static Toggle - No Jelly/Hover)
+            window.selectDrinkSize = function (hash, productId, price, size, btn) {
+                const card = document.getElementById('card-' + hash);
+                if (card) {
+                    card.querySelectorAll('.size-opt').forEach(b => b.classList.remove('active'));
+                    if (btn) btn.classList.add('active');
 
-            const priceEl = card.querySelector('.product-price, .price, strong');
-            if (priceEl) {
-                priceEl.textContent = '₱' + Number(price).toFixed(2);
-            }
-        }
+                    const priceEl = card.querySelector('.product-price, .price, strong');
+                    if (priceEl) {
+                        priceEl.textContent = '₱' + Number(price).toFixed(2);
+                    }
+                }
 
-        const addBtn = document.getElementById('btn-' + hash);
-        if (addBtn) {
-            addBtn.setAttribute('data-id', productId);
-            addBtn.setAttribute('data-price', price);
-            addBtn.setAttribute('data-size', size);
-            const baseName = addBtn.getAttribute('data-base-name') 
-                          || addBtn.getAttribute('data-name').replace(/\s*\(\d+oz\)/i, '').trim();
-            addBtn.setAttribute('data-name', `${baseName} (${size})`);
-        }
-    };
+                const addBtn = document.getElementById('btn-' + hash);
+                if (addBtn) {
+                    addBtn.setAttribute('data-id', productId);
+                    addBtn.setAttribute('data-price', price);
+                    addBtn.setAttribute('data-size', size);
+                    const baseName = addBtn.getAttribute('data-base-name')
+                        || addBtn.getAttribute('data-name').replace(/\s*\(\d+oz\)/i, '').trim();
+                    addBtn.setAttribute('data-name', `${baseName} (${size})`);
+                }
+            };
 
-    // Initialize Category Bar on load
-    document.addEventListener('DOMContentLoaded', () => {
-        applyCategoryJelly(0, true);
-    });
-})();
-</script>
+            // Initialize Category Bar on load
+            document.addEventListener('DOMContentLoaded', () => {
+                applyCategoryJelly(0, true);
+            });
+        })();
+    </script>
 
-    <script src="assets/js/customer.js?v=2"></script>
+ 
 </body>
+<?php require_once __DIR__ . '/includes/customer_footer.php'; ?>
 
 </html>

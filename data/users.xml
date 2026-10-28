@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users last_updated="2026-10-22 22:47:49">
+<users last_updated="2026-10-28 22:55:19">
   <user>
     <user_type>Employee / Admin</user_type>
     <id>1</id>
@@ -50,6 +50,14 @@
     <name>Joseph Cristobal</name>
     <email_or_username>paqluy077@gmail.com</email_or_username>
     <phone>09064995975</phone>
+    <role>Customer</role>
+  </user>
+  <user>
+    <user_type>Customer</user_type>
+    <id>9</id>
+    <name>Paqluy</name>
+    <email_or_username>cristobal57@gmail.com</email_or_username>
+    <phone>33333333333</phone>
     <role>Customer</role>
   </user>
 </users>

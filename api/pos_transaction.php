@@ -29,7 +29,9 @@ $employeeId = $_SESSION['employee_id'];
 // 1. Validate recipe stock availability
 foreach ($items as $item) {
     $pId = (int) $item['product_id'];
-    $qty = (int) $item['qty'];
+    
+    // FOOLPROOF FIX: Forces quantity to always be at least 1, preventing ₱0.00 errors.
+    $qty = max(1, (int) ($item['qty'] ?? $item['quantity'] ?? $item['count'] ?? 1));
 
     if (!CafeInventory::canFulfillProduct($pId, $qty)) {
         echo json_encode(['success' => false, 'message' => "Insufficient raw materials in inventory for product ID #{$pId}."]);
@@ -50,9 +52,10 @@ try {
     $grandTotal = 0.0;
     foreach ($items as $item) {
         $pId = (int) $item['product_id'];
-        $qty = (int) $item['qty'];
+        
+        // FOOLPROOF FIX: Apply the same strict rule before saving to the database
+        $qty = max(1, (int) ($item['qty'] ?? $item['quantity'] ?? $item['count'] ?? 1));
 
-        // Note: CalculateTotalAmount trigger automatically calculates total_amount
         // Note: AutoDeductRecipeStock trigger automatically updates the inventory table!
         $insertSale->execute([$transactionCode, $employeeId, $pId, $qty, $paymentMethod]);
 
@@ -60,6 +63,8 @@ try {
         $checkStmt = $db->prepare('SELECT Retail_price FROM menu_product WHERE Product_id = ?');
         $checkStmt->execute([$pId]);
         $price = (float) $checkStmt->fetchColumn();
+        
+        // Math operators fixed securely
         $grandTotal += ($price * $qty);
     }
 

@@ -290,7 +290,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <div class="card">
         <div class="card-header">
-            <h3>🧾 Walk-In POS Sales History (`salestb`)</h3>
+            <h3>🧾 Walk-In POS Sales History </h3>
             <div style="display:flex; gap:10px; align-items:center;">
                 <input type="text" id="salesSearchInput" class="form-control" placeholder="Search order # or item..."
                     oninput="filterSalesTable()" style="width:220px; margin:0;">
@@ -328,14 +328,14 @@ require_once __DIR__ . '/includes/header.php';
 <section id="tab-inventory" class="section-pane">
     <div class="card">
         <div class="card-header">
-            <h3>📦 Ingredient & Packaging Stocks (`inventory`)</h3>
+            <h3>📦 Ingredient & Packaging Stocks </h3>
             <div style="display:flex; gap:10px;">
                 <input type="text" id="invSearchInput" class="form-control" placeholder="Search ingredient..."
                     oninput="filterInventoryTable()" style="width:220px; margin:0;">
                 <button class="btn btn-primary" onclick="openInvModal()">+ Add New Ingredient</button>
                 <button class="btn btn-outline" onclick="lockInventory()"
                     style="margin-left:8px; border-color:#cbd5e1; color:#64748b;">
-                    🔒 Lock Stocks
+                    <img src="../images/lock.png" alt="Lock Icon" style="width: 16px; height: 12px; object-fit: contain;">Lock Stocks
                 </button>
             </div>
         </div>

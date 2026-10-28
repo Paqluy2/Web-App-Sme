@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<restock_logs last_updated="2026-10-22 22:47:49">
+<restock_logs last_updated="2026-10-28 22:55:19">
   <stock_item>
     <material_id>5000</material_id>
     <category>Coffee Beans &amp; Tea</category>
     <material_name>Italian Espresso</material_name>
-    <current_stock>4790</current_stock>
+    <current_stock>6790</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
     <material_id>5001</material_id>
     <category>Coffee Beans &amp; Tea</category>
     <material_name>Assam Black Tea</material_name>
-    <current_stock>44290</current_stock>
+    <current_stock>40610</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -25,7 +25,7 @@
     <material_id>5003</material_id>
     <category>Sinker Add-ons</category>
     <material_name>black pearls</material_name>
-    <current_stock>2740</current_stock>
+    <current_stock>1940</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -46,14 +46,14 @@
     <material_id>5006</material_id>
     <category>Sinker Add-ons</category>
     <material_name>Crushed Oreo</material_name>
-    <current_stock>4000</current_stock>
+    <current_stock>3960</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
     <material_id>5007</material_id>
     <category>Syrups</category>
     <material_name>Fructose</material_name>
-    <current_stock>4190</current_stock>
+    <current_stock>4010</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -67,7 +67,7 @@
     <material_id>5009</material_id>
     <category>Syrups</category>
     <material_name>Salted Caramel Syrup</material_name>
-    <current_stock>3760</current_stock>
+    <current_stock>3420</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -88,7 +88,7 @@
     <material_id>5012</material_id>
     <category>Syrups</category>
     <material_name>Vanilla Syrup</material_name>
-    <current_stock>4940</current_stock>
+    <current_stock>4910</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -116,7 +116,7 @@
     <material_id>5016</material_id>
     <category>Syrups</category>
     <material_name>Winter melon Syrup</material_name>
-    <current_stock>4430</current_stock>
+    <current_stock>4000</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -130,7 +130,7 @@
     <material_id>5018</material_id>
     <category>Syrups</category>
     <material_name>Okinawa Syrup</material_name>
-    <current_stock>4900</current_stock>
+    <current_stock>4860</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -193,7 +193,7 @@
     <material_id>5027</material_id>
     <category>Sauces</category>
     <material_name>Da Vinci Dark Chocolate</material_name>
-    <current_stock>4940</current_stock>
+    <current_stock>4930</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -256,14 +256,14 @@
     <material_id>5036</material_id>
     <category>Dairy Products</category>
     <material_name>Fresh Milk</material_name>
-    <current_stock>48500</current_stock>
+    <current_stock>48380</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
     <material_id>5037</material_id>
     <category>Dairy Products</category>
     <material_name>whipped Cream</material_name>
-    <current_stock>610</current_stock>
+    <current_stock>590</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -291,7 +291,7 @@
     <material_id>5041</material_id>
     <category>Powders</category>
     <material_name>Creamer</material_name>
-    <current_stock>1110</current_stock>
+    <current_stock>310</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -368,7 +368,7 @@
     <material_id>5052</material_id>
     <category>Dry Materials</category>
     <material_name>WHITE Cold Cup (16 oz)</material_name>
-    <current_stock>925</current_stock>
+    <current_stock>901</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
@@ -403,7 +403,7 @@
     <material_id>5057</material_id>
     <category>Dry Materials</category>
     <material_name>Hot Cup (16 oz)</material_name>
-    <current_stock>495</current_stock>
+    <current_stock>494</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
@@ -424,7 +424,7 @@
     <material_id>5060</material_id>
     <category>Packaging / Miscellaneous</category>
     <material_name>Flat Lid</material_name>
-    <current_stock>918</current_stock>
+    <current_stock>893</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
@@ -438,7 +438,7 @@
     <material_id>5062</material_id>
     <category>Packaging / Miscellaneous</category>
     <material_name>Straw (Big)</material_name>
-    <current_stock>2418</current_stock>
+    <current_stock>2393</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>

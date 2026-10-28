@@ -1,12 +1,19 @@
 :root {
-    --primary: #1e3a8a;
-    --primary-hover: #172554;
-    --secondary: #64748b;
-    --accent: #0ea5e9;
+    /* --- 10% ACCENT (Buttons & Highlights) --- */
+    --primary: #1d4ed8;       
+    --primary-hover: #1e40af; 
+    --accent: #d97706;        
+
+    /* --- 30% SECONDARY (Text & Structure) --- */
+    --secondary: #27272a;     
+
+    /* --- 60% DOMINANT (Backgrounds & Lines) --- */
+    --bg-light: #f8f6f0;      
+    --border-color: #e2d7cc;  
+
+    /* --- SEMANTIC COLORS & FONTS (Kept exactly the same) --- */
     --danger: #ef4444;
     --success: #10b981;
-    --bg-light: #f8fafc;
-    --border-color: #e2e8f0;
     --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 

@@ -31,7 +31,7 @@ $db->beginTransaction();
 $txnCode = 'WEB-' . date('YmdHis') . '-' . strtoupper(bin2hex(random_bytes(2)));
 
 try {
-    $deliveryFee = ($fulfillment['type'] === 'Delivery') ? FLAT_DELIVERY_FEE : 0.00;
+    $deliveryFee = ($fulfillment['type'] === 'Delivery') ? (defined('FLAT_DELIVERY_FEE') ? FLAT_DELIVERY_FEE : 50.00) : 0.00;
 
     // Insert into online_orders table
     $stmtOrder = $db->prepare('
