@@ -131,7 +131,6 @@ foreach ($salesRaw as $row) {
         'date' => $date
     ];
 }
-
 // 4. Load Online Orders (Joined with customers)
 $onlineRaw = safeQuery($db, "
     SELECT 
@@ -142,6 +141,7 @@ $onlineRaw = safeQuery($db, "
         o.delivery_address,
         o.grand_total,
         o.created_at,
+        o.ip_address, 
         c.full_name,
         c.phone
     FROM online_orders o
@@ -165,6 +165,24 @@ foreach ($onlineRaw as $row) {
     $total = (float) ($row['grand_total'] ?? 0.0);
     $status = (string) ($row['order_status'] ?? 'Pending');
     $date = (string) ($row['created_at'] ?? date('Y-m-d H:i:s'));
+    $ip = (string) ($row['ip_address'] ?? '');
+    $stmtItems = $db->prepare("
+        SELECT m.Product_name, s.quantity_sold 
+        FROM salestb s 
+        LEFT JOIN menu_product m ON s.product_id = m.Product_id 
+        WHERE s.transaction_code = ?
+    ");
+    $stmtItems->execute([$ordNo]);
+    $orderItems = $stmtItems->fetchAll();
+
+    // Build the HTML list of items (e.g., "2x Matcha Tea Latte")
+    $itemsHtml = '';
+    foreach ($orderItems as $item) {
+        $itemsHtml .= "<li>" . (int)$item['quantity_sold'] . "x " . htmlspecialchars((string)$item['Product_name']) . "</li>";
+    }
+    if (empty($itemsHtml)) {
+        $itemsHtml = "<li><em>No items found</em></li>";
+    }
 
     if (strtolower($status) === 'pending') {
         $pendingOnlineCount++;
@@ -182,7 +200,9 @@ foreach ($onlineRaw as $row) {
         'addr' => $addr,
         'total' => $total,
         'status' => $status,
-        'date' => $date
+        'date' => $date,
+        'ip_address' => $ip,
+        'items_html' => $itemsHtml
     ];
 }
 require_once __DIR__ . '/../export_xml.php';
@@ -873,7 +893,7 @@ $analyticsChartData = [
             <div class="brand-logo"><img src="../images/logocafe.jpg" alt="Gigs Cafe Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
             
             <div>
-                <h2>Gigs Cafe</h2>
+                <h2>GIGS CAFÉ</h2>
                 <span>Admin & POS System</span>
             </div>
         </div>

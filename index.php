@@ -14,6 +14,7 @@ $isCustomerLoggedIn = isset($_SESSION['customer_id']);
 $customerName = $_SESSION['customer_name'] ?? 'Account';
 $currentPage = 'index.php';
 ?>
+<?php require_once 'config/firewall.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +60,7 @@ $currentPage = 'index.php';
         <p>Discover our signature milk teas, slow-dripped espresso, iced blends, and refreshing fruit tea infusions.</p>
         <a href="menu.php" class="btn btn-primary btn-lg"
             style="background:var(--cafe-caramel); border:none; padding:14px 28px; border-radius:30px; text-decoration:none; display:inline-block;">
-            View Our Drink Menu 
+            View Our Drink Menu
         </a>
     </section>
 
@@ -107,18 +108,18 @@ $currentPage = 'index.php';
                 <span style="font-size:0.8rem; font-weight:700; color:var(--cafe-caramel);">SPECIAL PROMO</span>
                 <h3 style="margin:10px 0;">LIMITED TIME OFFER</h3>
                 <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">
-                   Get a🍟FREE Great Fries🍟 (Classic)! No tricks, 𝗝𝗨𝗦𝗧 𝗧𝗥𝗘𝗔𝗧𝗦! 👻💙
-For all that wants to hang out with drinks and free fries, what are you waiting for? 🤩🎉🥳
-This Oct. 26 - Nov. 2, 2026, enjoy our freebie for every purchase of 3 Iced Blends (any flavor). 
-FOR A LIMITED TIME ONLY! 🍟👻 Get ready, #GIGSFam!
+                    Get a🍟FREE Great Fries🍟 (Classic)! No tricks, 𝗝𝗨𝗦𝗧 𝗧𝗥𝗘𝗔𝗧𝗦! 👻💙
+                    For all that wants to hang out with drinks and free fries, what are you waiting for? 🤩🎉🥳
+                    This Oct. 26 - Nov. 2, 2026, enjoy our freebie for every purchase of 3 Iced Blends (any flavor).
+                    FOR A LIMITED TIME ONLY! 🍟👻 Get ready, #GIGSFam!
                 </p>
             </article>
         </div>
     </div>
 
-<?php require_once __DIR__ . '/includes/customer_footer.php'; ?>
+    <?php require_once __DIR__ . '/includes/customer_footer.php'; ?>
 
-    <!-- Customer Login & Direct Registration Modal -->
+ <!-- Customer Login & Direct Registration Modal -->
     <div class="modal-overlay" id="authModal">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
@@ -133,13 +134,31 @@ FOR A LIMITED TIME ONLY! 🍟👻 Get ready, #GIGSFam!
             <form id="customerLoginForm" method="POST" action="customer_auth.php?action=login">
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" name="email" class="form-control" required placeholder="juan@gmail.com" autocapitalize="none" autocorrect="off">
+                    <input type="email" name="email" class="form-control" required placeholder="juan@gmail.com"
+                        autocapitalize="none" autocorrect="off">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" required autocapitalize="none" autocorrect="off">
+                    <input type="password" name="password" class="form-control" required autocapitalize="none"
+                        autocorrect="off">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                
+                <!-- Google Login Section Added Here -->
+                <div style="text-align: center; margin: 15px 0; color: var(--text-muted); font-size: 0.85rem; font-weight: bold;">
+                    — OR —
+                </div>
+                
+                <!-- The Google Button -->
+                <div id="g_id_onload"
+                     data-client_id="595592701169-rpfbal35qkmri3vu925okcj1a5ta1936.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-callback="handleGoogleLogin"
+                     data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left" data-width="100%" style="margin-bottom: 12px;"></div>
+                
                 <p style="text-align:center; margin-top:12px; font-size:0.85rem;">
                     New customer? <a href="javascript:void(0)" onclick="showRegisterForm()">Create an Account</a>
                 </p>
@@ -173,50 +192,25 @@ FOR A LIMITED TIME ONLY! 🍟👻 Get ready, #GIGSFam!
             </form>
         </div>
     </div>
-
-    <!-- 3. Registration Step 2: Enter SMS Code -->
-    <form id="otpStep2Form" style="display:none;" onsubmit="handleVerifyOtp(event)">
-        <div
-            style="background:#e0f2fe; color:#0369a1; padding:12px; border-radius:6px; font-size:0.85rem; margin-bottom:14px;">
-            Enter the 6-digit OTP sent to <strong id="displayTargetPhone"></strong>.
-        </div>
-        <div class="form-group">
-            <label style="font-weight:700;">6-Digit SMS Verification Code</label>
-            <input type="text" id="reg_otp" class="form-control" maxlength="6" pattern="[0-9]{6}" required
-                placeholder="000000" style="font-size:1.4rem; letter-spacing:6px; text-align:center; font-weight:700;">
-        </div>
-        <button type="submit" id="btnVerifyOtp" class="btn btn-primary btn-block">Verify Phone & Register</button>
-        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:0.85rem;">
-            <a href="javascript:void(0)" onclick="showRegisterStep1()">Change Number</a>
-            <a href="javascript:void(0)" onclick="resendOtp()">Resend Code</a>
-        </div>
-    </form>
-    </div>
-    </div>
-
-    <!-- Register Form (Clean 4-Field Setup) -->
-    <form id="customerRegisterForm" method="POST" action="customer_auth.php?action=register" style="display:none;">
-        <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" name="full_name" class="form-control" required placeholder="Juan Dela Cruz">
-        </div>
-        <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" name="email" class="form-control" required placeholder="juan@gmail.com">
-        </div>
-        <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" name="phone" class="form-control" required placeholder="09123456789">
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control" required minlength="6">
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Register Account</button>
-        <p style="text-align:center; margin-top:10px; font-size:0.85rem;">
-            Already have an account? <a href="#" onclick="toggleAuthForms(false)">Sign In</a>
-        </p>
-    </form>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+function handleGoogleLogin(response) {
+    fetch('api/google_auth.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: response.credential })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.success) {
+            window.location.href = 'index.php'; // Refresh to show logged-in state
+        } else {
+            alert('Google Login Failed: ' + data.message);
+        }
+    })
+    .catch(err => console.error("Error connecting to backend:", err));
+}
+</script>
 
     <script src="assets/js/customer.js?v=2"></script>
 </body>

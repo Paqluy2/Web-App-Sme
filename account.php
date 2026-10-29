@@ -70,6 +70,7 @@ if ($isCustomerLoggedIn) {
     $user = $stmt->fetch();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

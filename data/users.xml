@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users last_updated="2026-10-28 22:55:19">
+<users last_updated="2026-10-29 21:34:56">
   <user>
     <user_type>Employee / Admin</user_type>
     <id>1</id>
@@ -58,6 +58,22 @@
     <name>Paqluy</name>
     <email_or_username>cristobal57@gmail.com</email_or_username>
     <phone>33333333333</phone>
+    <role>Customer</role>
+  </user>
+  <user>
+    <user_type>Customer</user_type>
+    <id>10</id>
+    <name>JOYSIS Joseph Daniel Cristobal</name>
+    <email_or_username>sj4.jdcristobal26@joysistvi.edu.ph</email_or_username>
+    <phone>09981992282</phone>
+    <role>Customer</role>
+  </user>
+  <user>
+    <user_type>Customer</user_type>
+    <id>11</id>
+    <name>Sir Prize Madda Fakka</name>
+    <email_or_username>paqluy055@gmail.com</email_or_username>
+    <phone></phone>
     <role>Customer</role>
   </user>
 </users>

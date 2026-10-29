@@ -20,6 +20,7 @@ if ($isCustomerLoggedIn) {
     $orders = $stmt->fetchAll();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

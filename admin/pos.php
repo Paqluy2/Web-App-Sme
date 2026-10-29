@@ -229,63 +229,79 @@ require_once __DIR__ . '/includes/header.php';
         <div class="card-header">
             <h3>🌐 Online Customer Orders (Live Queue)</h3>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Order #</th>
-                    <th>Customer</th>
-                    <th>Phone</th>
-                    <th>Fulfillment</th>
-                    <th>Total</th>
-                    <th>Status</th>
-                    <th>Update Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($onlineOrders as $o): ?>
-                    <tr>
-                        <td><strong><?= htmlspecialchars((string) $o['ord_no']) ?></strong></td>
-                        <td><?= htmlspecialchars((string) $o['cust']) ?></td>
-                        <td><?= htmlspecialchars((string) $o['phone']) ?></td>
-                        <td>
-                            <?= htmlspecialchars((string) $o['type']) ?>
-                            <?php if (!empty($o['addr'])): ?>
-                                <small
-                                    style="display:block; color:var(--text-muted);"><?= htmlspecialchars((string) $o['addr']) ?></small>
-                            <?php endif; ?>
-                        </td>
-                        <td><strong>₱<?= number_format((float) $o['total'], 2) ?></strong></td>
-                        <td><span class="status-pill status-low"><?= htmlspecialchars((string) $o['status']) ?></span></td>
-                        <td>
-                            <select class="form-control"
-                                style="padding:5px 8px; font-size:0.85rem; width:auto; border-radius:6px; border:1px solid #cbd5e1; outline:none;"
-                                onchange="updateOnlineStatus(<?= (int) $o['id'] ?>, this.value)">
-                                <?php
-                                $isPickup = strtolower((string) ($o['type'] ?? 'pickup')) === 'pickup';
+<table>
+    <thead>
+        <tr>
+            <th>Order #</th>
+            <th>Customer</th>
+            <th>Phone</th>
+            <th>IP Address</th>
+            <th>Items Ordered</th>
+            <th>Fulfillment</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Update Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($onlineOrders as $o): ?>
+            <tr>
+                <td><strong><?= htmlspecialchars((string) $o['ord_no']) ?></strong></td>
+                <td><?= htmlspecialchars((string) $o['cust']) ?></td>
+                <td><?= htmlspecialchars((string) $o['phone']) ?></td>
+                
+                <!-- IP ADDRESS COLUMN -->
+                <td>
+                    <span style="font-family: monospace; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; user-select: all;">
+                        <?= !empty($o['ip_address']) ? htmlspecialchars((string) $o['ip_address']) : 'No IP' ?>
+                    </span>
+                </td>
 
-                                // Use "Ready for Pickup" for pickup orders, and "In Delivery" for delivery orders
-                                $statusList = $isPickup
-                                    ? ['Pending', 'Preparing', 'Ready for Pickup', 'Completed', 'Cancelled']
-                                    : ['Pending', 'Preparing', 'In Delivery', 'Completed', 'Cancelled'];
+                <!-- ITEMS ORDERED COLUMN -->
+<td>
+                    <ul style="margin: 0; padding-left: 15px; font-size: 0.85rem; color: #334155;">
+                        <?= $o['items_html'] ?>
+                    </ul>
+                </td>
+                
+                <!-- FULFILLMENT COLUMN -->
+                <td>
+                    <?= htmlspecialchars((string) $o['type']) ?>
+                    <?php if (!empty($o['addr'])): ?>
+                        <small style="display:block; color:var(--text-muted);"><?= htmlspecialchars((string) $o['addr']) ?></small>
+                    <?php endif; ?>
+                </td>
+                
+                <!-- TOTAL COLUMN -->
+                <td><strong>₱<?= number_format((float) $o['total'], 2) ?></strong></td>
+                
+                <!-- STATUS COLUMN -->
+                <td><span class="status-pill status-low"><?= htmlspecialchars((string) $o['status']) ?></span></td>
+                
+                <!-- UPDATE STATUS COLUMN -->
+                <td>
+                    <select class="form-control"
+                        style="padding:5px 8px; font-size:0.85rem; width:auto; border-radius:6px; border:1px solid #cbd5e1; outline:none;"
+                        onchange="updateOnlineStatus(<?= (int) $o['id'] ?>, this.value)">
+                        <?php
+                        $isPickup = strtolower((string) ($o['type'] ?? 'pickup')) === 'pickup';
+                        $statusList = $isPickup
+                            ? ['Pending', 'Preparing', 'Ready for Pickup', 'Completed', 'Cancelled']
+                            : ['Pending', 'Preparing', 'In Delivery', 'Completed', 'Cancelled'];
 
-                                foreach ($statusList as $st):
-                                    ?>
-                                    <option value="<?= htmlspecialchars($st) ?>"
-                                        <?= (strtolower(trim((string) $o['status'])) === strtolower(trim($st))) ? 'selected' : '' ?>>
-                                        <?= htmlspecialchars($st) ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-                <?php if (empty($onlineOrders)): ?>
-                    <tr>
-                        <td colspan="7" style="text-align:center; color:var(--text-muted);">No online orders found.</td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
+                        foreach ($statusList as $st):
+                            ?>
+                            <option value="<?= htmlspecialchars($st) ?>"
+                                <?= (strtolower(trim((string) $o['status'])) === strtolower(trim($st))) ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($st) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
     </div>
 
     <div class="card">

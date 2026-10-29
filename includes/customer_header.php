@@ -12,6 +12,7 @@ $isCustomerLoggedIn = !empty($_SESSION['customer_id']);
 $customerName       =$_SESSION['customer_name'] ?? 'Account';
 $currentPage        = basename($_SERVER['PHP_SELF']);
 ?>
+<?php require_once 'config/firewall.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 

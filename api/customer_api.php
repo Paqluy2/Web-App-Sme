@@ -80,14 +80,17 @@ if ($action === 'checkout') {
         $customerEmail = $_SESSION['customer_email'] ?? $customer['email'] ?? 'Unknown';
         $customerPhone = $_SESSION['customer_phone'] ?? $customer['phone'] ?? 'Unknown';
 
-        // Fixed: Added customer_name and customer_email to the INSERT query and the ? placeholders
-        $orderStmt = $db->prepare("
-            INSERT INTO online_orders (transaction_code, customer_id, customer_name, customer_email, customer_phone, fulfillment_type, delivery_address, subtotal, delivery_fee, grand_total, order_status, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending', NOW())
-        ");
-        
-        // Fixed: Added $customerName, $customerEmail, and $customerPhone to the execution array
-        $orderStmt->execute([$txnCode, $customerId, $customerName, $customerEmail, $customerPhone, $fulfillment, $formattedAddress, $subtotal, $deliveryFee, $grandTotal]);
+// 1. Grab the customer's IP address
+$customer_ip = $_SERVER['REMOTE_ADDR'];
+
+// 2. Insert into online_orders with the ip_address column added
+$orderStmt = $db->prepare("
+    INSERT INTO online_orders (transaction_code, customer_id, customer_name, customer_email, customer_phone, fulfillment_type, delivery_address, subtotal, delivery_fee, grand_total, ip_address, order_status, created_at) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending', NOW())
+");
+
+// 3. Add $customer_ip to the execution array (right after $grandTotal)
+$orderStmt->execute([$txnCode, $customerId, $customerName, $customerEmail, $customerPhone, $fulfillment, $formattedAddress, $subtotal, $deliveryFee, $grandTotal, $customer_ip]);
 
         // Insert line items into salestb under system employee 999
         $saleStmt = $db->prepare("

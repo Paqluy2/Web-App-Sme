@@ -32,11 +32,13 @@ $txnCode = 'WEB-' . date('YmdHis') . '-' . strtoupper(bin2hex(random_bytes(2)));
 
 try {
     $deliveryFee = ($fulfillment['type'] === 'Delivery') ? (defined('FLAT_DELIVERY_FEE') ? FLAT_DELIVERY_FEE : 50.00) : 0.00;
+// 1. Grab the customer's IP address
+    $customer_ip = $_SERVER['REMOTE_ADDR'];
 
-    // Insert into online_orders table
+    // 2. Insert into online_orders table with the new ip_address column
     $stmtOrder = $db->prepare('
-        INSERT INTO online_orders (transaction_code, customer_name, customer_email, customer_phone, fulfillment_type, delivery_address, pickup_slot, delivery_fee)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO online_orders (transaction_code, customer_name, customer_email, customer_phone, fulfillment_type, delivery_address, pickup_slot, delivery_fee, ip_address)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     ');
     $stmtOrder->execute([
         $txnCode,
@@ -46,7 +48,8 @@ try {
         $fulfillment['type'],
         sanitize($fulfillment['address'] ?? ''),
         sanitize($fulfillment['slot'] ?? ''),
-        $deliveryFee
+        $deliveryFee,
+        $customer_ip // 3. Pass the IP address into the database
     ]);
 
     // Insert line items into salestb under system employee 999

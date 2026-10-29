@@ -98,12 +98,17 @@ if ($action === 'register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $email    = trim($_POST['email'] ?? '');
     $password = (string) ($_POST['password'] ?? '');
+    
 
     if ($email === '' || $password === '') {
         $_SESSION['auth_error'] = 'Please fill in both email and password.';
         header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? 'menu.php'));
         exit;
     }
+    if ($customer['is_banned'] == 1) {
+    echo json_encode(['success' => false, 'message' => 'This account has been suspended for violating our terms.']);
+    exit;
+}
 
     $stmt = $db->prepare("SELECT customer_id, full_name, email, password FROM customers WHERE email = ? LIMIT 1");
     $stmt->execute([$email]);
