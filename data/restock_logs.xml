@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<restock_logs last_updated="2026-10-29 21:34:56">
+<restock_logs last_updated="2026-10-29 22:33:42">
   <stock_item>
     <material_id>5000</material_id>
     <category>Coffee Beans &amp; Tea</category>
@@ -11,7 +11,7 @@
     <material_id>5001</material_id>
     <category>Coffee Beans &amp; Tea</category>
     <material_name>Assam Black Tea</material_name>
-    <current_stock>39210</current_stock>
+    <current_stock>39060</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -25,7 +25,7 @@
     <material_id>5003</material_id>
     <category>Sinker Add-ons</category>
     <material_name>black pearls</material_name>
-    <current_stock>1620</current_stock>
+    <current_stock>1590</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -116,7 +116,7 @@
     <material_id>5016</material_id>
     <category>Syrups</category>
     <material_name>Winter melon Syrup</material_name>
-    <current_stock>3870</current_stock>
+    <current_stock>3830</current_stock>
     <unit>ml</unit>
   </stock_item>
   <stock_item>
@@ -291,7 +291,7 @@
     <material_id>5041</material_id>
     <category>Powders</category>
     <material_name>Creamer</material_name>
-    <current_stock>-10</current_stock>
+    <current_stock>-40</current_stock>
     <unit>grams</unit>
   </stock_item>
   <stock_item>
@@ -368,7 +368,7 @@
     <material_id>5052</material_id>
     <category>Dry Materials</category>
     <material_name>WHITE Cold Cup (16 oz)</material_name>
-    <current_stock>892</current_stock>
+    <current_stock>891</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
@@ -424,7 +424,7 @@
     <material_id>5060</material_id>
     <category>Packaging / Miscellaneous</category>
     <material_name>Flat Lid</material_name>
-    <current_stock>884</current_stock>
+    <current_stock>883</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>
@@ -438,7 +438,7 @@
     <material_id>5062</material_id>
     <category>Packaging / Miscellaneous</category>
     <material_name>Straw (Big)</material_name>
-    <current_stock>2384</current_stock>
+    <current_stock>2383</current_stock>
     <unit>pcs</unit>
   </stock_item>
   <stock_item>

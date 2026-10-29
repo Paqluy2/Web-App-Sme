@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<transactions last_updated="2026-10-29 21:34:56">
+<transactions last_updated="2026-10-29 22:33:42">
+  <transaction>
+    <sales_id>1139</sales_id>
+    <transaction_code>ORD-20261029153311-35E1</transaction_code>
+    <employee_id>999</employee_id>
+    <product_id>3</product_id>
+    <quantity_sold>1</quantity_sold>
+    <total_amount>95.00</total_amount>
+    <payment_method>Online Order</payment_method>
+    <order_type>Pickup</order_type>
+    <sold_date>2026-10-29 22:33:11</sold_date>
+    <order_number></order_number>
+    <items></items>
+    <qty>1</qty>
+    <total>0.00</total>
+    <cash>0.00</cash>
+    <change_amount>0.00</change_amount>
+    <cashier>Admin</cashier>
+    <sale_date>2026-10-29 22:33:11</sale_date>
+  </transaction>
   <transaction>
     <sales_id>1138</sales_id>
     <transaction_code>ORD-20261029143152-B2EE</transaction_code>

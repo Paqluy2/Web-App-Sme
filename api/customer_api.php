@@ -81,7 +81,14 @@ if ($action === 'checkout') {
         $customerPhone = $_SESSION['customer_phone'] ?? $customer['phone'] ?? 'Unknown';
 
 // 1. Grab the customer's IP address
-$customer_ip = $_SERVER['REMOTE_ADDR'];
+$customer_ip = $_SERVER['REMOTE_ADDR']; // Default fallback
+if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    // Render often passes multiple IPs in a comma-separated list; the first one is the real customer
+    $ip_list = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+    $customer_ip = trim($ip_list[0]);
+} elseif (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $customer_ip = $_SERVER['HTTP_CLIENT_IP'];
+}
 
 // 2. Insert into online_orders with the ip_address column added
 $orderStmt = $db->prepare("

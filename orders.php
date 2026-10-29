@@ -47,22 +47,22 @@ if ($isCustomerLoggedIn) {
                 <li><a href="orders.php" class="active">Orders</a></li>
                 <li><a href="account.php">Account</a></li>
             </ul>
-            <div class="nav-actions">
-                <a href="menu.php" class="cart-btn" style="text-decoration:none;">🛒 Menu</a>
+            <div class="nav-actions"
+                style="display: flex; align-items: center; gap: 10px; flex-direction: row !important;">
                 <?php if ($isCustomerLoggedIn): ?>
                     <a href="customer_auth.php?action=logout" class="btn btn-sm btn-secondary">Sign Out</a>
                 <?php else: ?>
                     <button type="button" class="btn btn-sm btn-primary" onclick="openAuthModal()">Sign In</button>
                 <?php endif; ?>
             </div>
-        </div>
     </header>
 
     <main class="content-section" style="max-width:900px;">
         <h1 style="color:var(--cafe-dark); margin-bottom:8px;">Live Order Tracking</h1>
         <p style="color:var(--text-muted); margin-bottom:24px;">Orders can be cancelled while in
             <strong>Pending</strong> or <strong>Preparing</strong> status. Once marked <strong>In Delivery</strong>,
-            orders are locked.</p>
+            orders are locked.
+        </p>
 
         <?php if (!$isCustomerLoggedIn): ?>
             <div class="card-box" style="text-align:center; padding:40px;">
@@ -147,6 +147,22 @@ if ($isCustomerLoggedIn) {
                     <input type="password" name="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+
+                <!-- Google Login Section Added Here -->
+                <div
+                    style="text-align: center; margin: 15px 0; color: var(--text-muted); font-size: 0.85rem; font-weight: bold;">
+                    — OR —
+                </div>
+
+                <!-- The Google Button -->
+                <div id="g_id_onload"
+                    data-client_id="595592701169-rpfbal35qkmri3vu925okcj1a5ta1936.apps.googleusercontent.com"
+                    data-context="signin" data-ux_mode="popup" data-callback="handleGoogleLogin"
+                    data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                    data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left" data-width="100%"
+                    style="margin-bottom: 12px;"></div>
                 <p style="text-align:center; margin-top:12px; font-size:0.85rem;">
                     New customer? <a href="javascript:void(0)" onclick="showRegisterForm()">Create an Account</a>
                 </p>
@@ -199,7 +215,25 @@ if ($isCustomerLoggedIn) {
             }
         }
     </script>
-
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleGoogleLogin(response) {
+            fetch('api/google_auth.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token: response.credential })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = 'index.php'; // Refresh to show logged-in state
+                    } else {
+                        alert('Google Login Failed: ' + data.message);
+                    }
+                })
+                .catch(err => console.error("Error connecting to backend:", err));
+        }
+    </script>
 </body>
 
 </html>

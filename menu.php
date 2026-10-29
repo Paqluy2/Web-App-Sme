@@ -224,6 +224,21 @@ $categories = array_keys($categoryFolderMap);
                     <input type="password" name="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <!-- Google Login Section Added Here -->
+                <div
+                    style="text-align: center; margin: 15px 0; color: var(--text-muted); font-size: 0.85rem; font-weight: bold;">
+                    — OR —
+                </div>
+
+                <!-- The Google Button -->
+                <div id="g_id_onload"
+                    data-client_id="595592701169-rpfbal35qkmri3vu925okcj1a5ta1936.apps.googleusercontent.com"
+                    data-context="signin" data-ux_mode="popup" data-callback="handleGoogleLogin"
+                    data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                    data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left" data-width="100%"
+                    style="margin-bottom: 12px;"></div>
                 <p style="text-align:center; margin-top:12px; font-size:0.85rem;">
                     New customer? <a href="javascript:void(0)" onclick="showRegisterForm()">Create an Account</a>
                 </p>
@@ -455,8 +470,26 @@ $categories = array_keys($categoryFolderMap);
             });
         })();
     </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleGoogleLogin(response) {
+            fetch('api/google_auth.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token: response.credential })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = 'index.php'; // Refresh to show logged-in state
+                    } else {
+                        alert('Google Login Failed: ' + data.message);
+                    }
+                })
+                .catch(err => console.error("Error connecting to backend:", err));
+        }
+    </script>
 
- 
 </body>
 <?php require_once __DIR__ . '/includes/customer_footer.php'; ?>
 

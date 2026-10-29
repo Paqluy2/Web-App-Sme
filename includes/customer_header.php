@@ -120,6 +120,21 @@ if (!empty($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                     <input type="password" name="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                
+                <!-- Google Login Section Added Here -->
+                <div style="text-align: center; margin: 15px 0; color: var(--text-muted); font-size: 0.85rem; font-weight: bold;">
+                    — OR —
+                </div>
+                
+                <!-- The Google Button -->
+                <div id="g_id_onload"
+                     data-client_id="595592701169-rpfbal35qkmri3vu925okcj1a5ta1936.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-callback="handleGoogleLogin"
+                     data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left" data-width="100%" style="margin-bottom: 12px;"></div>
                 <p style="text-align:center; margin-top:10px; font-size:0.85rem;">
                     New to Gigs Cafe? <a href="#" onclick="toggleAuthForms(true); return false;">Create an Account</a>
                 </p>

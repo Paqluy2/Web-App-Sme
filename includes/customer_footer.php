@@ -22,7 +22,25 @@
         &copy; <?= date('Y') ?> Gigs Cafe. All Rights Reserved.
     </div>
 </footer>
-
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+function handleGoogleLogin(response) {
+    fetch('api/google_auth.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: response.credential })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.success) {
+            window.location.href = 'index.php'; // Refresh to show logged-in state
+        } else {
+            alert('Google Login Failed: ' + data.message);
+        }
+    })
+    .catch(err => console.error("Error connecting to backend:", err));
+}
+</script>
 <!-- 3. Global Scripts -->
 <script src="assets/js/customer.js?v=4.0"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
