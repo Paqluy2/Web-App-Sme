@@ -19,7 +19,7 @@ $currentPage        = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gigs Cafe - Artisan Drinks & Fresh Brews</title>
+    <title>GIGS CAFÉ - Artisan Drinks & Fresh Brews</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/customer.css">
 </head>
@@ -103,7 +103,7 @@ if (!empty($_SESSION['cart']) && is_array($_SESSION['cart'])) {
     <div class="modal-overlay" id="authModal">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <h3 id="authModalTitle">Welcome to Gigs Cafe</h3>
+                <h3 id="authModalTitle">Welcome to GIGS CAFÉ</h3>
                 <button type="button" class="btn-del" onclick="closeAuthModal()" style="font-size:1.5rem;">&times;</button>
             </div>
 
@@ -136,7 +136,7 @@ if (!empty($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                 </div>
                 <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left" data-width="100%" style="margin-bottom: 12px;"></div>
                 <p style="text-align:center; margin-top:10px; font-size:0.85rem;">
-                    New to Gigs Cafe? <a href="#" onclick="toggleAuthForms(true); return false;">Create an Account</a>
+                    New to GIGS CAFÉ? <a href="#" onclick="toggleAuthForms(true); return false;">Create an Account</a>
                 </p>
             </form>
 

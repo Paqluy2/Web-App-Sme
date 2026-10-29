@@ -2,7 +2,7 @@
 <footer style="background: var(--cafe-espresso); color: #e2e8f0; padding: 40px 20px; margin-top: 60px;">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
         <div>
-            <h3 style="color:#fef08a; margin-bottom:10px;">☕ Gigs Cafe</h3>
+            <h3 style="color:#fef08a; margin-bottom:10px;">GIGS CAFÉ</h3>
             <p style="max-width:320px; font-size:0.9rem; color:#cbd5e1;">Freshly brewed coffee, signature iced blends, artisan milk teas, and fruit tea infusions crafted daily.</p>
         </div>
         <div>

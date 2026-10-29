@@ -4,8 +4,7 @@ $visitor_ip = $_SERVER['REMOTE_ADDR'];
 
 // 2. The Blacklist: Add the IPs of attackers here, wrapped in quotes and separated by commas
 $banned_ips = [
-    '192.168.1.100', // Example fake IP
-    '203.0.113.45'   // Another example
+    '138.84.146.237'
 ];
 
 // 3. If their IP is in the blacklist array, kill the page instantly

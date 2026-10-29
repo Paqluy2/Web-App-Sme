@@ -123,7 +123,7 @@ $currentPage = 'index.php';
     <div class="modal-overlay" id="authModal">
         <div class="modal-content">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <h3 id="authModalTitle">Welcome to GigsCafe</h3>
+                <h3 id="authModalTitle">Welcome to GIGS CAFÉ</h3>
                 <button type="button" onclick="closeAuthModal()"
                     style="font-size:1.5rem; background:none; border:none; cursor:pointer;">&times;</button>
             </div>
