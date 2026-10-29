@@ -55,10 +55,12 @@ try {
     } else {
         // New Customer: Register them using exact column names from your database
         $insert = $db->prepare("
-            INSERT INTO customers (full_name, email, oauth_provider, oauth_uid, created_at) 
-            VALUES (?, ?, 'google', ?, NOW())
+            INSERT INTO customers (full_name, email, phone, oauth_provider, oauth_uid, created_at) 
+            VALUES (?, ?, ?, 'google', ?, NOW())
         ");
-        $insert->execute([$name, $email, $googleId]);
+        
+        // Pass 'N/A' as the default phone number so the database accepts it
+        $insert->execute([$name, $email, 'N/A', $googleId]);
         
         // Log the brand new customer in
         $_SESSION['customer_id'] = $db->lastInsertId();
