@@ -44,7 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gigs Cafe - Staff Login</title>
+    <title>GIGS CAFE - Staff Login</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="auth-body">
