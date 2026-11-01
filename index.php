@@ -22,7 +22,7 @@ $currentPage = 'index.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>GIGS CAFÉ</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <!-- Relative paths to load CSS cleanly from /WebApp/ -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/customer.css?v=2.0">
